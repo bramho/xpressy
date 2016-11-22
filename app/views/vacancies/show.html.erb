@@ -24,16 +24,21 @@
 
 <p class="buttons">
    <%= link_to "Back", root_path %>
-   |
-   <%= link_to "Edit", edit_vacancy_path(@vacancy) %>
-   |
-   <%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+   <% if user_signed_in? %>
+      |
+      <%= link_to "Edit", edit_vacancy_path(@vacancy) %>
+      |
+      <%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
+   <% end %>
 </p>
 
 <div id="reaction">
    <h2><%= @vacancy.reactions.count %> Reactions</h2>
    <%= render @vacancy.reactions %>
 
-   <h3>Add a reaction</h3>
-   <%= render 'reactions/form' %>
+   <% if user_signed_in? %>
+      <h3>Add a reaction</h3>
+      <%= render 'reactions/form' %>
+   <% end %>
 </div>

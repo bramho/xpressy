@@ -9,11 +9,19 @@
   </head>
 
   <body>
-   <p class="log_buttons"><span class="log_in">Log in</span></p>
+   <% if user_signed_in? %>
+
+      <p class="log_buttons log_out_button"><span class="log_out">Log Out</span></p>
+
+   <% else %>
+
+      <p class="log_buttons log_in_button"><span class="log_in">Log In</span></p>
+
+   <% end %>
 
    <% flash.each do |name, msg| %>
 
-      <%= content.tag(:div, msg, class: "alert") %>
+      <%= content_tag(:div, msg, class: "alert") %>
 
    <% end %>
 
