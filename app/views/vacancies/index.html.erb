@@ -1,1 +1,8 @@
-<h1>This is the index.html.erb file</h1>
+<% @vacancies.each do |vacancy| %>
+
+   <div class="vacancy_wrapper">
+      <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
+      <p class="description"><%= vacancy.description %></p>
+   </div>
+
+<% end %>
