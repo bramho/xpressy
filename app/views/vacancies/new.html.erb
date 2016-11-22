@@ -1,0 +1,44 @@
+<h1>New vacancy</h1>
+
+<%= form_for :vacancie, url: vacancies_path do |f| %>
+
+   <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+   </p>
+
+   <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+   </p>
+
+   <p>
+      <%= f.label :location %><br />
+      <%= f.text_field :location %>
+   </p>
+
+   <p>
+      <%= f.label :demands %><br />
+      <%= f.text_field :demands %>
+   </p>
+
+   <p>
+      <%= f.label :branche %><br />
+      <%= f.text_field :branche %>
+   </p>
+
+   <p>
+      <%= f.label :education_level %><br />
+      <%= f.text_field :education_level %>
+   </p>
+
+   <p>
+      <%= f.label :experience %><br />
+      <%= f.text_field :experience %>
+   </p>
+
+   <p>
+      <%= f.submit %>
+   </p>
+
+<% end %>
