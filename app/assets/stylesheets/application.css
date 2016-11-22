@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+p.log_buttons {
+   text-align: center;
+   padding: 10px 0;
+}

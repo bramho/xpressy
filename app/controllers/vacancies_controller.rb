@@ -5,14 +5,17 @@ class VacanciesController < ApplicationController
    end
 
    def new
-
+      @vacancy = Vacancy.new
    end
 
    def create
       @vacancy = Vacancy.new(vacancy_params)
-      @vacancy.save
 
-      redirect_to @vacancy
+      if @vacancy.save
+         redirect_to @vacancy
+      else
+         render 'new'
+      end
    end
 
    def show

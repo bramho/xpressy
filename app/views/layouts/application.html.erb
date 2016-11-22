@@ -9,6 +9,14 @@
   </head>
 
   <body>
+   <p class="log_buttons"><span class="log_in">Log in</span></p>
+
+   <% flash.each do |name, msg| %>
+
+      <%= content.tag(:div, msg, class: "alert") %>
+
+   <% end %>
+
     <%= yield %>
   </body>
 </html>

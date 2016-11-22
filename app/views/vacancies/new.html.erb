@@ -1,6 +1,16 @@
 <h1>New vacancy</h1>
 
 <%= form_for :vacancy, url: vacancies_path do |f| %>
+   <% if @vacancy.errors.any? %>
+      <div id="errors">
+         <h2><%= pluralize(@vacancy.errors.count, "error") %> prevented this vacancy from saving.</h2>
+         <ul>
+            <% @vacancy.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+            <% end %>
+         </ul>
+      </div>
+   <% end %>
 
    <p>
       <%= f.label :title %><br />
@@ -10,11 +20,6 @@
    <p>
       <%= f.label :description %><br />
       <%= f.text_area :description %>
-   </p>
-
-   <p>
-      <%= f.label :location %><br />
-      <%= f.text_field :location %>
    </p>
 
    <p>
