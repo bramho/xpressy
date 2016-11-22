@@ -1,0 +1,7 @@
+<div class="reaction_wrapper">
+   <p><b>Name: </b><%= reaction.name %></p>
+   <p><b>Email: </b><%= reaction.email %></p>
+   <p><b>Reaction: </b><%= reaction.body %></p>
+   <p><%= link_to "Delete", [reaction.vacancy, reaction], method: :delete, data: { confirm: "Are you sure?" } %></p>
+   <br />
+</div>

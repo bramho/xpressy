@@ -29,3 +29,11 @@
    |
    <%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
+
+<div id="reaction">
+   <h2><%= @vacancy.reactions.count %> Reactions</h2>
+   <%= render @vacancy.reactions %>
+
+   <h3>Add a reaction</h3>
+   <%= render 'reactions/form' %>
+</div>
