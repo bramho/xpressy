@@ -1,4 +1,5 @@
 class Vacancy < ApplicationRecord
+   has_many :reactions
    validates :title, presence: true, length: { minimum: 5 }
    validates :description, presence: true
    validates :demands, presence: true
