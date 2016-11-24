@@ -6,4 +6,5 @@ class Vacancy < ApplicationRecord
    validates :branche, presence: true
    validates :education_level, presence: true
    validates :experience, presence: true
+   validates :location, presence: true
 end

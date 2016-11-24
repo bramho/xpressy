@@ -30,7 +30,7 @@ class VacanciesController < ApplicationController
    def update
       @vacancy = Vacancy.find(params[:id])
 
-      if @vacancy.update(params[:vacancy].permit(:title, :description, :demands, :branche, :education_level, :experience))
+      if @vacancy.update(params[:vacancy].permit(:title, :description, :demands, :branche, :education_level, :experience, :location))
          redirect_to @vacancy
       else
          render 'edit'
@@ -46,7 +46,7 @@ class VacanciesController < ApplicationController
 
    private
       def vacancy_params
-         params.require(:vacancy).permit(:title, :description, :demands, :branche, :education_level, :experience)
+         params.require(:vacancy).permit(:title, :description, :demands, :branche, :education_level, :experience, :location)
       end
 
 end
