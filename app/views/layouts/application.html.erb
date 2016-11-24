@@ -11,11 +11,17 @@
   <body>
    <% if user_signed_in? %>
 
-      <p class="log_buttons log_out_button"><span class="log_out">Log Out</span></p>
+      <p class="log_buttons log_out_button"><span class="log_out"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></span></p>
+
+      <% if current_user.admin? %>
+
+         <p class="log_buttons">Sign up new user</p>
+
+      <% end %>
 
    <% else %>
 
-      <p class="log_buttons log_in_button"><span class="log_in">Log In</span></p>
+      <p class="log_buttons log_in_button"><span class="log_in"><%= link_to 'Sign In', new_user_session_path %></span></p>
 
    <% end %>
 
