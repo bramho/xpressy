@@ -15,7 +15,7 @@
 
       <% if current_user.admin? %>
 
-         <p class="log_buttons">Sign up new user</p>
+         <p class="log_buttons"><%= link_to 'Sign up a new user', new_user_by_admin_path %></p>
 
       <% end %>
 
