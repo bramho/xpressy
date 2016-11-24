@@ -3,9 +3,11 @@
 
 <% @vacancies.each do |vacancy| %>
 
-   <div class="vacancy_wrapper">
-      <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
-      <p class="description"><%= vacancy.description %></p>
+   <div class="col-md-4">
+      <div class="vacancy-wrapper">
+         <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
+         <p class="description"><%= vacancy.description %></p>
+      </div>
    </div>
 
 <% end %>

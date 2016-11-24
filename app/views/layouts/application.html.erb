@@ -9,21 +9,22 @@
   </head>
 
   <body>
-   <% if user_signed_in? %>
+      <header class="header">
+         <ul>
+            <% if user_signed_in? %>
 
-      <p class="log_buttons log_out_button"><span class="log_out"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></span></p>
+               <li>Hello, <%= current_user.email %></li>
+               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></span></li>
 
-      <% if current_user.admin? %>
+               <% if current_user.admin? %>
+                  <li><%= link_to 'Sign up a new user', new_user_by_admin_path %></li>
+               <% end %>
 
-         <p class="log_buttons"><%= link_to 'Sign up a new user', new_user_by_admin_path %></p>
-
-      <% end %>
-
-   <% else %>
-
-      <p class="log_buttons log_in_button"><span class="log_in"><%= link_to 'Sign In', new_user_session_path %></span></p>
-
-   <% end %>
+            <% else %>
+               <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <% end %>
+         </ul>
+      </header>
 
    <% flash.each do |name, msg| %>
 
@@ -31,6 +32,8 @@
 
    <% end %>
 
-    <%= yield %>
+   <div class="content-wrapper">
+      <%= yield %>
+   </div>
   </body>
 </html>
