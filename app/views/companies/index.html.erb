@@ -1,0 +1,13 @@
+<h1>All Vacancies</h1>
+<p><%= link_to "New Company", new_vacancy_path %></p>
+
+<% @companies.each do |company| %>
+
+   <div class="col-md-4">
+      <div class="vacancy-wrapper">
+         <h2 class="title"><%= link_to company.title, company %></h2>
+         <p class="description"><%= company.description %></p>
+      </div>
+   </div>
+
+<% end %>
