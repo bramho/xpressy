@@ -1,0 +1,42 @@
+<%= form_for @company do |f| %>
+   <% if @company.errors.any? %>
+      <div id="errors">
+         <h2><%= pluralize(@company.errors.count, "error") %> prevented this vacancy from saving.</h2>
+         <ul>
+            <% @company.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+            <% end %>
+         </ul>
+      </div>
+   <% end %>
+
+   <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+   </p>
+
+   <p>
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+   </p>
+
+   <p>
+      <%= f.label :address %><br />
+      <%= f.text_field :address %>
+   </p>
+
+   <p>
+      <%= f.label :postal_code %><br />
+      <%= f.text_area :postal_code %>
+   </p>
+
+   <p>
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+   </p>
+
+   <p>
+      <%= f.submit %>
+   </p>
+
+<% end %>
