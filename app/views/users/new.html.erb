@@ -1,3 +1,9 @@
+<header class="sub-header">
+   <ul>
+      <li><%= link_to "Home", root_path %></li>
+   </ul>
+</header>
+
 <h1>Create new user</h1>
 <%= form_for(User.new, url: create_user_path) do |f| %>
    <div class="field">

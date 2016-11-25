@@ -56,17 +56,23 @@ input, textarea {
    color: $black;
 }
 
-input[type=submit], .button, button {
+input[type=submit], .button, button, select {
    background-color: $dark-secondary-color;
    color: $white;
    border: 2px solid $dark-secondary-color;
    padding: 10px 15px;
+   margin-top: 10px;
    font-weight: bold;
 
    &:hover, &:focus {
       background-color: $secondary-color;
       color: $dark-secondary-color;
    }
+}
+
+select {
+   min-width: 150px;
+   margin-top: 0px;
 }
 
 // Header
