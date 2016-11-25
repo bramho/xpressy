@@ -1,13 +1,16 @@
 <h1>All Vacancies</h1>
-<p><%= link_to "New Company", new_vacancy_path %></p>
+<p><%= link_to "New Company", new_company_path %></p>
 
-<% @companies.each do |company| %>
+<div class="col-md-4">
+   <div class="company-wrapper">
+      <% if Company.exists? %>
+         <% @companies.each do |company| %>
+            <h2 class="title"><%= link_to company.name, company %></h2>
+            <p class="description"><%= company.description %></p>
+         <% end %>
 
-   <div class="col-md-4">
-      <div class="vacancy-wrapper">
-         <h2 class="title"><%= link_to company.title, company %></h2>
-         <p class="description"><%= company.description %></p>
-      </div>
+      <% else %>
+         <h2 class="title"><%= link_to 'Create company', new_company_path %></h2>
+      <% end %>
    </div>
-
-<% end %>
+</div>
