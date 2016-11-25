@@ -40,14 +40,33 @@ a {
    }
 }
 
+
 h1, h2, h3 {
    text-transform: uppercase;
    font-weight: bold;
    color: $dark-secondary-color;
 }
 
+ul {
+   padding: 0;
+   list-style: none;
+}
+
 input, textarea {
    color: $black;
+}
+
+input[type=submit], .button, button {
+   background-color: $dark-secondary-color;
+   color: $white;
+   border: 2px solid $dark-secondary-color;
+   padding: 10px 15px;
+   font-weight: bold;
+
+   &:hover, &:focus {
+      background-color: $secondary-color;
+      color: $dark-secondary-color;
+   }
 }
 
 // Header
@@ -57,8 +76,6 @@ input, textarea {
     padding: 20px 0px 10px 0px;
 
     ul {
-      padding: 0;
-      list-style: none;
       text-align: center;
 
       li {
@@ -81,9 +98,7 @@ input, textarea {
    padding: 10px 0px;
 
    ul {
-      padding: 0;
       text-align: center;
-      list-style: none;
 
       li {
          display: inline-block;

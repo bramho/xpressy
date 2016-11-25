@@ -11,40 +11,50 @@
    </ul>
 </header>
 
-<h1 class="title">
-   <%= @vacancy.title %>
-</h1>
+<div class="col-md-4 vacancy-info">
+   <h1 class="title">
+      <%= @vacancy.title %>
+   </h1>
 
-<p class="description">
-   <b>Description:</b> <%= @vacancy.description %>
-</p>
+   <p class="description">
+      <b>Description:</b><br />
+      <%= @vacancy.description %>
+   </p>
 
-<p class="location">
-   <b>Location:</b> <%= @vacancy.location %>
-</p>
+   <p class="location">
+      <b>Location:</b><br />
+      <%= @vacancy.location %>
+   </p>
 
-<p class="demands">
-   <b>Demands:</b> <%= @vacancy.demands %>
-</p>
+   <p class="demands">
+      <b>Demands:</b><br />
+      <%= @vacancy.demands %>
+   </p>
 
-<p class="branche">
-   <b>Branche:</b> <%= @vacancy.branche %>
-</p>
+   <p class="branche">
+      <b>Branche:</b><br />
+      <%= @vacancy.branche %>
+   </p>
 
-<p class="education_level">
-   <b>Education level:</b> <%= @vacancy.education_level %>
-</p>
+   <p class="education_level">
+      <b>Education level:</b><br />
+      <%= @vacancy.education_level %>
+   </p>
 
-<p class="experience">
-   <b>Experience:</b> <%= @vacancy.experience %>
-</p>
+   <p class="experience">
+      <b>Experience:</b><br />
+      <%= @vacancy.experience %>
+   </p>
+</div>
 
-<div id="reaction">
-   <h2><%= @vacancy.reactions.count %> Reactions</h2>
-   <%= render @vacancy.reactions %>
+<div class="col-md-4">
+   <div id="reaction">
+      <h2><%= @vacancy.reactions.count %> Reactions</h2>
+      <%= render @vacancy.reactions %>
+   </div>
+</div>
 
-   <% if user_signed_in? %>
-      <h3>Add a reaction</h3>
-      <%= render 'reactions/form' %>
-   <% end %>
+<div class="col-md-4">
+   <h3>Add a reaction</h3>
+   <%= render 'reactions/form' %>
 </div>
