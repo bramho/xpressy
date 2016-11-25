@@ -1,12 +1,39 @@
-<h1>All Vacancies</h1>
-<p><%= link_to "New Company", new_company_path %></p>
+<h1>Company Settings</h1>
 
-<div class="col-md-4">
+<!-- <% if !Company.exists? %>
+   <p><%= link_to "New Company", new_company_path %></p>
+<% end %> -->
+
+<div class="col-md-12">
    <div class="company-wrapper">
       <% if Company.exists? %>
          <% @companies.each do |company| %>
-            <h2 class="title"><%= link_to company.name, company %></h2>
-            <p class="description"><%= company.description %></p>
+            <h2 class="title"><%= company.name %></h2>
+            <div class="container">
+               <p class="description">
+                  <b>Description: </b><br />
+                  <%= company.description %>
+               </p>
+
+               <p class="address">
+                  <b>Address: </b><br />
+                  <%= company.address %>
+               </p>
+
+               <p class="postal_code">
+                  <b>Postal Code: </b><br />
+                  <%= company.postal_code %>
+               </p>
+
+               <p class="city">
+                  <b>City: </b><br />
+                  <%= company.city %>
+               </p>
+
+               <p class="edit-company">
+                  <%= link_to 'Edit Company', edit_company_path(company) %>
+               </p>
+            </div>
          <% end %>
 
       <% else %>
