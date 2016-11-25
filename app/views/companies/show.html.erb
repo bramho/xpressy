@@ -4,9 +4,9 @@
 
       <% if user_signed_in? %>
          |
-         <li><%= link_to "Edit", edit_vacancy_path(@company) %></li>
+         <li><%= link_to "Edit", edit_company_path(@company) %></li>
          |
-         <li><%= link_to "Delete", vacancy_path(@company), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+         <li><%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
    </ul>
 </header>
