@@ -1,0 +1,38 @@
+<header class="sub-header">
+   <ul>
+      <li><%= link_to "Back to all locations", locations_path %></li>
+
+      <% if user_signed_in? %>
+         |
+         <li><%= link_to "Edit", edit_location_path(@location) %></li>
+         |
+         <li><%= link_to "Delete", location_path(@location), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+   </ul>
+</header>
+
+<div class="location-info">
+   <h1 class="name">
+      <%= @location.name %>
+   </h1>
+
+   <p class="address">
+      <b>Address:</b><br />
+      <%= @location.address %>
+   </p>
+
+   <p class="postal_code">
+      <b>Postal Code:</b><br />
+      <%= @location.postal_code %>
+   </p>
+
+   <p class="city">
+      <b>City:</b><br />
+      <%= @location.city %>
+   </p>
+
+   <p class="country">
+      <b>County:</b><br />
+      <%= @location.country %>
+   </p>
+</div>

@@ -4,6 +4,12 @@
    <p><%= link_to "New Company", new_company_path %></p>
 <% end %> -->
 
+<% if Company.exists? %>
+   <% @companies.each do |company| %>
+      <h3><%= link_to 'View locations', locations_path %></h3>   
+   <% end %>
+<% end %>
+
 <div class="col-md-12">
    <div class="company-wrapper">
       <% if Company.exists? %>
