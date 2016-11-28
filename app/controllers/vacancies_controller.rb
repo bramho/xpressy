@@ -3,6 +3,11 @@ class VacanciesController < ApplicationController
 
    def index
       @vacancies = Vacancy.all.order('created_at DESC')
+
+      respond_to do |format|
+         format.html 
+         format.json { render :json => @vacancies }
+      end
    end
 
    def new
