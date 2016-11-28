@@ -2,7 +2,7 @@ class ReactionsController < ApplicationController
 
    def create
       @vacancy = Vacancy.find(params[:vacancy_id])
-      @reaction = @vacancy.reactions.create(params[:reaction].permit(:name, :email, :body))
+      @reaction = @vacancy.reactions.create(params[:reaction].permit(:first_name, :last_name, :email, :age, :education, :body))
 
       redirect_to vacancy_path(@vacancy)
    end
