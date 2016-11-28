@@ -8,7 +8,9 @@ Rails.application.routes.draw do
      resources :reactions
   end
 
-  resources :companies
+  resources :companies do
+     resources :locations
+  end
 
   root "vacancies#index"
 end
