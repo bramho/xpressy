@@ -13,8 +13,10 @@ class UsersController < ApplicationController
 
    private
       def authorize_admin
-         return unless !current_user.admin?
-         redirect_to root_path, alert: 'This page can only be viewed by Admins.'
+         if (current_user)
+            return unless !current_user.admin?
+            redirect_to root_path, alert: 'This page can only be viewed by Admins.'
+         end
       end
 
       def user_params
