@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'scss_partials/colors';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body {
+   margin: 0;
+   padding: 0;
+   color: #fff;
+   background-color: $secondary-color;
+   font-family: 'Open Sans', sans-serif;
+}
+
+a {
+   color: $white;
+   font-weight: bold;
+   text-decoration: underline;
+
+   &:link, &:visited {
+      color: $white;
+   }
+
+   &:hover, &:focus {
+      color: $dark-secondary-color;
+   }
+}
+
+
+h1, h2, h3 {
+   text-transform: uppercase;
+   font-weight: bold;
+   color: $dark-secondary-color;
+}
+
+ul {
+   padding: 0;
+   list-style: none;
+}
+
+input, textarea {
+   color: $black;
+}
+
+input[type=submit], .button, button, select {
+   background-color: $dark-secondary-color;
+   color: $white;
+   border: 2px solid $dark-secondary-color;
+   padding: 10px 15px;
+   margin-top: 10px;
+   font-weight: bold;
+
+   &:hover, &:focus {
+      background-color: $secondary-color;
+      color: $dark-secondary-color;
+   }
+}
+
+select {
+   min-width: 150px;
+   margin-top: 0px;
+}
+
+// Header
+.header {
+    width: 100%;
+    background-color: $primary-color;
+    padding: 20px 0px 10px 0px;
+
+    ul {
+      text-align: center;
+
+      li {
+         display: inline-block;
+         margin: 0px 10px;
+
+         a {
+            &:hover, &:focus {
+               color: $secondary-color;
+            }
+         }
+      }
+   }
+}
+
+// Sub header
+.sub-header {
+   width: 100%;
+   background-color: $light-primary-color;
+   padding: 10px 0px;
+
+   ul {
+      text-align: center;
+
+      li {
+         display: inline-block;
+
+         a {
+            &:hover, &:focus {
+               color: $secondary-color;
+            }
+         }
+      }
+   }
+}
+
+// Content
+.content-wrapper {
+   text-align: center;
+}

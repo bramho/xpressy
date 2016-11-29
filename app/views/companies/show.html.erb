@@ -1,0 +1,38 @@
+<header class="sub-header">
+   <ul>
+      <li><%= link_to "Back", companies_path %></li>
+
+      <% if user_signed_in? %>
+         |
+         <li><%= link_to "Edit", edit_company_path(@company) %></li>
+         |
+         <li><%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+   </ul>
+</header>
+
+<div class="col-md-4 company-info">
+   <h1 class="title">
+      <%= @company.name %>
+   </h1>
+
+   <p class="description">
+      <b>Description:</b><br />
+      <%= @company.description %>
+   </p>
+
+   <p class="address">
+      <b>Address:</b><br />
+      <%= @company.address %>
+   </p>
+
+   <p class="postal_code">
+      <b>Postal Code:</b><br />
+      <%= @company.postal_code %>
+   </p>
+
+   <p class="city">
+      <b>City:</b><br />
+      <%= @company.city %>
+   </p>
+</div>

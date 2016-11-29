@@ -1,0 +1,13 @@
+<header class="sub-header">
+   <ul>
+      <li><%= link_to "Back", companies_path %></li>
+
+      <% if user_signed_in? %>
+         |
+         <li><%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+   </ul>
+</header>
+<h1>Edit Company</h1>
+
+<%= render 'form' %>

@@ -1,0 +1,39 @@
+<header class="sub-header">
+   <ul>
+      <li><%= link_to "Back", companies_path %></li>
+   </ul>
+</header>
+
+<h1>All locations</h1>
+<p><%= link_to "New Location", new_location_path %></p>
+
+<% @locations.each do |location| %>
+   <div class="col-md-4">
+      <div class="location-wrapper">
+         <h2 class="title"><%= link_to location.name, location %></h2>
+         <p class="address">
+            <b>Address:</b><br />
+            <%= location.address %>
+         </p>
+
+         <p class="postal_code">
+            <b>Postal Code:</b><br />
+            <%= location.postal_code %>
+         </p>
+
+         <p class="city">
+            <b>City:</b><br />
+            <%= location.city %>
+         </p>
+
+         <p class="country">
+            <b>County:</b><br />
+            <%= location.country %>
+         </p>
+         <% if user_signed_in? %>
+            <p><%= link_to "Edit", edit_location_path(location) %></p>
+            <p><%= link_to "Delete", location_path(location), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+         <% end %>
+      </div>
+   </div>
+<% end %>

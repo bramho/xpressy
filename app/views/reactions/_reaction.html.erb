@@ -1,0 +1,32 @@
+<div class="col-md-6 reaction-wrapper">
+   <p>
+      <b>First Name: </b><br />
+      <%= reaction.first_name %>
+   </p>
+   <p>
+      <b>Last Name: </b><br />
+      <%= reaction.last_name %>
+   </p>
+   <p>
+      <b>Email: </b><br />
+      <%= reaction.email %>
+   </p>
+   <p>
+      <b>Age: </b><br />
+      <%= reaction.age %>
+   </p>
+   <p>
+      <b>Education: </b><br />
+      <%= reaction.education %>
+   </p>
+   <p>
+      <b>Reaction: </b><br />
+      <%= reaction.body %>
+   </p>
+
+   <% if user_signed_in? %>
+      <p><%= link_to "Delete", [reaction.vacancy, reaction], method: :delete, data: { confirm: "Are you sure?" } %></p>
+   <% end %>
+
+   <br />
+</div>
