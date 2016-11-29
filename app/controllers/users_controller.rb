@@ -16,6 +16,10 @@ class UsersController < ApplicationController
          if (current_user)
             return unless !current_user.admin?
             redirect_to root_path, alert: 'This page can only be viewed by Admins.'
+         elsif (User.count == 0)
+            return
+         else
+            redirect_to root_path, alert: 'This page can only be viewed by Admins.'
          end
       end
 
