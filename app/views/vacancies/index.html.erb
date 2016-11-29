@@ -1,13 +1,24 @@
-<h1>All Vacancies</h1>
-<p><%= link_to "New Vacancy", new_vacancy_path %></p>
+<h1>Alle Vacatures</h1>
 
+<div class="row">
+  <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="vacancy-wrapper">
+      <h2><%= link_to "New Vacancy", new_vacancy_path %></h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
 <% @vacancies.each do |vacancy| %>
 
-   <div class="col-md-4">
+   <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="vacancy-wrapper">
          <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
          <p class="description"><%= vacancy.description %></p>
+         <p class="updated">Voor het laatst gewijzigd op: <%= vacancy.updated_at %></p>
       </div>
    </div>
 
 <% end %>
+
+</div>

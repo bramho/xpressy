@@ -1,0 +1,73 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+   color: $white;
+   font-weight: bold;
+   text-decoration: underline;
+
+   &:link, &:visited {
+      color: $white;
+   }
+
+   &:hover, &:focus {
+      color: $dark-secondary-color;
+   }
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   color: #fff;
+   background-color: $secondary-color;
+   font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+   padding: 0;
+   list-style: none;
+}
+
+input, textarea {
+   color: $black;
+}
+
+input[type=submit], .button, button, select {
+   background-color: $dark-secondary-color;
+   color: $white;
+   border: 2px solid $dark-secondary-color;
+   padding: 10px 15px;
+   margin-top: 10px;
+   font-weight: bold;
+
+   &:hover, &:focus {
+      background-color: $secondary-color;
+      color: $dark-secondary-color;
+   }
+}
+
+select {
+   min-width: 150px;
+   margin-top: 0px;
+}
