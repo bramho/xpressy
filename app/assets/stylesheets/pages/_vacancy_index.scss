@@ -4,6 +4,21 @@
   color: #fff;
   min-height: 300px;
 
+  h2{
+    background: #fff;
+    padding: 10px 0 10px 0;
+
+    a{
+      color: #000;
+      text-decoration: none;
+    }
+  }
+
+  p{
+    font-size: 16px;
+    padding: 0 10px 0 10px;
+  }
+
   .fa-plus-circle{
         font-size: 220px;
   }
