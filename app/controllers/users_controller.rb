@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-   before_filter :authorize_admin, only: :create
+   # before_filter :authorize_admin, only: :create
+   before_action :authorize_admin
 
    def add_new_user
       render 'new'
@@ -8,22 +9,25 @@ class UsersController < ApplicationController
    def create
       @user = User.new(user_params)
       @user.save
-      redirect_to root_path
+      redirect_to root_path, alert: 'New user has been created.'
    end
 
    private
       def authorize_admin
-         if (current_user)
-            return unless !current_user.admin?
-            redirect_to root_path, alert: 'This page can only be viewed by Admins.'
+         if(current_user)
+            if (current_user.admin?)
+               return
+            else
+               redirect_to root_path, alert: 'You do not have the rights to view this page.'
+            end
          elsif (User.count == 0)
             return
          else
-            redirect_to root_path, alert: 'This page can only be viewed by Admins.'
+            redirect_to root_path, alert: 'You do not have the rights to view this page.'
          end
       end
 
       def user_params
-         params.require(:user).permit(:email, :admin, :password, :password_confirmation)
+         params.require(:user).permit(:email, :first_name, :last_name, :admin, :password, :password_confirmation)
       end
 end

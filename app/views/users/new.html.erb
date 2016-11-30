@@ -6,6 +6,16 @@
    </div>
 
    <div class="field">
+     <%= f.label :first_name %><br />
+     <%= f.text_field :first_name, autocomplete: "off" %>
+   </div>
+
+   <div class="field">
+     <%= f.label :last_name %><br />
+     <%= f.text_field :last_name, autocomplete: "off" %>
+   </div>
+
+   <div class="field">
       <%= f.label :admin %><br />
       <%= f.select :admin, [true, false], :promt => 'Select One' %>
    </div>

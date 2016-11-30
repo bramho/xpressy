@@ -14,7 +14,7 @@
          <ul>
             <% if user_signed_in? %>
 
-               <li>Hello, <%= current_user.email %></li>
+               <li>Hello, <%= current_user.first_name %></li>
 
                <li><%= link_to 'Home', root_path %></li>
 
