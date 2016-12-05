@@ -7,4 +7,6 @@ class Vacancy < ApplicationRecord
    validates :education_level, presence: true
    validates :experience, presence: true
    validates :location, presence: true
+   # validates :modules_array, presence: true
+   serialize :modules_array, Array
 end

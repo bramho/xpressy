@@ -10,10 +10,11 @@ Rails.application.routes.draw do
 
   resources :vacancies do
      resources :reactions
+     resources :vacancy_steps
   end
 
+  # resources :vacancy_steps
   resources :companies
-
   resources :locations
 
   root "vacancies#index"

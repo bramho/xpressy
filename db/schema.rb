@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201085052) do
+ActiveRecord::Schema.define(version: 20161201103522) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20161201085052) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "location"
+    t.text     "modules_array"
   end
 
 end
