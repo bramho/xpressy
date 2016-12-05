@@ -1,24 +1,6 @@
-# README
+# Xpressy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Download, clone or fork this repo
+2. Run <code>bundle install</code>
+3. Run <code>rake db:migrate</code>
+4. Have fun
