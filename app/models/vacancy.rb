@@ -9,4 +9,5 @@ class Vacancy < ApplicationRecord
    validates :location, presence: true
    # validates :modules_array, presence: true
    serialize :modules_array, Array
+   serialize :positions_array, Array
 end

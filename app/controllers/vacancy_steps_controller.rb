@@ -10,7 +10,7 @@ class VacancyStepsController < ApplicationController
    def update
       @vacancy = Vacancy.find(params[:vacancy_id])
 
-      @vacancy.update_attributes(params[:vacancy].permit(modules_array: []))
+      @vacancy.update_attributes(params[:vacancy].permit(modules_array: [], positions_array: []))
 
       render_wizard @vacancy
    end

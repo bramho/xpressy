@@ -12,6 +12,13 @@
    </div>
 
    <div class="field">
+      <%= f.label :positions_array %>
+      <% ["1", "2"].each do |m| %>
+         <%= check_box_tag "vacancy[positions_array][]", m, id: "vacancy_positions_#{m}" %><%= m %>
+      <% end %>
+   </div>
+
+   <div class="field">
       <%= f.submit "Continue" %>
    </div>
 
