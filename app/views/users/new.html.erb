@@ -1,8 +1,23 @@
 <h1>Create new user</h1>
-<%= form_for(User.new, url: create_user_path) do |f| %>
+<%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
    <div class="field">
      <%= f.label :email %><br />
      <%= f.email_field :email, autofocus: true %>
+   </div>
+
+   <div class="field">
+      Add your <%= f.label :avatar %><br />
+      <%= f.file_field :avatar %>
+   </div>
+
+   <div class="field">
+     <%= f.label :first_name %><br />
+     <%= f.text_field :first_name, autocomplete: "off" %>
+   </div>
+
+   <div class="field">
+     <%= f.label :last_name %><br />
+     <%= f.text_field :last_name, autocomplete: "off" %>
    </div>
 
    <div class="field">
