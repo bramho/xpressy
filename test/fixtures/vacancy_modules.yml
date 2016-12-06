@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  module: MyString
+  horizontal_position: 
+  vertical_position: 
+  width_size: 
+  hight_size: 
+  vacancy: one
+
+two:
+  module: MyString
+  horizontal_position: 
+  vertical_position: 
+  width_size: 
+  hight_size: 
+  vacancy: two
