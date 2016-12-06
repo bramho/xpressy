@@ -7,29 +7,33 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://use.fontawesome.com/ad3908c2e9.js"></script>
+    <script src="cbpFWTabs.js"></script>
+    <script src="modernizr.custom.js"></script>
   </head>
 
   <body>
       <header class="header">
-         <ul>
+
+        <div class="tabs tabs-style-linemove">
+          <nav>
+            <ul>
             <% if user_signed_in? %>
+              <li><%= link_to (raw('<span>Home</span>')), root_path, class:"" %></a></li>
+              <li><%= link_to (raw('<span>Company Settings</span>')), companies_path, class:"" %></a></li>
+              <li><%= link_to (raw('<span>Sign Out</span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
 
-               <li>Hello, <%= current_user.first_name %></li>
-
-               <li><%= link_to 'Home', root_path %></li>
-
-               <li><%= link_to 'Company settings', companies_path %></li>
-
-               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></span></li>
-
-               <% if current_user.admin? %>
-                  <li><%= link_to 'Sign up a new user', new_user_by_admin_path %></li>
-               <% end %>
+            <% if current_user.admin? %>
+              <li><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
+            <% end %>
 
             <% else %>
-               <li><%= link_to 'Sign In', new_user_session_path %></li>
+              <li><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
             <% end %>
-         </ul>
+
+            </ul>
+          </nav>
+        </div><!-- /tabs -->
+
       </header>
 
    <% flash.each do |name, msg| %>
