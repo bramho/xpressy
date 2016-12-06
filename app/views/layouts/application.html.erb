@@ -18,16 +18,18 @@
           <nav>
             <ul>
             <% if user_signed_in? %>
-              <li><%= link_to (raw('<span>Home</span>')), root_path, class:"" %></a></li>
-              <li><%= link_to (raw('<span>Company Settings</span>')), companies_path, class:"" %></a></li>
-              <li><%= link_to (raw('<span>Sign Out</span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
+
+              <li class="<%= active_tab(root_path) %>"><%= link_to (raw('<span>Home</span>')), root_path, class:"" %></a></li>
+              <li class="<%= active_tab(companies_path) %>"><%= link_to (raw('<span>Company Settings</span>')), companies_path, class:"" %></a></li>
+              <li class="<%= active_tab(destroy_user_session_path) %>"><%= link_to (raw('<span>Sign Out</span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
 
             <% if current_user.admin? %>
-              <li><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
+              <li class="<%= active_tab(new_user_by_admin_path) %>"><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
             <% end %>
 
             <% else %>
-              <li><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
+              <li class="<%= active_tab(new_user_session_path) %>"><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
+
             <% end %>
 
             </ul>
