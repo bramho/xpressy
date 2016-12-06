@@ -14,7 +14,7 @@
    <div class="field">
       <%= f.label :positions_array %>
       <% ["1", "2"].each do |m| %>
-         <%= check_box_tag "vacancy[positions_array][]", m, id: "vacancy_positions_#{m}" %><%= m %>
+         <%= check_box_tag "vacancy[vertical_positions_array][]", m, id: "vacancy_vertical_positions_#{m}" %><%= m %>
       <% end %>
    </div>
 
