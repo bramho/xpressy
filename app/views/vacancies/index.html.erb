@@ -1,12 +1,39 @@
-<div class="row">
 
-    <div class="col-sm-6 col-md-4 col-lg-3">
+<div class="row options-bar">
+
+  <div class="col-sm-3">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." style="vertical-align: top;">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+  <div class="col-sm-3">
+    <select name="" id="">
+      <option value="">Filteren</option>
+      <option value=""></option>
+      <option value=""></option>
+      <option value=""></option>
+    </select>
+  </div>
+
+  <div class="col-sm-3 pull-right">
+    <h2><%= link_to "Nieuwe Vacature +", new_vacancy_path %></h2>
+  </div>
+
+</div>
+
+
+<div class="row">
+<!--     <div class="col-sm-6 col-md-4 col-lg-3">
       <div class="vacancy-wrapper">
         <h2><%= link_to "Nieuwe Vacature", new_vacancy_path %></h2>
         <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i>'.html_safe, new_vacancy_path %>
 
       </div>
-    </div>
+    </div> -->
 <% @vacancies.each do |vacancy| %>
 
   <div class="col-sm-6 col-md-4 col-lg-3">
@@ -14,6 +41,12 @@
        <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
        <p class="description"><%= vacancy.description %></p>
        <p class="updated">Voor het laatst gewijzigd op: <%= vacancy.updated_at %></p>
+    </div>
+    <div class="vacancy-options">
+      <img src="http://placehold.it/50x50" class="img-circle">
+      <%= link_to "Bewerken", edit_vacancy_path(vacancy) %>
+      <input type="radio" name="onoff" value="on"> On
+      <input type="radio" name="onoff" value="off"> Off
     </div>
   </div>
 

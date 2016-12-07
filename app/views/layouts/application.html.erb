@@ -7,33 +7,29 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://use.fontawesome.com/ad3908c2e9.js"></script>
-    <script src="cbpFWTabs.js"></script>
-    <script src="modernizr.custom.js"></script>
+
   </head>
 
   <body>
-      <header class="header">
+      <header class="tabs tabs-style-linemove">
+        <nav>
+          <ul>
+          <% if user_signed_in? %>
 
-        <div class="tabs tabs-style-linemove">
-          <nav>
-            <ul>
-            <% if user_signed_in? %>
-              <li class="<%= active_tab(root_path) %>"><%= link_to (raw('<span>Home</span>')), root_path, class:"" %></a></li>
-              <li class="<%= active_tab(companies_path) %>"><%= link_to (raw('<span>Company Settings</span>')), companies_path, class:"" %></a></li>
-              <li class="<%= active_tab(destroy_user_session_path) %>"><%= link_to (raw('<span>Sign Out</span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
+            <li class="<%= active_tab(root_path) %>"><%= link_to (raw('<span>Home</span>')), root_path, class:"" %></a></li>
+            <li class="<%= active_tab(companies_path) %>"><%= link_to (raw('<span>Company Settings</span>')), companies_path, class:"" %></a></li>
+            <li class="<%= active_tab(destroy_user_session_path) %>"><%= link_to (raw('<span>Sign Out</span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
 
-            <% if current_user.admin? %>
-              <li class="<%= active_tab(new_user_by_admin_path) %>"><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
-            <% end %>
+          <% if current_user.admin? %>
+            <li class="<%= active_tab(new_user_by_admin_path) %>"><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
+          <% end %>
 
-            <% else %>
-              <li class="<%= active_tab(new_user_session_path) %>"><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
-            <% end %>
+          <% else %>
+            <li class="<%= active_tab(new_user_session_path) %>"><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
+          <% end %>
 
-            </ul>
-          </nav>
-        </div><!-- /tabs -->
-
+          </ul>
+        </nav>
       </header>
 
    <% flash.each do |name, msg| %>
@@ -43,6 +39,7 @@
    <% end %>
 
    <div class="container-fluid background">
+
       <%= yield %>
    </div>
   </body>
