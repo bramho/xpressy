@@ -1,44 +1,49 @@
-<h1>Create new user</h1>
-<%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
-   <div class="field">
-     <%= f.label :email %><br />
-     <%= f.email_field :email, autofocus: true %>
-   </div>
+<div class="user-wrapper">
 
-   <div class="field">
-      Add your <%= f.label :avatar %><br />
-      <%= f.file_field :avatar %>
-   </div>
+  <h1>Create new user</h1>
+  
+  <%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
+     <div class="field">
+       <%= f.label :email %><br />
+       <%= f.email_field :email, autofocus: true %>
+     </div>
 
-   <div class="field">
-     <%= f.label :first_name %><br />
-     <%= f.text_field :first_name, autocomplete: "off" %>
-   </div>
+     <div class="address">
+        Add your <%= f.label :avatar %><br />
+        <%= f.file_field :avatar %>
+     </div>
 
-   <div class="field">
-     <%= f.label :last_name %><br />
-     <%= f.text_field :last_name, autocomplete: "off" %>
-   </div>
+     <div class="field">
+       <%= f.label :first_name %><br />
+       <%= f.text_field :first_name, autocomplete: "off" %>
+     </div>
 
-   <div class="field">
-      <%= f.label :admin %><br />
-      <%= f.select :admin, [true, false], :promt => 'Select One' %>
-   </div>
+     <div class="field">
+       <%= f.label :last_name %><br />
+       <%= f.text_field :last_name, autocomplete: "off" %>
+     </div>
 
-   <div class="field">
-     <%= f.label :password %>
-     <% if @minimum_password_length %>
-     <em>(<%= @minimum_password_length %> characters minimum)</em>
-     <% end %><br />
-     <%= f.password_field :password, autocomplete: "off" %>
-   </div>
+     <div class="field">
+        <%= f.label :admin %><br />
+        <%= f.select :admin, [true, false], :promt => 'Select One' %>
+     </div>
 
-   <div class="field">
-     <%= f.label :password_confirmation %><br />
-     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-   </div>
+     <div class="field">
+       <%= f.label :password %>
+       <% if @minimum_password_length %>
+       <em>(<%= @minimum_password_length %> characters minimum)</em>
+       <% end %><br />
+       <%= f.password_field :password, autocomplete: "off" %>
+     </div>
 
-   <div class="actions">
-     <%= f.submit "Sign up" %>
-   </div>
+     <div class="field">
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation, autocomplete: "off" %>
+     </div>
+
+     <div class="actions">
+       <%= f.submit 'Sign up new user', :class => 'submit-button' %>
+
+     </div>
+</div>
 <% end %>
