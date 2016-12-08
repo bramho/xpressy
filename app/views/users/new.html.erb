@@ -1,49 +1,72 @@
 <div class="user-wrapper">
 
-  <h1>Create new user</h1>
-  
-  <%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
-     <div class="field">
-       <%= f.label :email %><br />
-       <%= f.email_field :email, autofocus: true %>
-     </div>
+   <h1>Create new user</h1>
 
-     <div class="address">
-        Add your avatar
-        <%= f.file_field 'avatar', :class => 'avatar_button' %>
-     </div>
+   <%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
 
-     <div class="field">
-       <%= f.label :first_name %><br />
-       <%= f.text_field :first_name, autocomplete: "off" %>
-     </div>
 
-     <div class="field">
-       <%= f.label :last_name %><br />
-       <%= f.text_field :last_name, autocomplete: "off" %>
-     </div>
+   <span class="input input--kaede">
+      <%= f.email_field :email, class: 'input__field input__field--kaede' %>
+      <label class="input__label input__label--kaede" for="user_email">
+         <span class="input__label-content input__label-content--kaede"> e-mailadres</span>
+      </label>
+   </span>
 
-     <div class="field">
-        <%= f.label :admin %><br />
-        <%= f.select :admin, [true, false], :promt => 'Select One' %>
-     </div>
 
-     <div class="field">
-       <%= f.label :password %>
-       <% if @minimum_password_length %>
-       <em>(<%= @minimum_password_length %> characters minimum)</em>
-       <% end %><br />
-       <%= f.password_field :password, autocomplete: "off" %>
-     </div>
 
-     <div class="field">
-       <%= f.label :password_confirmation %><br />
-       <%= f.password_field :password_confirmation, autocomplete: "off" %>
-     </div>
 
-     <div class="actions">
-       <%= f.submit 'Sign up new user', :class => 'submit-button' %>
+   <div class="address">
+     <%= f.file_field 'avatar', :class => 'avatar_button' %>
+   </div>
 
-     </div>
+
+
+   <span class="input input--kaede">
+      <%= f.text_field :first_name, class: 'input__field input__field--kaede' %>
+      <label class="input__label input__label--kaede" for="user_first_name">
+         <span class="input__label-content input__label-content--kaede"> Voornaam</span>
+      </label>
+   </span>
+
+
+
+
+
+
+    <span class="input input--kaede">
+      <%= f.text_field :last_name, class: 'input__field input__field--kaede' %>
+      <label class="input__label input__label--kaede" for="user_last_name">
+         <span class="input__label-content input__label-content--kaede"> Naam Vacature </span>
+      </label>
+   </span>
+
+  <div class="field">
+     <%= f.label :admin %><br />
+     <%= f.select :admin, [true, false], :promt => 'Select One' %>
+   </div>
+
+
+   
+    <span class="input input--kaede">
+      <%= f.password_field :password, class: 'input__field input__field--kaede' %>
+      <label class="input__label input__label--kaede" for="user_password">
+         <span class="input__label-content input__label-content--kaede"> Wachtwoord</span>
+      </label>
+   </span>
+
+
+    <span class="input input--kaede">
+      <%= f.password_field :password_confirmation, class: 'input__field input__field--kaede' %>
+      <label class="input__label input__label--kaede" for="user_password_confirmation">
+         <span class="input__label-content input__label-content--kaede"> Wachtwoord herhalen </span>
+      </label>
+   </span>
+
+
+
+   <div class="actions">
+    <%= f.submit 'Sign up new user', :class => 'submit-button' %>
+   </div>
+
 </div>
 <% end %>
