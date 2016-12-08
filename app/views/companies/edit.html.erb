@@ -1,13 +1,17 @@
-<header class="sub-header">
-   <ul>
-      <li><%= link_to "Back", companies_path %></li>
+<div class="user-wrapper">
 
-      <% if user_signed_in? %>
-         |
-         <li><%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      <% end %>
-   </ul>
-</header>
-<h1>Edit Company</h1>
+	<header class="sub-header">
+	   <ul>
+	      <li><%= link_to "Back", companies_path %></li>
 
-<%= render 'form' %>
+	      <% if user_signed_in? %>
+	         |
+	         <li><%= link_to "Delete", company_path(@company), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+	      <% end %>
+	   </ul>
+	</header>
+
+	<h1>Bedrijfsgegevens aanpassen</h1>
+
+	<%= render 'form' %>
+</div>
