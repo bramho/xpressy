@@ -15,10 +15,11 @@
 
 
 
-   <div class="address">
-     <%= f.file_field 'avatar', :class => 'avatar_button' %>
-   </div>
 
+   <label class="custom-file-upload">
+      <%= f.file_field 'avatar', :class => 'avatar_button' %>
+      Upload avatar
+   </label>
 
 
    <span class="input input--kaede">
@@ -36,7 +37,7 @@
     <span class="input input--kaede">
       <%= f.text_field :last_name, class: 'input__field input__field--kaede' %>
       <label class="input__label input__label--kaede" for="user_last_name">
-         <span class="input__label-content input__label-content--kaede"> Naam Vacature </span>
+         <span class="input__label-content input__label-content--kaede"> Achternaam </span>
       </label>
    </span>
 
