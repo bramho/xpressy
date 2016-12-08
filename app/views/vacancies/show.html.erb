@@ -1,86 +1,40 @@
-<header class="sub-header">
-   <ul>
-      <li><%= link_to "Back", root_path %></li>
+<div class="row">
+  <div class="col-sm-3 vacancy-candidates">
+    <h2>Sollicitanten</h2>
+    <h3>Filters</h3>
+      <ul>
+        <li><a href="#">MBO4 +</a></li>
+        <li><a href="#">HBO -</a></li>
+        <li><a href="#">HTML +</a></li>
+        <li><a href="#">CSS +</a></li>
+        <li><a href="#">PHP +</a></li>
+      </ul>
+
+<%= link_to "Back", root_path %>
 
       <% if user_signed_in? %>
          |
-         <li><%= link_to "Edit", edit_vacancy_path(@vacancy) %></li>
+<%= link_to "Edit", edit_vacancy_path(@vacancy) %>
          |
-         <li><%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-   </ul>
-</header>
 
-<div class="col-md-4 vacancy-info">
-   <h1 class="title">
-      <%= @vacancy.title %>
-   </h1>
+    <% @vacancy.reactions.each do |reaction| %>
+      <div class="reaction">
+        <a href="#"><%= reaction.first_name %> <%= reaction.last_name %></a>
+        <div class="pull-right reaction-icons">
+          <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-question" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-   <p class="description">
-      <b>Description:</b><br />
-      <%= @vacancy.description %>
-   </p>
-
-   <p class="location">
-      <b>Location:</b><br />
-      <%= @vacancy.location %>
-   </p>
-
-   <p class="demands">
-      <b>Demands:</b><br />
-      <%= @vacancy.demands %>
-   </p>
-
-   <p class="branche">
-      <b>Branche:</b><br />
-      <%= @vacancy.branche %>
-   </p>
-
-   <p class="education_level">
-      <b>Education level:</b><br />
-      <%= @vacancy.education_level %>
-   </p>
-
-   <p class="experience">
-      <b>Experience:</b><br />
-      <%= @vacancy.experience %>
-   </p>
-
-   <p class="modules">
-      <b>Modules:</b><br />
-      <%= @vacancy.modules_array %>
-   </p>
-
-   <p class="horizontal_positions">
-      <b>Positions:</b><br />
-      <%= @vacancy.horizontal_positions_array %>
-   </p>
-
-   <p class="vertical_positions">
-      <b>Positions:</b><br />
-      <%= @vacancy.vertical_positions_array %>
-   </p>
-
-   <p class="width_size">
-      <b>Positions:</b><br />
-      <%= @vacancy.width_size_array %>
-   </p>
-
-   <p class="hight_size">
-      <b>Positions:</b><br />
-      <%= @vacancy.hight_size_array %>
-   </p>
+  <div class="col-sm-9 xpressheet">
+    <h1><%= @vacancy.title %></h1>
+    <img src="http://placehold.it/1000x800" class="img-responsive">
+  </div>
 
 </div>
 
-<div class="col-md-4">
-   <div id="reaction">
-      <h2><%= @vacancy.reactions.count %> Reactions</h2>
-      <%= render @vacancy.reactions %>
-   </div>
-</div>
-
-<div class="col-md-4">
-   <h3>Add a reaction</h3>
-   <%= render 'reactions/form' %>
-</div>
