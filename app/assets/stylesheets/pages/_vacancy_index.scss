@@ -1,6 +1,6 @@
 .vacancy-wrapper{
   text-align: center;
-  background: #666;
+  background: rgba(102,102,102,0.8);
   color: #fff;
   min-height: 300px;
 
@@ -23,3 +23,42 @@
         font-size: 220px;
   }
 }
+
+.vacancy-options{
+  background: $white;
+  margin-top: -10px;
+  padding: 5px 10px 5px 10px;
+
+  a{
+    color: $black;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: $light-primary-color;
+    }
+  }
+}
+
+.options-bar{
+  margin-top: 15px;
+
+  select{
+  width: 100%;
+  }
+
+  h2{
+    background: $light-primary-color;
+    margin: 0px;
+    padding: 5px 5px 5px 15px;
+
+    a{
+      text-decoration: none;
+    }
+  }
+
+  button{
+    margin: 0;
+  }
+}
+
+
