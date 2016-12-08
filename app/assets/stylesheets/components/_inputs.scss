@@ -8,7 +8,7 @@
 }
 
 select {
-	width: 90%;
+	width: 95%;
   margin-top: 0px;
   max-width: 402px;
   height: 50px;
@@ -24,4 +24,37 @@ select {
   textarea{
     resize: none;
   }
+}
+
+
+.input__label-content--kaede{
+    padding: 3px;
+    font-size: 15px;
+}
+
+.input__field{
+  font-family: $text-font-stack;
+  font-size: 16px;
+}
+
+.user-wrapper label{
+    padding: 10px;
+    font-size: 16px;
+}
+
+input, textarea {
+   color: $black;
+}
+
+input[type=submit], .button, button, select {
+    background-color: $dark-secondary-color;
+    color: #fff;
+    border: none;
+    padding: 20px 36px;
+    margin-top: 10px;
+    font-size: 16px;
+
+   &:hover, &:focus {
+      background-color: $secondary-color;
+   }
 }

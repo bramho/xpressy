@@ -32,7 +32,7 @@ a {
    }
 
    &:hover, &:focus {
-      color: $light-primary-color;
+      color: $secondary-color;
    }
 }
 
@@ -40,7 +40,7 @@ body {
    margin: 0;
    padding: 0;
    color: #fff;
-   background-color: $secondary-color;
+   
 
   background: url(bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover !important;
@@ -54,25 +54,13 @@ ul {
    list-style: none;
 }
 
-input, textarea {
-   color: $black;
+
+.alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    background: rgba(81, 173, 98, 0.53);
+    border: green 3px solid;
+    color: white;
+    font-size: 16px;
 }
 
-input[type=submit], .button, button, select {
-   background-color: $dark-secondary-color;
-   color: $white;
-   border: 2px solid $dark-secondary-color;
-   padding: 10px 15px;
-   margin-top: 10px;
-   font-weight: bold;
-
-   &:hover, &:focus {
-      background-color: $secondary-color;
-      color: $dark-secondary-color;
-   }
-}
-
-select {
-   min-width: 150px;
-   margin-top: 0px;
-}
