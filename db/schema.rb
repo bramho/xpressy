@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201103522) do
+ActiveRecord::Schema.define(version: 20161206115726) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -78,10 +78,27 @@ ActiveRecord::Schema.define(version: 20161201103522) do
     t.string   "branche"
     t.string   "education_level"
     t.text     "experience"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "location"
     t.text     "modules_array"
+    t.text     "positions_array"
+    t.text     "horizontal_positions_array"
+    t.text     "vertical_positions_array"
+    t.text     "width_size_array"
+    t.text     "hight_size_array"
+  end
+
+  create_table "vacancy_modules", force: :cascade do |t|
+    t.string   "module"
+    t.integer  "horizontal_position"
+    t.integer  "vertical_position"
+    t.integer  "width_size"
+    t.integer  "hight_size"
+    t.integer  "vacancy_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["vacancy_id"], name: "index_vacancy_modules_on_vacancy_id"
   end
 
 end

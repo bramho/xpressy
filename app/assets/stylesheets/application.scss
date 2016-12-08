@@ -10,6 +10,10 @@
 @import
   'bootstrap-sprockets',
   'bootstrap',
+  'vendor/demo',
+  'vendor/tabs',
+  'vendor/tabstyles',
+  'vendor/set1',
   'vendor/normalize';
 
 // 3. Base stuff
@@ -26,12 +30,15 @@
 
 // 5. Components
 @import
+  'components/form',
   'components/button';
 
 // 6. Page-specific styles
 @import
   'pages/home',
-  'pages/vacancy_index';
+  'pages/users',
+  'pages/vacancy_index',
+  'pages/vacancy_new';
 
 // 7. Themes
 @import

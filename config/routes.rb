@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :vacancies do
      resources :reactions
      resources :vacancy_steps
+     resources :vacancy_modules
   end
 
   # resources :vacancy_steps

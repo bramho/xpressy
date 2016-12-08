@@ -1,5 +1,5 @@
 <%= form_for @vacancy, url: wizard_path do |f| %>
-   <!-- <div class="field">
+   <div class="field">
       <%= f.label :modules_array %>
       <%= f.text_field :modules_array %>
    </div> -->
@@ -8,6 +8,13 @@
       <%= f.label :modules_array %>
       <% ["Contact Gegevens", "Social Media"].each do |m| %>
          <%= check_box_tag "vacancy[modules_array][]", m, id: "vacancy_modules_#{m}" %><%= m %>
+      <% end %>
+   </div>
+
+   <div class="field">
+      <%= f.label :positions_array %>
+      <% ["1", "2"].each do |m| %>
+         <%= check_box_tag "vacancy[vertical_positions_array][]", m, id: "vacancy_vertical_positions_#{m}" %><%= m %>
       <% end %>
    </div>
 

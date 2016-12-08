@@ -1,3 +1,0 @@
-class ModulesController < ApplicationController
-   
-end
