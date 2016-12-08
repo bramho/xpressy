@@ -7,14 +7,23 @@ $black: #000;
 
 $primary-color: #2d3e50;
 
-// hover color
-$secondary-color: #104e6d; 
+
 
 // dark blue opacity background
 $light-primary-color: rgba(102, 102, 102, 0.8);
 
 // blue button color
 $dark-secondary-color: #1b6a92;
+// hover color
+$secondary-color: #104e6d; 
+
+// Google font for h1 titles
+$h1-font: 'Nunito Sans';
+// Google font for h2 titles
+$h2-font:'Exo 2';
+
+
+
 
 
 
@@ -22,7 +31,7 @@ $dark-secondary-color: #1b6a92;
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: 'Exo 2' !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -30,7 +39,7 @@ $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
 
 /// Copy text color
 /// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$text-color: #000 !default;
 
 /// Main brand color
 /// @type Color

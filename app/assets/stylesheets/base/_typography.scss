@@ -2,12 +2,23 @@
  * Basic typography style for copy text
  */
 body {
-  color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+  color: $black;
+  font: $text-font-stack;
 }
 
-h1, h2, h3 {
+h1 {
    text-transform: uppercase;
-   font-weight: bold;
-   color: $white;
+   color: $black;
+   font-family: $h1-font;
+
+}
+
+h2{
+	font-family: $h2-font;
+	color: $black;
+}
+
+h3{
+	font-family: $h2-font;
+	color: $white;
 }
