@@ -1,16 +1,25 @@
-<header class="sub-header">
-   <ul>
-      <li><%= link_to "Back", root_path %></li>
+<div class="row">
+  <div class="col-sm-3 vacancy-candidates">
+    <h2>Sollicitanten</h2>
+    <h3>Filters</h3>
+      <ul>
+        <li><a href="#">MBO4 +</a></li>
+        <li><a href="#">HBO -</a></li>
+        <li><a href="#">HTML +</a></li>
+        <li><a href="#">CSS +</a></li>
+        <li><a href="#">PHP +</a></li>
+      </ul>
+
+<%= link_to "Back", root_path %>
 
       <% if user_signed_in? %>
          |
-         <li><%= link_to "Edit", edit_vacancy_path(@vacancy) %></li>
+<%= link_to "Edit", edit_vacancy_path(@vacancy) %>
          |
-         <li><%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-   </ul>
-</header>
 
+<<<<<<< HEAD
 <div class="col-md-4 vacancy-info">
    <h1 class="title">
       <%= @vacancy.title %>
@@ -70,17 +79,24 @@
       <b>Height Sizes:</b><br />
       <%= @vacancy.height_size_array %>
    </p>
+=======
+    <% @vacancy.reactions.each do |reaction| %>
+      <div class="reaction">
+        <a href="#"><%= reaction.first_name %> <%= reaction.last_name %></a>
+        <div class="pull-right reaction-icons">
+          <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-question" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-9 xpressheet">
+    <h1><%= @vacancy.title %></h1>
+    <img src="http://placehold.it/1000x800" class="img-responsive">
+  </div>
+>>>>>>> 10c8cec47b92d0a515074d2e69a00e5a8912f325
 
 </div>
 
-<div class="col-md-4">
-   <div id="reaction">
-      <h2><%= @vacancy.reactions.count %> Reactions</h2>
-      <%= render @vacancy.reactions %>
-   </div>
-</div>
-
-<div class="col-md-4">
-   <h3>Add a reaction</h3>
-   <%= render 'reactions/form' %>
-</div>
