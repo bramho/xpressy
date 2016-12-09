@@ -1,0 +1,2 @@
+class ContactInformationModule < ApplicationRecord
+end

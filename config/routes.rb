@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   end
 
   # resources :vacancy_steps
-  resources :companies
-  resources :locations
+  resources :companies do
+     resources :locations
+  end
 
   root "vacancies#index"
 end
