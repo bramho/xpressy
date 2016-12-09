@@ -30,11 +30,16 @@ select {
 .input__label-content--kaede{
     padding: 3px;
     font-size: 15px;
+    font-family: $input;
+    font-weight: lighter;
+
 }
 
 .input__field{
-  font-family: $text-font-stack;
+  font-family: $input;
   font-size: 16px;
+  font-weight: lighter;
+
 }
 
 .user-wrapper label{
@@ -58,3 +63,4 @@ input[type=submit], .button, button, select {
       background-color: $secondary-color;
    }
 }
+

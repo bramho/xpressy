@@ -10,6 +10,7 @@ h1 {
    text-transform: uppercase;
    color: $black;
    font-family: $h1-font;
+   font-weight: lighter;
    font-size: 26px;
 
 }
@@ -17,6 +18,7 @@ h1 {
 h2{
 	font-family: $h2-font;
 	color: $black;
+  font-weight: lighter;
 	font-size: 22px;
 }
 
@@ -29,5 +31,6 @@ h3{
 p{
 	font-size: 13px !important;
 	color: $text-color;
+  
 }
 
