@@ -3,15 +3,31 @@
   <h1>Inloggen Xpressy</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
+
+
+
+    <span class="input input--kaede">
+      <%= f.email_field :email, class: 'input__field input__field--kaede' %>
+      
+      <label class="input__label input__label--kaede" for="user_email">
+         
+         <span class="input__label-content input__label-content--kaede"> E-mailadres</span>
+
+      </label>
+    </span>
+
+
+
+    <span class="input input--kaede">
+      <%= f.password_field :password, class: 'input__field input__field--kaede' %>
+      
+      <label class="input__label input__label--kaede" for="user_password">
+         
+         <span class="input__label-content input__label-content--kaede"> Wachtwoord</span>
+
+      </label>
+    </span>
 
     <% if devise_mapping.rememberable? -%>
       <div class="field">
