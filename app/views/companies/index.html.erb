@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 <div class="user-wrapper">
+=======
+
+>>>>>>> 10c8cec47b92d0a515074d2e69a00e5a8912f325
 
    <h1>Bedrijfsinstellingen</h1>
 
+<<<<<<< HEAD
    <!-- <% if !Company.exists? %>
       <p><%= link_to "New Company", new_company_path %></p>
    <% end %> -->
@@ -49,3 +54,55 @@
          <% end %>
    </div>
 </div>
+=======
+<div class="row">
+
+  <div class="col-sm-4">
+    <div class="company-wrapper">
+        <h1>Bedrijfsgegevens</h1>
+       <% if Company.exists? %>
+          <% @companies.each do |company| %>
+             <h2 class="title"><%= company.name %></h2>
+             <div class="container">
+                <p class="description">
+                   <b>Description: </b><br />
+                   <%= company.description %>
+                </p>
+
+                <p class="address">
+                   <b>Address: </b><br />
+                   <%= company.address %>
+                </p>
+
+                <p class="postal_code">
+                   <b>Postal Code: </b><br />
+                   <%= company.postal_code %>
+                </p>
+
+                <p class="city">
+                   <b>City: </b><br />
+                   <%= company.city %>
+                </p>
+
+                <p class="edit-company">
+                   <%= link_to 'Edit Company', edit_company_path(company) %>
+                </p>
+             </div>
+          <% end %>
+
+       <% else %>
+          <h2 class="title"><%= link_to 'Create company', new_company_path %></h2>
+       <% end %>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <h1>Bedrijfslocaties</h1>
+    <% if Company.exists? %>
+      <% @companies.each do |company| %>
+         <h3><%= link_to 'View locations', locations_path %></h3>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+>>>>>>> 10c8cec47b92d0a515074d2e69a00e5a8912f325
