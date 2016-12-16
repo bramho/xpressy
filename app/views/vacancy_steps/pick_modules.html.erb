@@ -1,44 +1,32 @@
 <%= form_for @vacancy, url: wizard_path do |f| %>
 
    <div class="field">
-      <%= f.label :modules_array %>
-      <% ["contact-gegevens", "social-media"].each do |m| %>
-         <%= check_box_tag "vacancy[modules_array][]", m, false, :onchange=>"toggleForms('module-checkbox', '#{m}-vertical-position')" ,id: "vacancy_modules_#{m} module-checkbox" %><%= m %>
-      <% end %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
    </div>
 
-   <div class="field" id="contact-gegevens-vertical-position" style="display:none">
-      <%= f.label :vertical_positions_array %>
-      <% ["1", "2"].each do |m| %>
-         <%= check_box_tag "vacancy[vertical_positions_array][]", m, false, id: "vacancy_vertical_positions_#{m}" %><%= ' Positie ' + m %>
-      <% end %>
+   <div class="field">
+      <%= f.label :module_horizontal_position %>
+      <%= f.text_field :module_horizontal_position %>
    </div>
 
-   <div class="field" id="contact-gegevens-horizontal-position" style="display:none">
-      <%= f.label :horizontal_positions_array %>
-      <% ["1", "2"].each do |m| %>
-         <%= check_box_tag "vacancy[horizontal_positions_array][]", m, false, id: "horizontal_vertical_positions_#{m}" %><%= ' Positie ' + m %>
-      <% end %>
+   <div class="field">
+      <%= f.label :module_vertical_position %>
+      <%= f.text_field :module_vertical_position %>
    </div>
 
-   <div class="field" id="social-media-vertical-position" style="display:none">
-      <%= f.label :vertical_positions_array %>
-      <% ["3", "4"].each do |m| %>
-         <%= check_box_tag "vacancy[vertical_positions_array][]", m, false, id: "vacancy_vertical_positions_#{m}" %><%= ' Positie ' + m %>
-      <% end %>
+   <div class="field">
+      <%= f.label :module_width %>
+      <%= f.text_field :module_width %>
+   </div>
+
+   <div class="field">
+      <%= f.label :module_height %>
+      <%= f.text_field :module_height %>
    </div>
 
    <div class="field">
       <%= f.submit "Continue" %>
    </div>
-
-   <script>
-      function toggleForms(checkbox, hidden_field) {
-         if($("#" + checkbox).toggle()) {
-            $("#" + hidden_field).toggle();
-         }
-      }
-
-   </script>
 
 <% end %>

@@ -1,0 +1,9 @@
+{
+   "vacancy" : {
+      "modules" : [
+         { "name" : "contact-gegevens", "width" : "4", "height" : "2", "horizontal_position" : "1", "vertical-position" : "1" }
+         { "name" : "social-media", "width" : "3", "height" : "2", "horizontal_position" : "1", "vertical-position" : "3" }
+         { "name" : "profiel-foto", "width" : "1", "height" : "2", "horizontal_position" : "4", "vertical-position" : "3" }
+      ]
+   }
+}
