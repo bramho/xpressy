@@ -43,12 +43,11 @@
          <h2 class="title"><%= link_to 'Create company', new_company_path %></h2>
 
       <% end %>
-    <% end %>
   </div>
 </div>
 
 <div class="col-md-9">
-   <h1 style="text-align:center;">Locations  - <%= link_to "Add new location", new_company_location_path(@companies.ids) %></h1>
+   <h1 style="text-align:center;"><%= link_to "Voeg een nieuwe locatie toe", new_company_location_path(@companies.ids) %></h1>
    <% @companies.each do |company| %>
       <div class="col-md-3">
          <% company.locations.each do |location| %>
