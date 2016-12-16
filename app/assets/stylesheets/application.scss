@@ -35,7 +35,9 @@
 
 // 6. Page-specific styles
 @import
+  'pages/users',
   'pages/vacancy_index',
+  'pages/vacancy_show',
   'pages/vacancy_new';
 
 // 7. Themes
