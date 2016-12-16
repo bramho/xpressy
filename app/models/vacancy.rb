@@ -6,19 +6,19 @@ class Vacancy < ApplicationRecord
 
    accepts_nested_attributes_for :social_media_modules
    # has_many :vacancy_modules, dependent: :destroy
-   validates :title, presence: true, length: { minimum: 5 }
-   validates :description, presence: true
-   validates :demands, presence: true
-   validates :branche, presence: true
-   validates :education_level, presence: true
-   validates :experience, presence: true
-   validates :location, presence: true
-
-   validates :name, presence: true
-   validates :module_vertical_position, presence: true
-   validates :module_horizontal_position, presence: true
-   validates :module_width, presence: true
-   validates :module_height, presence: true
+   # validates :title, presence: true, length: { minimum: 5 }
+   # validates :description, presence: true
+   # validates :demands, presence: true
+   # validates :branche, presence: true
+   # validates :education_level, presence: true
+   # validates :experience, presence: true
+   # validates :location, presence: true
+   #
+   # validates :name, presence: true
+   # validates :module_vertical_position, presence: true
+   # validates :module_horizontal_position, presence: true
+   # validates :module_width, presence: true
+   # validates :module_height, presence: true
 
    # validates :modules_array, presence: true
    serialize :modules_array, Hash

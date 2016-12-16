@@ -10,20 +10,22 @@ class VacancyStepsController < ApplicationController
    def update
       @vacancy = Vacancy.find(params[:vacancy_id])
 
-      @name = params[:name]
-      module_hash = Hash.new
+      @name = params[:vacancy][:name]
+      modules_array = {}
+      module_hash = {}
 
       case @name
 
       when 'contact-gegevens'
          module_hash["name"] = @name
-         module_hash["vertical_position"] = params[:module_vertical_position]
-         module_hash["horizontal_position"] = params[:module_horizontal_position]
-         module_hash["width"] = params[:module_width]
-         module_hash["height"] = params[:module_height]
+         module_hash["module_horizontal_position"] = params[:vacancy][:module_horizontal_position]
+         module_hash["module_vertical_position"] = params[:vacancy][:module_vertical_position]
+         module_hash["module_width"] = params[:vacancy][:module_width]
+         module_hash["module_height"] = params[:vacancy][:module_height]
+
+         @vacancy.update_attributes(modules_array: module_hash)
       end
 
-      @vacancy.update_attributes(params[:vacancy].permit(:modules_array => module_hash))
 
       render_wizard @vacancy
    end
