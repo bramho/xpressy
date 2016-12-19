@@ -18,68 +18,6 @@
          |
 <%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-
-<<<<<<< HEAD
-<div class="col-md-4 vacancy-info">
-   <h1 class="title">
-      <%= @vacancy.title %>
-   </h1>
-
-   <p class="description">
-      <b>Description:</b><br />
-      <%= @vacancy.description %>
-   </p>
-
-   <p class="location">
-      <b>Location:</b><br />
-      <%= @vacancy.location %>
-   </p>
-
-   <p class="demands">
-      <b>Demands:</b><br />
-      <%= @vacancy.demands %>
-   </p>
-
-   <p class="branche">
-      <b>Branche:</b><br />
-      <%= @vacancy.branche %>
-   </p>
-
-   <p class="education_level">
-      <b>Education level:</b><br />
-      <%= @vacancy.education_level %>
-   </p>
-
-   <p class="experience">
-      <b>Experience:</b><br />
-      <%= @vacancy.experience %>
-   </p>
-
-   <p class="modules">
-      <b>Modules:</b><br />
-      <%= @vacancy.modules_array %>
-   </p>
-
-   <p class="horizontal_positions">
-      <b>Horizontal Positions:</b><br />
-      <%= @vacancy.horizontal_positions_array %>
-   </p>
-
-   <p class="vertical_positions">
-      <b>Vertical Positions:</b><br />
-      <%= @vacancy.vertical_positions_array %>
-   </p>
-
-   <p class="width_size">
-      <b>Width Sizes:</b><br />
-      <%= @vacancy.width_size_array %>
-   </p>
-
-   <p class="hight_size">
-      <b>Height Sizes:</b><br />
-      <%= @vacancy.height_size_array %>
-   </p>
-=======
     <% @vacancy.reactions.each do |reaction| %>
       <div class="reaction">
         <a href="#"><%= reaction.first_name %> <%= reaction.last_name %></a>
@@ -96,7 +34,6 @@
     <h1><%= @vacancy.title %></h1>
     <img src="http://placehold.it/1000x800" class="img-responsive">
   </div>
->>>>>>> 10c8cec47b92d0a515074d2e69a00e5a8912f325
 
 </div>
 

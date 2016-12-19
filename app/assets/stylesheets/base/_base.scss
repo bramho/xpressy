@@ -23,16 +23,16 @@ html {
  * Basic styles for links
  */
 a {
-   color: $white;
+   color: $anchor-color;
    font-weight: bold;
    text-decoration: underline;
 
    &:link, &:visited {
-      color: $white;
+      color: $anchor-color;
    }
 
    &:hover, &:focus {
-      color: $light-primary-color;
+      color: $hover-color;
    }
 }
 
@@ -48,6 +48,19 @@ body {
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(000,000,000,0.7);
+  img{
+    max-height: 100%;
+    padding: 8px;
+  }
 }
 
 ul {
