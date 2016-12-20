@@ -1,32 +1,61 @@
 <%= form_for @vacancy, url: wizard_path do |f| %>
 
-   <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+   <!-- <%= render partial: 'vacancy_steps/partials/contact-gegevens', locals: {f: f} %> -->
+
+   <div class="button" id="contact-gegevens" onclick="show_module('contact-gegevens-module')">Contact Gegevens</div>
+   <div class="button" id="social-media" onclick="show_module('social-media-module')">Social Media</div>
+   <!-- <div class="button" id="profiel-foto" onclick="show_module('profiel-foto-module')">Profiel Foto</div> -->
+
+   <div id="contact-gegevens-module" class="contact-gegevens-module" style="display:none">
+      <input type="hidden" name="vacancy[contact_fields_name]" value="contact_gegevens">
+
+      <div class="field">
+         <%= f.label :contact_fields_horizontal_position %>
+         <%= f.text_field :contact_fields_horizontal_position %>
+      </div>
+
+      <div class="field">
+         <%= f.label :contact_fields_vertical_position %>
+         <%= f.text_field :contact_fields_vertical_position %>
+      </div>
+
+      <div class="field">
+         <%= f.label :contact_fields_width %>
+         <%= f.text_field :contact_fields_width %>
+      </div>
+
+      <div class="field">
+         <%= f.label :contact_fields_height %>
+         <%= f.text_field :contact_fields_height %>
+      </div>
+   </div>
+
+   <div id="social-media-module" class="social-media-module" style="display:none">
+      <input type="hidden" name="vacancy[social_media_name]" value="social_media">
+
+      <div class="field">
+         <%= f.label :social_media_horizontal_position %>
+         <%= f.text_field :social_media_horizontal_position %>
+      </div>
+
+      <div class="field">
+         <%= f.label :social_media_vertical_position %>
+         <%= f.text_field :social_media_vertical_position %>
+      </div>
+
+      <div class="field">
+         <%= f.label :social_media_width %>
+         <%= f.text_field :social_media_width %>
+      </div>
+
+      <div class="field">
+         <%= f.label :social_media_height %>
+         <%= f.text_field :social_media_height %>
+      </div>
    </div>
 
    <div class="field">
-      <%= f.label :module_horizontal_position %>
-      <%= f.text_field :module_horizontal_position %>
-   </div>
-
-   <div class="field">
-      <%= f.label :module_vertical_position %>
-      <%= f.text_field :module_vertical_position %>
-   </div>
-
-   <div class="field">
-      <%= f.label :module_width %>
-      <%= f.text_field :module_width %>
-   </div>
-
-   <div class="field">
-      <%= f.label :module_height %>
-      <%= f.text_field :module_height %>
-   </div>
-
-   <div class="field">
-      <%= f.submit "Continue" %>
+      <%= f.submit "Volgende" %>
    </div>
 
 <% end %>
