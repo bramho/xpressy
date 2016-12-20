@@ -2,7 +2,7 @@ class VacanciesController < ApplicationController
    before_action :authenticate_user!, except: [:index, :show]
 
    def index
-      @vacancies = Vacancy.all.order('created_at DESC')
+      @vacancies = Vacancy.all.order('online DESC', 'created_at DESC')
 
       respond_to do |format|
          format.html
