@@ -3,16 +3,32 @@
 // -----------------------------------------------------------------------------
 
 $white: #fff;
+$grey: #333;
 $black: #000;
 
-$primary-color: #009CA8;
+//Primaire Kleuren
+$primar-grey: #333333;
+$primary-white: #ffffff;
+$primary-blue: #009ca8;
+
+//Secundaire kleuren
+$dark-blue: #1d3542;
+$middle-blue: #2c5160;
+$light-blue: #b0dce2;
+
+//Accent kleuren
+$important-pink: #d88e8d;
+$important-green: #009ca8;
+$important-red: #e14139;
+
+$primary-blue: #009CA8;
 $secondary-color: #065152;
 
-$light-primary-color: #3a5169;
+$light-primary-blue: #3a5169;
 $dark-secondary-color: #0d6855;
 
 $anchor-color: #fff;
-$hover-color: $primary-color;
+$hover-color: $primary-blue;
 
 /// Regular font family
 /// @type List

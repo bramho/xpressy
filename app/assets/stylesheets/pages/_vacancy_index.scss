@@ -1,6 +1,6 @@
 .vacancy-wrapper{
   text-align: center;
-  background: rgba(102,102,102,0.8);
+  background: $primary-blue;
   color: #fff;
   min-height: 300px;
 
@@ -34,20 +34,37 @@
     text-decoration: none;
 
     &:hover, &:focus {
-      color: $light-primary-color;
+      color: $light-primary-blue;
     }
   }
 }
 
 .options-bar{
-  margin-top: 15px;
+  padding: 15px 0 10px;
+  margin-bottom: 30px;
+  background: $secondary-color;
+
+  .btn-group{
+    width: 100%;
+
+    #btn-text{
+      width: 90%;
+      background: $white;
+      color: #666;
+      text-align: left;
+    }
+
+    #btn-arrow{
+      width: 10%;
+    }
+  }
 
   select{
   width: 100%;
   }
 
   h2{
-    background: $light-primary-color;
+    background: $light-primary-blue;
     margin: 0px;
     padding: 5px 5px 5px 15px;
 
@@ -58,6 +75,10 @@
 
   button{
     margin: 0;
+    border: 1px solid $primary-blue;
+    border-radius: 5px;
+    color: $white;
+    background: $primary-blue;
   }
 }
 

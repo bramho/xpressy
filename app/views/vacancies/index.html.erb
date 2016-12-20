@@ -3,24 +3,35 @@
 
   <div class="col-sm-3">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for..." style="vertical-align: top;">
+      <input type="text" class="form-control" placeholder="Zoeken" style="vertical-align: top;">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="button">
+
+
+  <i class="fa fa-search"></i>
+
+
+
+        </button>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 
   <div class="col-sm-3">
-    <select name="" id="">
-      <option value="">Filteren</option>
-      <option value=""></option>
-      <option value=""></option>
-      <option value=""></option>
-    </select>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-text">Filters</button>
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-arrow">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Optie1</a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="col-sm-3 pull-right">
-    <h2><%= link_to "Nieuwe Vacature +", new_vacancy_path %></h2>
+    <h2><a href="vacancies/new">Nieuwe Vacature <i class="fa fa-plus-circle fa-1x pull-right" aria-hidden="true"></i></a></h2>
   </div>
 
 </div>
@@ -38,16 +49,15 @@
 
   <div class="col-sm-6 col-md-4 col-lg-3">
     <div class="vacancy-wrapper">
+        <i class="fa fa-code fa-5x" aria-hidden="true"></i>
        <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
-       <p class="description"><%= vacancy.description %></p>
-       <p class="updated">Voor het laatst gewijzigd op: <%= vacancy.updated_at %></p>
     </div>
-    <div class="vacancy-options">
+<!--     <div class="vacancy-options">
       <img src="http://placehold.it/50x50" class="img-circle">
       <%= link_to "Bewerken", edit_vacancy_path(vacancy) %>
       <input type="radio" name="onoff" value="on"> On
       <input type="radio" name="onoff" value="off"> Off
-    </div>
+    </div> -->
   </div>
 
 <% end %>
