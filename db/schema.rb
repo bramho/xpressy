@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208091905) do
+ActiveRecord::Schema.define(version: 20161220112909) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 20161208091905) do
     t.index ["vacancy_id"], name: "index_reactions_on_vacancy_id"
   end
 
+  create_table "social_media_modules", force: :cascade do |t|
+    t.string   "social_media_type"
+    t.string   "social_media_value"
+    t.integer  "vacancy_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["vacancy_id"], name: "index_social_media_modules_on_vacancy_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -89,8 +98,8 @@ ActiveRecord::Schema.define(version: 20161208091905) do
     t.string   "branche"
     t.string   "education_level"
     t.text     "experience"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "location"
     t.text     "modules_array"
     t.text     "positions_array"
@@ -98,6 +107,7 @@ ActiveRecord::Schema.define(version: 20161208091905) do
     t.text     "vertical_positions_array"
     t.text     "width_size_array"
     t.text     "height_size_array"
+    t.boolean  "online",                     default: false
   end
 
   create_table "vacancy_modules", force: :cascade do |t|

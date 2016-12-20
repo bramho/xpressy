@@ -18,6 +18,7 @@
          |
 <%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
+
     <% @vacancy.reactions.each do |reaction| %>
       <div class="reaction">
         <a href="#"><%= reaction.first_name %> <%= reaction.last_name %></a>
@@ -36,4 +37,18 @@
   </div>
 
 </div>
+<div class="col-md-4">
 
+</div>
+
+<!-- <div class="col-md-4">
+   <div id="reaction">
+      <h2><%= @vacancy.reactions.count %> Reactions</h2>
+      <%= render @vacancy.reactions %>
+   </div>
+</div>
+
+<div class="col-md-4">
+   <h3>Add a reaction</h3>
+   <%= render 'reactions/form' %>
+</div> -->

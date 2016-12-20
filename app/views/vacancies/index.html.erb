@@ -55,9 +55,17 @@
 <!--     <div class="vacancy-options">
       <img src="http://placehold.it/50x50" class="img-circle">
       <%= link_to "Bewerken", edit_vacancy_path(vacancy) %>
-      <input type="radio" name="onoff" value="on"> On
-      <input type="radio" name="onoff" value="off"> Off
-    </div> -->
+-->
+
+      <% if vacancy.online %>
+         <input type="radio" name="on_off_<%= vacancy.id %>" value="on" checked="checked"> On
+         <input type="radio" name="on_off_<%= vacancy.id %>" value="off"> Off
+      <% else %>
+      <input type="radio" name="on_off_<%= vacancy.id %>" value="on"> On
+      <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
+      <% end %>
+    </div>
+
   </div>
 
 <% end %>
