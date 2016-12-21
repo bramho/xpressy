@@ -39,6 +39,12 @@
             </div>
          <% end %>
 
+         <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li class="<%= active_tab(new_user_by_admin_path) %>"><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
+          <% end %>
+         <% end %>
+
       <% else %>
          <h2 class="title"><%= link_to 'Create company', new_company_path %></h2>
 

@@ -46,7 +46,7 @@
 }
 
 .options-bar{
-  padding: 15px 0 10px;
+  padding: 15px 0 15px;
   margin-bottom: 30px;
   background: $dark-blue;
 
@@ -69,15 +69,29 @@
   width: 100%;
   }
 
-  h2{
-    background: $light-primary-blue;
+  .new-vac{
+    position: relative;
+    background: $white;
     margin: 0px;
-    padding: 5px 5px 5px 15px;
+    padding: 8px 5px 8px 15px;
+    border-radius: 5px;
+    text-align: left;
 
     a{
       text-decoration: none;
+      color: $grey;
+    }
+
+    i{
+    color: $important-red;
+    font-size: 50px;
+    position: absolute;
+    top: -9px;
+    right: -8px;
     }
   }
+
+
 
   button{
     margin: 0;
