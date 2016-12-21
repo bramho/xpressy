@@ -14,4 +14,8 @@ class Vacancy < ApplicationRecord
 
    serialize :modules_array, Hash
 
+   def self.search(search)
+      where("title LIKE ?", "%#{search}%")
+   end
+
 end

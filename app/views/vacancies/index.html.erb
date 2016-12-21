@@ -3,17 +3,16 @@
 
   <div class="col-sm-3">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Zoeken" style="vertical-align: top;">
+      <%= form_tag vacancies_path, method: 'get' do %>
+         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Zoeken', style: 'vertical-align: top;' %>
+         <%= submit_tag "Search" %>
+      <% end %>
+      <!-- <input type="text" class="form-control" placeholder="Zoeken" style="vertical-align: top;">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button">
-
-
-  <i class="fa fa-search"></i>
-
-
-
+           <i class="fa fa-search"></i>
         </button>
-      </span>
+      </span> -->
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 

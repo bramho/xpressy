@@ -1,8 +1,15 @@
 class VacanciesController < ApplicationController
-   before_action :authenticate_user!, except: [:index, :show]
+   # before_action :authenticate_user!, except: [:index, :show]
+   before_action :authenticate_user!
 
    def index
-      @vacancies = Vacancy.all.order('online DESC', 'created_at DESC')
+      @vacancies = Vacancy.all
+
+      if params[:search]
+         @vacancies = Vacancy.search(params[:search]).order('online DESC', 'created_at DESC')
+      else
+         @vacancies = Vacancy.all.order('online DESC', 'created_at DESC')
+      end
 
       respond_to do |format|
          format.html
