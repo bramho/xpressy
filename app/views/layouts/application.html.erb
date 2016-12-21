@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>XpressyApp</title>
+    <title>Xpressy</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,14 +12,15 @@
   </head>
 
   <body>
-      <header class="tabs tabs-style-linemove">
+      <header class="tabs">
         <nav>
           <ul>
           <% if user_signed_in? %>
 
-            <li class="<%= active_tab(root_path) %>"><%= link_to (raw('<span>Home</span>')), root_path, class:"" %></a></li>
-            <li class="<%= active_tab(companies_path) %>"><%= link_to (raw('<span>Company Settings</span>')), companies_path, class:"" %></a></li>
-            <li class="<%= active_tab(destroy_user_session_path) %>"><%= link_to (raw('<span>Sign Out</span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
+            <li > <%= current_user.first_name %> </li>
+            <li class="<%= active_tab(root_path) %>"><%= link_to (raw('<span>Portefeuille <i class="fa fa-folder-open" aria-hidden="true"></i></span>')), root_path, class:"" %></a></li>
+            <li class="<%= active_tab(companies_path) %>"><%= link_to (raw('<span>Instellingen <i class="fa fa-cog" aria-hidden="true"></i></span>')), companies_path, class:"" %></a></li>
+            <li class="<%= active_tab(destroy_user_session_path) %>"><%= link_to (raw('<span>Uitloggen <i class="fa fa-sign-out" aria-hidden="true"></i></span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
 
           <% if current_user.admin? %>
             <li class="<%= active_tab(new_user_by_admin_path) %>"><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>

@@ -1,15 +1,21 @@
 .vacancy-wrapper{
   text-align: center;
-  background: $primary-blue;
+  background: $middle-blue;
   color: #fff;
   min-height: 300px;
 
+  i{
+    font-size: 150px;
+    margin-top: 10%;
+  }
+
   h2{
-    background: #fff;
+    font-size: 30px;
     padding: 10px 0 10px 0;
+    margin-top: 0;
 
     a{
-      color: #000;
+      color: $white;
       text-decoration: none;
     }
   }
@@ -25,7 +31,7 @@
 }
 
 .vacancy-options{
-  background: $white;
+  color: $white;
   margin-top: -10px;
   padding: 5px 10px 5px 10px;
 
@@ -42,7 +48,7 @@
 .options-bar{
   padding: 15px 0 10px;
   margin-bottom: 30px;
-  background: $secondary-color;
+  background: $dark-blue;
 
   .btn-group{
     width: 100%;

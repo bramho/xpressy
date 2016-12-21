@@ -1,7 +1,7 @@
 
 <div class="row options-bar">
 
-  <div class="col-sm-3">
+  <div class="col-sm-4 col-md-3">
     <div class="input-group">
       <%= form_tag vacancies_path, method: 'get' do %>
          <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Zoeken', style: 'vertical-align: top;' %>
@@ -16,7 +16,7 @@
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 
-  <div class="col-sm-3">
+  <div class="col-sm-4 col-md-3">
     <div class="btn-group">
       <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-text">Filters</button>
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-arrow">
@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="col-sm-3 pull-right">
+  <div class="col-sm-4 col-md-3 pull-right">
     <h2><a href="vacancies/new">Nieuwe Vacature <i class="fa fa-plus-circle fa-1x pull-right" aria-hidden="true"></i></a></h2>
   </div>
 
@@ -37,13 +37,6 @@
 
 
 <div class="row">
-<!--     <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="vacancy-wrapper">
-        <h2><%= link_to "Nieuwe Vacature", new_vacancy_path %></h2>
-        <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i>'.html_safe, new_vacancy_path %>
-
-      </div>
-    </div> -->
 <% @vacancies.each do |vacancy| %>
 
   <div class="col-sm-6 col-md-4 col-lg-3">
@@ -56,17 +49,17 @@
       <%= link_to "Bewerken", edit_vacancy_path(vacancy) %>
 -->
 
-      <% if vacancy.online %>
+<!--       <% if vacancy.online %>
          <input type="radio" name="on_off_<%= vacancy.id %>" value="on" checked="checked"> On
          <input type="radio" name="on_off_<%= vacancy.id %>" value="off"> Off
       <% else %>
       <input type="radio" name="on_off_<%= vacancy.id %>" value="on"> On
       <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
-      <% end %>
+      <% end %> -->
     </div>
-
+<% end %>
   </div>
 
-<% end %>
+
 
 </div>
