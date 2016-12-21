@@ -16,15 +16,10 @@
         <nav>
           <ul>
           <% if user_signed_in? %>
-
-            <li > <%= current_user.first_name %> </li>
-            <li class="<%= active_tab(root_path) %>"><%= link_to (raw('<span>Portefeuille <i class="fa fa-folder-open" aria-hidden="true"></i></span>')), root_path, class:"" %></a></li>
-            <li class="<%= active_tab(companies_path) %>"><%= link_to (raw('<span>Instellingen <i class="fa fa-cog" aria-hidden="true"></i></span>')), companies_path, class:"" %></a></li>
-            <li class="<%= active_tab(destroy_user_session_path) %>"><%= link_to (raw('<span>Uitloggen <i class="fa fa-sign-out" aria-hidden="true"></i></span>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
-
-          <% if current_user.admin? %>
-            <li class="<%= active_tab(new_user_by_admin_path) %>"><%= link_to (raw('<span>Sign Up New User</span>')), new_user_by_admin_path, class:"" %></a></li>
-          <% end %>
+            <li> <%= image_tag current_user.avatar.url(:thumb), class: "img-circle"%> <%= current_user.first_name %> </li>
+            <li> <%= link_to (raw('Portefeuille <i class="fa fa-folder-open" aria-hidden="true"></i>')), root_path, class:"" %></a></li>
+            <li> <%= link_to (raw('Instellingen <i class="fa fa-cog" aria-hidden="true"></i>')), companies_path, class:"" %></a></li>
+            <li> <%= link_to (raw('Uitloggen <i class="fa fa-sign-out" aria-hidden="true"></i>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
 
           <% else %>
             <li class="<%= active_tab(new_user_session_path) %>"><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
