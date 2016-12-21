@@ -24,12 +24,17 @@
       </label>
    </span>
 
-   <span class="input input--kaede">
+   <!-- <span class="input input--kaede">
       <%= f.text_field :location, class: 'input__field input__field--kaede' %>
       <label class="input__label input__label--kaede" for="vacancy_location">
          <span class="input__label-content input__label-content--kaede"> Locatie </span>
       </label>
-   </span>
+   </span> -->
+   <div class="field">
+      <%= f.label :location_id %>
+      <%= f.collection_select :location_id, Location.all, :id, :name %>
+   </div>
+
 
    <span class="input input--kaede kaede--textarea">
       <%= f.text_area :demands, class: 'input__field input__field--kaede' %>

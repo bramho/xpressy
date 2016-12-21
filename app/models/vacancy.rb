@@ -1,6 +1,7 @@
 class Vacancy < ApplicationRecord
    has_many :reactions, dependent: :destroy
    has_many :social_media_modules, dependent: :destroy
+   # has_many :location
 
    attr_accessor :name, :module_horizontal_position, :module_vertical_position, :module_width, :module_height
 

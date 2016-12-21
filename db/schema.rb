@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161220112909) do
+ActiveRecord::Schema.define(version: 20161221123644) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -48,13 +48,17 @@ ActiveRecord::Schema.define(version: 20161220112909) do
   create_table "reactions", force: :cascade do |t|
     t.text     "body"
     t.integer  "vacancy_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "age"
     t.string   "education"
+    t.string   "address"
+    t.string   "postal_code"
+    t.string   "city"
+    t.string   "country"
     t.index ["vacancy_id"], name: "index_reactions_on_vacancy_id"
   end
 
@@ -108,6 +112,8 @@ ActiveRecord::Schema.define(version: 20161220112909) do
     t.text     "width_size_array"
     t.text     "height_size_array"
     t.boolean  "online",                     default: false
+    t.integer  "location_id"
+    t.index ["location_id"], name: "index_vacancies_on_location_id"
   end
 
   create_table "vacancy_modules", force: :cascade do |t|
