@@ -1,8 +1,19 @@
+.vacancy-box{
+    overflow: hidden;
+
+  &:hover > .vacancy-overlay{
+  left: 0;
+  display: block;
+  }
+}
+
 .vacancy-wrapper{
   text-align: center;
   background: $middle-blue;
   color: #fff;
   min-height: 300px;
+
+
 
   i{
     font-size: 150px;
@@ -28,6 +39,18 @@
   .fa-plus-circle{
         font-size: 220px;
   }
+}
+
+.vacancy-overlay{
+  background: $black;
+  width: 200px;
+  height: 200px;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin: 0 15px;
+  display: none;
 }
 
 .vacancy-options{
@@ -69,28 +92,28 @@
   width: 100%;
   }
 
+  a{
+    text-decoration: none;
+
   .new-vac{
     position: relative;
-    background: $white;
     margin: 0px;
-    padding: 8px 5px 8px 15px;
     border-radius: 5px;
     text-align: left;
+    width: 100%;
+    padding: 8px 5px 8px 15px;
+    background: $white;
+    color: $grey;
 
-    a{
-      text-decoration: none;
-      color: $grey;
-    }
-
-    i{
-    color: $important-red;
-    font-size: 50px;
-    position: absolute;
-    top: -9px;
-    right: -8px;
+      i{
+      color: $important-red;
+      font-size: 50px;
+      position: absolute;
+      top: -9px;
+      right: -8px;
+      }
     }
   }
-
 
 
   button{
