@@ -1,10 +1,5 @@
 .vacancy-box{
     overflow: hidden;
-
-  &:hover > .vacancy-overlay{
-  left: 0;
-  display: block;
-  }
 }
 
 .vacancy-wrapper{
@@ -12,8 +7,39 @@
   background: $middle-blue;
   color: #fff;
   min-height: 300px;
+  position: relative;
 
+  .vacancy-overlay{
+    width: 100%;
+    height: 100%;
+    background: $primary-blue;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    margin: 0;
+    display: none;
 
+    a{
+      text-decoration: none;
+            text-align: left;
+    }
+
+      i{
+        font-size: 50px;
+        color: $white;
+      }
+
+    span{
+      font-size: 20px;
+    }
+
+  }
+
+  &:hover > .vacancy-overlay{
+    left: 0;
+    display: block;
+  }
 
   i{
     font-size: 150px;
@@ -39,18 +65,6 @@
   .fa-plus-circle{
         font-size: 220px;
   }
-}
-
-.vacancy-overlay{
-  background: $black;
-  width: 200px;
-  height: 200px;
-  color: $white;
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin: 0 15px;
-  display: none;
 }
 
 .vacancy-options{

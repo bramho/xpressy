@@ -40,34 +40,51 @@
 
 </div>
 
-
 <div class="row">
 <% @vacancies.each do |vacancy| %>
 
   <div class="col-sm-6 col-md-4 col-lg-3">
+
     <div class="vacancy-box">
+
       <div class="vacancy-wrapper">
           <i class="fa fa-code fa-5x" aria-hidden="true"></i>
          <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
-      </div>
 
 
-      <div class="vacancy-overlay">
-        sdfgjmkresrtyjkerk
-      </div>
+        <div class="vacancy-overlay">
+<!--           <% if vacancy.online %>
+             <input type="radio" name="on_off_<%= vacancy.id %>" value="on" checked="checked"> On
+             <input type="radio" name="on_off_<%= vacancy.id %>" value="off"> Off
+          <% else %>
+            <input type="radio" name="on_off_<%= vacancy.id %>" value="on"> On
+            <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
+          <% end %> -->
+
+<i class="fa fa-power-off" aria-hidden="true"></i>
+
+<div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+
+          <br>
+
+          <a href="#"> <span> <i class="fa fa-eye" aria-hidden="true"></i> Reacties Inzien </span></a> <br>
+          <a href="#"> <span> <i class="fa fa-pencil" aria-hidden="true"></i> Vacature Bewerken </span></a>
+          <%= link_to vacancy.title, vacancy %>
+        </div>
+
     </div>
-
+</div>
 <!--     <div class="vacancy-options">
       <%= link_to "Bewerken", edit_vacancy_path(vacancy) %>
 -->
 
-<!--       <% if vacancy.online %>
-         <input type="radio" name="on_off_<%= vacancy.id %>" value="on" checked="checked"> On
-         <input type="radio" name="on_off_<%= vacancy.id %>" value="off"> Off
-      <% else %>
-      <input type="radio" name="on_off_<%= vacancy.id %>" value="on"> On
-      <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
-      <% end %> -->
+
   </div>
 <% end %>
 </div>

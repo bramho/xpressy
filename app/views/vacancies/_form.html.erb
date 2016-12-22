@@ -1,66 +1,44 @@
 <%= form_for @vacancy do |f| %>
-   <% if @vacancy.errors.any? %>
-      <div id="errors">
-         <h2><%= pluralize(@vacancy.errors.count, "error") %> prevented this vacancy from saving.</h2>
-         <ul>
-            <% @vacancy.errors.full_messages.each do |msg| %>
-               <li><%= msg %></li>
-            <% end %>
-         </ul>
-      </div>
-   <% end %>
+<% if @vacancy.errors.any? %>
+  <div id="errors">
+     <h2><%= pluralize(@vacancy.errors.count, "error") %> prevented this vacancy from saving.</h2>
+     <ul>
+        <% @vacancy.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+        <% end %>
+     </ul>
+  </div>
+<% end %>
 
-   <span class="input input--kaede ">
-      <%= f.text_field :title, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_title">
-         <span class="input__label-content input__label-content--kaede"> Naam Vacature </span>
-      </label>
-   </span>
+<div class="new-vac-form">
 
-   <span class="input input--kaede kaede--textarea">
-      <%= f.text_area :description, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_description">
-         <span class="input__label-content input__label-content--kaede"> Beschrijving Vacature </span>
-      </label>
-   </span>
+  <%= f.text_field :title, class: '', placeholder: 'Naam vacature' %>
 
-   <span class="input input--kaede">
-      <%= f.text_field :location, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_location">
-         <span class="input__label-content input__label-content--kaede"> Locatie </span>
-      </label>
-   </span>
+  <%= f.text_area :description, class: '', placeholder: 'Bescrijving vacature' %>
 
-   <span class="input input--kaede kaede--textarea">
-      <%= f.text_area :demands, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_demands">
-         <span class="input__label-content input__label-content--kaede"> Vacature Eisen </span>
-      </label>
-   </span>
+  <%= f.text_field :location, class: '', placeholder: 'Locatie' %>
 
-   <span class="input input--kaede">
-      <%= f.text_field :branche, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_branche">
-         <span class="input__label-content input__label-content--kaede"> Vacature Branche </span>
-      </label>
-   </span>
+  <%= f.text_area :demands, class: '', placeholder: 'Eisen' %>
 
-   <span class="input input--kaede">
-      <%= f.text_field :education_level, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_education_level">
-         <span class="input__label-content input__label-content--kaede"> Educatie Niveau </span>
-      </label>
-   </span>
+  <%= f.text_field :branche, class: '', placeholder: 'Branche' %>
 
-   <span class="input input--kaede kaede--textarea">
-      <%= f.text_area :experience, class: 'input__field input__field--kaede' %>
-      <label class="input__label input__label--kaede" for="vacancy_experience">
-         <span class="input__label-content input__label-content--kaede"> Ervaring </span>
-      </label>
-   </span>
+  <%= f.text_field :education_level, class: '', placeholder: 'Educatie Niveau' %>
 
-   <p>
-      <%= f.submit %>
-   </p>
+  <%= f.text_area :experience, class: '', placeholder: 'Ervaring' %>
+
+  <label for="">Mail voor sollicitanten die worden uitgenodigd voor een gesprek.</label>
+  <textarea name="" id="bottom-border-radius" cols="30" rows="10" placeholder="Tekst"> </textarea>
+
+  <label for="">Mail voor sollicitanten die een twijfelgeval zijn.</label>
+  <textarea name="" id="bottom-border-radius" cols="30" rows="10" placeholder="Tekst"> </textarea>
+
+  <label for="">Mail voor sollicitanten die worden afgewezen.</label>
+  <textarea name="" id="bottom-border-radius" cols="30" rows="10" placeholder="Tekst"> </textarea>
+
+<p>
+  <%= f.submit %>
+</p>
+
+</div>
 
 <% end %>

@@ -15,7 +15,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require classie
-//= modernizr.custom
-//= cbpFWTabs
 //= vacancy-modules.js

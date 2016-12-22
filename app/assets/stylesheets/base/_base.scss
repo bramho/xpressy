@@ -25,14 +25,16 @@ html {
 a {
    color: $anchor-color;
    font-weight: bold;
-   text-decoration: underline;
+   text-decoration: none;
 
    &:link, &:visited {
       color: $anchor-color;
+      text-decoration: none;
    }
 
    &:hover, &:focus {
-      color: $hover-color;
+    color: $hover-color;
+     text-decoration: none;
    }
 }
 
