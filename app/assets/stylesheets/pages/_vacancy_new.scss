@@ -1,0 +1,53 @@
+.new-vac-form{
+  max-width: 800px;
+  margin: auto;
+
+  input, textarea{
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding-left: 15px;
+    border: 2px solid $dark-blue;
+  }
+
+  input[type='text']{
+    height: 50px;
+  }
+
+  textarea{
+    resize: none;
+    overflow: auto;
+    height: 100px;
+    padding-top: 15px;
+    z-index: 999;
+  }
+
+  input[type='submit']{
+    width: 20%;
+    margin: auto;
+  }
+
+  label{
+    width: 100%;
+    background: $dark-blue;
+    color: $white;
+    padding: 10px;
+    z-index: 9999;
+    clear: both;
+    margin-bottom: 0px;
+  }
+
+  #bottom-border-radius{
+    border-radius: 0 0 15px 15px !important;
+  }
+}
+
+.form-title{
+  margin-bottom: 30px;
+}
+
+.progress-bar{
+  background: $dark-blue;
+  width: 100%;
+  height: 50px;
+}

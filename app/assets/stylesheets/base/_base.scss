@@ -19,20 +19,26 @@ html {
   box-sizing: inherit;
 }
 
+.container{
+  max-width: 1480px !important;
+}
+
 /**
  * Basic styles for links
  */
 a {
    color: $anchor-color;
    font-weight: bold;
-   text-decoration: underline;
+   text-decoration: none;
 
    &:link, &:visited {
       color: $anchor-color;
+      text-decoration: none;
    }
 
    &:hover, &:focus {
-      color: $hover-color;
+    color: $hover-color;
+     text-decoration: none;
    }
 }
 
@@ -42,8 +48,7 @@ body {
    color: #fff;
    background-color: $secondary-color;
    font-family: 'Open Sans', sans-serif;
-
-  background: url(bg.jpg) no-repeat center center fixed;
+  background: $white;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
