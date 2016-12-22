@@ -75,6 +75,14 @@
                <%= location.country %>
             </p>
             <p>
+               <b>Longitude</b><br />
+               <%= location.longitude %>
+            </p>
+            <p>
+               <b>Latitude</b><br />
+               <%= location.latitude %>
+            </p>
+            <p>
                <b><%= link_to 'Edit', edit_company_location_path(company, location) %></b><br />
 
                <b><%= link_to 'Delete', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" } %></b>

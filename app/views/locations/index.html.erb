@@ -30,6 +30,17 @@
             <b>County:</b><br />
             <%= location.country %>
          </p>
+
+         <p class="longitude">
+            <b>Longitude:</b><br />
+            <%= location.longitude %>
+         </p>
+
+         <p class="latitude">
+            <b>Latitude:</b><br />
+            <%= location.latitude %>
+         </p>
+
          <% if user_signed_in? %>
             <p><%= link_to "Edit", [location.company, location] %></p>
             <p><%= link_to "Delete", [location.company, location], method: :delete, data: { confirm: 'Are you sure?' } %></p>

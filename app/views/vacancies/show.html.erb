@@ -21,11 +21,14 @@
 
     <% @vacancy.reactions.each do |reaction| %>
       <div class="reaction">
-        <a href="#"><%= reaction.first_name %> <%= reaction.last_name %></a>
+        <%= link_to reaction.first_name + ' ' + reaction.last_name, vacancy_reaction_path(reaction) %>
+
+         <%= (reaction.distance_to(Location.find(@vacancy.location_id)) * 1.61).round(2) %> km
+
         <div class="pull-right reaction-icons">
-          <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-question" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>
+          <%= link_to vacancy_reaction_path(@vacancy, reaction), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          <% end %>
         </div>
       </div>
     <% end %>

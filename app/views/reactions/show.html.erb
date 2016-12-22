@@ -1,48 +1,48 @@
 <header class="sub-header">
    <ul>
-      <li><%= link_to "Back", companies_path %></li>
+      <li><%= link_to "Back", vacancies_path(:vacancy_id) %></li>
 
       <% if user_signed_in? %>
          |
-         <li><%= link_to "Edit", edit_company_location_path(@location) %></li>
+         <li><%= link_to "Edit", edit_vacancy_reaction_path(@reaction) %></li>
          |
-         <li><%= link_to "Delete", company_location_path(@location), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+         <li><%= link_to "Delete", vacancy_reaction_path(@reaction), method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
    </ul>
 </header>
 
 <div class="location-info">
    <h1 class="name">
-      <%= @location.name %>
+      <%= @reaction.name %>
    </h1>
 
    <p class="address">
       <b>Address:</b><br />
-      <%= @location.address %>
+      <%= @reaction.address %>
    </p>
 
    <p class="postal_code">
       <b>Postal Code:</b><br />
-      <%= @location.postal_code %>
+      <%= @reaction.postal_code %>
    </p>
 
    <p class="city">
       <b>City:</b><br />
-      <%= @location.city %>
+      <%= @reaction.city %>
    </p>
 
    <p class="country">
       <b>County:</b><br />
-      <%= @location.country %>
+      <%= @reaction.country %>
    </p>
 
    <p class="longitude">
       <b>Longitude:</b><br />
-      <%= @location.longitude %>
+      <%= @reaction.longitude %>
    </p>
 
    <p class="latitude">
       <b>Latitude:</b><br />
-      <%= @location.latitude %>
+      <%= @reaction.latitude %>
    </p>
 </div>
