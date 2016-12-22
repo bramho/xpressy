@@ -19,6 +19,10 @@ html {
   box-sizing: inherit;
 }
 
+.container{
+  max-width: 1480px !important;
+}
+
 /**
  * Basic styles for links
  */
@@ -44,7 +48,6 @@ body {
    color: #fff;
    background-color: $secondary-color;
    font-family: 'Open Sans', sans-serif;
-
   background: $white;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
