@@ -45,7 +45,7 @@ body {
    background-color: $secondary-color;
    font-family: 'Open Sans', sans-serif;
 
-  background: url(bg.jpg) no-repeat center center fixed;
+  background: $white;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
