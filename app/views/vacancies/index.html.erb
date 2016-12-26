@@ -53,23 +53,21 @@
 
 
         <div class="vacancy-overlay">
-<!--           <% if vacancy.online %>
-             <input type="radio" name="on_off_<%= vacancy.id %>" value="on" checked="checked"> On
-             <input type="radio" name="on_off_<%= vacancy.id %>" value="off"> Off
-          <% else %>
-            <input type="radio" name="on_off_<%= vacancy.id %>" value="on"> On
-            <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
-          <% end %> -->
 
-<i class="fa fa-power-off" aria-hidden="true"></i>
+         <i class="fa fa-power-off" aria-hidden="true"></i>
 
-<div class="onoffswitch">
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-    <label class="onoffswitch-label" for="myonoffswitch">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-    </label>
-</div>
+         <div class="onoffswitch">
+
+            <% if vacancy.online %>
+               <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <% else %>
+               <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+            <% end %>
+               <label class="onoffswitch-label" for="myonoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+               </label>
+         </div>
 
           <br>
 
