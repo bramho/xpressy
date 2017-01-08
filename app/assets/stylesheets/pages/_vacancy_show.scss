@@ -17,6 +17,10 @@
     }
   }
 
+  .filters{
+    padding-left: 10px;
+  }
+
   .on{
     color: $important-green;
   }
@@ -35,10 +39,14 @@
    }
   }
 
+  .reaction-icons{
+    padding-right: 10px;
+  }
+
   .reactions{
     margin-top: 20px;
     .reaction{
-      padding: 15px 0px 15px 5px;
+      padding: 15px 0 15px 5px;
       color: $black;
       border-bottom: 2px solid $white;
       background: $primary-blue;

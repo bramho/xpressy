@@ -8,13 +8,13 @@
       <a href="#" class="button-red">Plaats in portefeuille <i class="fa fa-star" aria-hidden="true"></i></a>
     </div>
 
-
+    <div class="filters">
       <a href="#" class="on">MBO4 X</a> |
       <a href="#" class="off">HBO -</a> |
       <a href="#" class="off">HTML -</a> |
       <a href="#" class="on">CSS X</a>|
       <a href="#" class="on">PHP X</a> <br>
-
+    </div>
 
 <%= link_to "Back", root_path %>
 
@@ -25,11 +25,11 @@
 <%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
 
-      <div class="pull-right reaction-icons">
-        <a href="#"><i class="fa fa-times cross" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-question question" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-check check" aria-hidden="true"></i></a>
-      </div>
+    <div class="pull-right reaction-icons">
+      <a href="#"><i class="fa fa-times cross" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-question question" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-check check" aria-hidden="true"></i></a>
+    </div>
 
     <div class="reactions">
     <% @vacancy.reactions.each do |reaction| %>
