@@ -16,3 +16,5 @@
 //= require turbolinks
 //= require_tree .
 //= vacancy-modules.js
+//= interact
+//= grid
