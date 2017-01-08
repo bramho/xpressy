@@ -100,7 +100,7 @@
 .options-bar{
   padding: 15px 0 15px;
   margin-bottom: 30px;
-  background: $dark-blue;
+  background: $primary-blue;
 
   .btn-group{
     width: 100%;
@@ -146,9 +146,9 @@
 
   button{
     margin: 0;
-    border: 1px solid $primary-blue;
+    border: 1px solid $light-blue;
     border-radius: 5px;
     color: $white;
-    background: $primary-blue;
+    background: $light-blue;
   }
 }

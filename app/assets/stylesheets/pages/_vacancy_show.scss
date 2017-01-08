@@ -1,22 +1,69 @@
 .vacancy-candidates{
-  background: $light-primary-blue;
-  padding-left: 10px;
+  background: $white;
+  padding: 0px;
+  color: $black;
+
+  .buttons{
+    margin-bottom: 10px;
+    background: $primary-blue;
+    padding: 15px 0px 15px 10px;
+
+    .button-red{
+      background: $important-red;
+      padding: 8px;
+      border-radius: 8px;
+      color: $white;
+      margin-bottom: 10px;
+    }
+  }
+
+  .on{
+    color: $important-green;
+  }
+
+  .off{
+    color: $important-red;
+  }
 
   a{
     text-decoration: none;
+      color: $black;
 
     &:hover, &:focus {
       text-decoration: underline;
-      color: $white;
+      color: $black;
    }
   }
 
-  .reaction{
-    padding: 5px;
-    color: $white;
-    border-bottom: 2px solid $white;
-
+  .reactions{
+    margin-top: 20px;
+    .reaction{
+      padding: 15px 0px 15px 5px;
+      color: $black;
+      border-bottom: 2px solid $white;
+      background: $primary-blue;
+    }
   }
+
+  i{
+    padding: 5px;
+    border-radius: 20px;
+    color: $white;
+  }
+
+  .cross{
+    background: $important-red;
+  }
+
+  .question{
+    background: $primary-blue;
+    padding: 5px 8px;
+  }
+
+  .check{
+    background: $important-green;
+  }
+
 }
 
 .xpressheet{

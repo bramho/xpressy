@@ -49,5 +49,33 @@
 .progress-bar{
   background: $dark-blue;
   width: 100%;
-  height: 50px;
+
+  .progress-bar-content{
+    background: $dark-blue;
+    width: 100%;
+    max-width: 800px;
+    line-height: 50px;
+    height: 50px;
+    font-size: 15px;
+    margin: 0 auto;
+    float: none;
+
+    a{
+      margin-right: 20px;
+    }
+
+    span{
+      background: $white;
+      color: $dark-blue;
+      padding: 5px 12px 5px 12px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    i{
+      font-size: 20px;
+      padding: 5px;
+      background: $important-red;
+    }
+  }
 }

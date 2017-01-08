@@ -19,5 +19,6 @@ Rails.application.routes.draw do
      resources :locations
   end
 
+  resources :vacancies
   root "vacancies#index"
 end

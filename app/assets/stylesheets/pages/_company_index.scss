@@ -1,4 +1,31 @@
-.company-wrapper{
-  background: $light-primary-blue;
-  padding: 5px;
+.sidenav{
+  padding: 0;
+  background: $light-blue;
+  a{
+    color: $black;
+
+    i{
+      color: $primary-blue;
+    }
+
+    p{
+      padding: 20px 10px 20px 10px;
+      margin: 0px;
+    }
+  }
+
+  .active{
+    background: $primary-blue;
+  }
+}
+
+.locations{
+  h1{
+    color: $black;
+  }
+
+  a{
+    float: right;
+    color: $black;
+  }
 }

@@ -1,13 +1,69 @@
-
-<h1 style="text-align: center;">Company Settings</h1>
-
 <% if Company.exists? %>
    <!-- <% @companies.each do |company| %>
       <h3><%= link_to 'View locations', company_locations_path(company) %></h3>
    <% end %> -->
 <% end %>
 
-<div class="col-md-3">
+<div class="container">
+  <div class="col-sm-3 sidenav">
+    <a href="#" ><p class="active">Bedrijfsgegevens <i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p></a>
+    <a href="#"><p>Bedrijfslocatie toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p></a>
+    <a href="#"><p>Gebruiker toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p></a>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="locations">
+      <div class="location">
+        <h1>Locatie 1</h1>
+        <p>Bedrijfsnaam: <a href="#">Bewerken</a></p>
+        <p>Straatnaam en huisnummer: <a href="#">Bewerken</a></p>
+        <p>postcode: <a href="#">Bewerken</a></p>
+        <p>Land: <a href="#">Bewerken</a></p>
+        <a href="#">Locatie verwijderen</a>
+      </div>
+
+      <div class="location">
+        <h1>Locatie 2</h1>
+        <p>Bedrijfsnaam: <a href="#">Bewerken</a></p>
+        <p>Straatnaam en huisnummer: <a href="#">Bewerken</a></p>
+        <p>postcode: <a href="#">Bewerken</a></p>
+        <p>Land: <a href="#">Bewerken</a></p>
+        <a href="#">Locatie verwijderen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+   <!-- <h1 style="text-align:center;"><%= link_to "Voeg een nieuwe locatie toe", new_company_location_path(@companies.ids) %></h1>
+   <% @companies.each do |company| %>
+      <div class="col-md-3">
+         <% company.locations.each do |location| %>
+            <h1 style="text-align:center;"><%= location.name %></h1>
+            <p>
+               <b>Address</b><br />
+               <%= location.address %>
+            </p>
+            <p>
+               <b>Postal Code</b><br />
+               <%= location.postal_code %>
+            </p>
+            <p>
+               <b>City</b><br />
+               <%= location.city %>
+            </p>
+            <p>
+               <b>Country</b><br />
+               <%= location.country %>
+            </p>
+            <p>
+               <b><%= link_to 'Edit', edit_company_location_path(company, location) %></b><br />
+
+               <b><%= link_to 'Delete', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" } %></b>
+            </p>
+         <% end %>
+      </div>
+   <% end %>
+
    <div class="company-wrapper">
       <% if Company.exists? %>
          <% @companies.each do |company| %>
@@ -50,35 +106,4 @@
 
       <% end %>
   </div>
-</div>
-
-<div class="col-md-9">
-   <h1 style="text-align:center;"><%= link_to "Voeg een nieuwe locatie toe", new_company_location_path(@companies.ids) %></h1>
-   <% @companies.each do |company| %>
-      <div class="col-md-3">
-         <% company.locations.each do |location| %>
-            <h1 style="text-align:center;"><%= location.name %></h1>
-            <p>
-               <b>Address</b><br />
-               <%= location.address %>
-            </p>
-            <p>
-               <b>Postal Code</b><br />
-               <%= location.postal_code %>
-            </p>
-            <p>
-               <b>City</b><br />
-               <%= location.city %>
-            </p>
-            <p>
-               <b>Country</b><br />
-               <%= location.country %>
-            </p>
-            <p>
-               <b><%= link_to 'Edit', edit_company_location_path(company, location) %></b><br />
-
-               <b><%= link_to 'Delete', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" } %></b>
-            </p>
-         <% end %>
-      </div>
-   <% end %>
+ -->
