@@ -57,21 +57,19 @@
             <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
           <% end %> -->
 
-<i class="fa fa-power-off" aria-hidden="true"></i>
+          <span class="vacancy-option">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+            </span> <br>
 
-<div class="onoffswitch">
-    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-    <label class="onoffswitch-label" for="myonoffswitch">
-        <span class="onoffswitch-inner"></span>
-        <span class="onoffswitch-switch"></span>
-    </label>
-</div>
-
-          <br>
-
-          <a href="#"> <span> <i class="fa fa-eye" aria-hidden="true"></i> Reacties Inzien </span></a> <br>
-          <a href="#"> <span> <i class="fa fa-pencil" aria-hidden="true"></i> Vacature Bewerken </span></a>
-          <%= link_to vacancy.title, vacancy %>
+          <span class="vacancy-option"> <i class="fa fa-eye" aria-hidden="true"></i> <%= link_to "Reacties Inzien", vacancy %> </span> <br>
+          <span class="vacancy-option"> <i class="fa fa-pencil" aria-hidden="true"></i> <%= link_to "Vacature Bewerken", vacancy %> </span>
         </div>
 
     </div>
