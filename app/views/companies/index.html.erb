@@ -5,12 +5,15 @@
 <% end %>
 
 <div class="container">
+
+   <% @companies.each do |company| %>
   <div class="col-sm-3 sidenav">
     <a href="#" ><p class="active">Bedrijfsgegevens <i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p></a>
-    <%= link_to (raw('<p>Bedrijfslocatie toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_company_location_path, class:"" %>
+    <%= link_to (raw('<p>Bedrijfslocatie toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_company_location_path(company), class:"" %>
     <%= link_to (raw('<p>Gebruiker toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_user_path, class:"" %>
-
   </div>
+
+  <% end %>
 
   <div class="col-sm-9">
     <div class="locations">
