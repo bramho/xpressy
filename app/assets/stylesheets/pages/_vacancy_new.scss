@@ -1,47 +1,3 @@
-.new-vac-form{
-  max-width: 800px;
-  margin: auto;
-
-  input, textarea{
-    width: 100%;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    padding-left: 15px;
-    border: 2px solid $dark-blue;
-  }
-
-  input[type='text']{
-    height: 50px;
-  }
-
-  textarea{
-    resize: none;
-    overflow: auto;
-    height: 100px;
-    padding-top: 15px;
-    z-index: 999;
-  }
-
-  input[type='submit']{
-    width: 20%;
-    margin: auto;
-  }
-
-  label{
-    width: 100%;
-    background: $dark-blue;
-    color: $white;
-    padding: 10px;
-    z-index: 9999;
-    clear: both;
-    margin-bottom: 0px;
-  }
-
-  #bottom-border-radius{
-    border-radius: 0 0 15px 15px !important;
-  }
-}
-
 .form-title{
   margin-bottom: 30px;
 }
@@ -49,5 +5,44 @@
 .progress-bar{
   background: $dark-blue;
   width: 100%;
-  height: 50px;
+
+  .progress-bar-content{
+    background: $dark-blue;
+    width: 100%;
+    max-width: 800px;
+    line-height: 50px;
+    height: 50px;
+    font-size: 15px;
+    margin: 0 auto;
+    float: none;
+
+    a{
+      margin-right: 20px;
+    }
+
+    span{
+      background: $white;
+      color: $dark-blue;
+      padding: 5px 12px 5px 12px;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+
+    i{
+      font-size: 20px;
+      padding: 5px;
+      background: $important-red;
+    }
+  }
+}
+
+// Grid
+#grid-snap {
+  width: 40%;
+  background-color: #29e;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 4px;
+  padding: 2%;
+  margin: 5%;
 }
