@@ -59,9 +59,9 @@
          <div class="onoffswitch">
 
             <% if vacancy.online %>
-               <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+               <input type="checkbox" name="onoffswitch-<%= vacancy.id %>" class="onoffswitch-checkbox" id="myonoffswitch" checked>
             <% else %>
-               <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+               <input type="checkbox" name="onoffswitch-<%= vacancy.id %>" class="onoffswitch-checkbox" id="myonoffswitch">
             <% end %>
                <label class="onoffswitch-label" for="myonoffswitch">
                   <span class="onoffswitch-inner"></span>
