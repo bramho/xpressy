@@ -2,11 +2,16 @@
 <div class="row">
   <div class="col-sm-3 vacancy-candidates">
 
+   <% if user_signed_in? %>
     <div class="buttons">
-      <a href="#" class="button-red">Vacature verwijderen <i class="fa fa-times" aria-hidden="true"></i></a> <br> <br>
+      <%= link_to (raw('Vacature Verwijderen <i class="fa fa-times" aria-hidden="true"></i>')), vacancy_path(@vacancy), method: :delete, data: { confirm: 'Weet u het zeker dat u deze vacature wilt verwijderen?' }, class:"button-red" %><br /><br />
+
+      <%= link_to (raw('Vacature Bewerken <i class="fa fa-pencil" aria-hidden="true"></i>')), edit_vacancy_path(@vacancy), class:"button-red" %>
+      <br /><br />
 
       <a href="#" class="button-red">Plaats in portefeuille <i class="fa fa-star" aria-hidden="true"></i></a>
     </div>
+   <% end %>
 
     <div class="filters">
       <a href="#" class="on">MBO4 X</a> |
@@ -15,15 +20,6 @@
       <a href="#" class="on">CSS X</a>|
       <a href="#" class="on">PHP X</a> <br>
     </div>
-
-<%= link_to "Back", root_path %>
-
-      <% if user_signed_in? %>
-         |
-<%= link_to "Edit", edit_vacancy_path(@vacancy) %>
-         |
-<%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
 
     <div class="pull-right reaction-icons">
       <a href="#"><i class="fa fa-times cross" aria-hidden="true"></i></a>
