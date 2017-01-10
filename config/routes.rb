@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, except: :create
   get 'create_user' => 'users#add_new_user', as: :new_user_by_admin
   post 'create_user' => 'users#create', as: :create_user
+  get 'wallet' => 'vacancies#wallet'
 
   # devise_for :users, controllers: {
   #       sessions: 'users/sessions'
@@ -19,6 +20,5 @@ Rails.application.routes.draw do
      resources :locations
   end
 
-  resources :vacancies
   root "vacancies#index"
 end

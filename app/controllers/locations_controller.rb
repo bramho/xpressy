@@ -6,6 +6,7 @@ class LocationsController < ApplicationController
    end
 
    def new
+      @company= Company.find(params[:company_id])
       @location = Location.new
    end
 

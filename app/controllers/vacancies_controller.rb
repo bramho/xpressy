@@ -62,6 +62,10 @@ class VacanciesController < ApplicationController
       redirect_to root_path
    end
 
+   def wallet
+
+   end
+
    private
       def vacancy_params
          params.require(:vacancy).permit(:title, :description, :demands, :branche, :education_level, :experience, :location_id, :modules_array, :positions_array, social_media_modules_attributes: [:id, :social_media_type, :social_media_value])

@@ -10,33 +10,19 @@
       </div>
    <% end %>
 
-   <p>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-   </p>
+<div class="form">
 
-   <p>
-      <%= f.label :address %><br />
-      <%= f.text_field :address %>
-   </p>
+      <%= f.text_field :name, placeholder: 'Naam'%>
 
-   <p>
-      <%= f.label :postal_code %><br />
-      <%= f.text_field :postal_code %>
-   </p>
+      <%= f.text_field :address, placeholder: 'Adres' %>
 
-   <p>
-      <%= f.label :city %><br />
-      <%= f.text_field :city %>
-   </p>
+      <%= f.text_field :postal_code, placeholder: 'Postcode' %>
 
-   <p>
-      <%= f.label :country %><br />
-      <%= f.text_field :country %>
-   </p>
+      <%= f.text_field :city, placeholder: 'Stad' %>
 
-   <p>
+      <%= f.text_field :country, placeholder: 'Land' %>
+
       <%= f.submit %>
-   </p>
 
 <% end %>
+</div>
