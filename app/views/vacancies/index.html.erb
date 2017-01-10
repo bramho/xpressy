@@ -1,25 +1,20 @@
 <div class="row options-bar">
   <div class="container">
-  <div class="col-sm-4 col-md-3">
+  <div class="col-sm-4 col-md-4 col-lg-3">
+
+    <%= form_tag vacancies_path, method: 'get' do %>
     <div class="input-group">
-      <%= form_tag vacancies_path, method: 'get' do %>
-         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Zoeken', style: 'vertical-align: top;' %>
-         <span class="input-group-btn">
-            <%= submit_tag "Search", class: 'btn btn-default' %>
-          </span>
-      <% end %>
-
-
-<!-- <input type="text" class="form-control" placeholder="Zoeken" style="vertical-align: top;">
+         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Zoeken'%>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">
-          <i class="fa fa-search"></i>
-        </button>
-      </span> -->
+        <%= button_tag(type: "submit", class: "btn btn-secondary") do %>
+            <i class="fa fa-search"></i>
+        <% end %>
+      </span>
     </div>
+    <% end %>
   </div>
 
-  <div class="col-sm-4 col-md-3">
+  <div class="col-sm-4 col-md-4 col-lg-3">
     <div class="btn-group">
       <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-text">Filters</button>
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-arrow">
@@ -32,7 +27,7 @@
     </div>
   </div>
 
-  <div class="col-sm-4 col-md-3 pull-right">
+  <div class="col-sm-4 col-md-4 col-lg-3 pull-right">
     <a href="vacancies/new">
       <div class="new-vac">
         Vacature Aanmaken <i class="fa fa-plus-circle fa-1x pull-right" aria-hidden="true"></i>
