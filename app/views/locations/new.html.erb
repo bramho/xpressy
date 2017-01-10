@@ -1,12 +1,5 @@
-<header class="sub-header">
-   <ul>
-      <li><%= link_to "Back", companies_path %></li>
-   </ul>
-</header>
-
 <div class="container">
 <div class="row">
-
   <div class="col-sm-3 sidenav">
     <%= link_to (raw('<p>Bedrijfsgegevens<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), companies_path, class:"" %>
     <%= link_to (raw('<p class="active">Bedrijfslocatie toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_company_location_path(@company), class:"" %>
@@ -14,9 +7,7 @@
   </div>
 
    <div class="col-sm-9">
-
   <%= render 'form' %>
   </div>
 </div>
 </div>
-
