@@ -14,7 +14,7 @@ en:
       last_attempt: "U heeft nog één poging om in te loggen voordat uw account gesloten wordt."
       not_found_in_database: "Uw %{authentication_keys} of wachtwoord is onjuist."
       timeout: "Uw sessie is verlopen. Logt u a.u.b. opnieuw in."
-      unauthenticated: "U moet inloggen om verder te gaan."
+      unauthenticated: "U bent succesvol uitgelogd."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
       confirmation_instructions:

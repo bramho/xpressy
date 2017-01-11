@@ -37,6 +37,18 @@
 </div>
 </div>
 
+<div class="flash-notice-space">
+   <% flash.each do |key, value| %>
+      <div class="alert alert-success">
+         <a href="#" data-dismiss="alert" class="close-success">x</a>
+         <ul>
+            <li><%= value %></li>
+         </ul>
+      </div>
+      <!-- <%= content_tag :div, value, :class => "flash #{key}" unless value.blank? %> -->
+    <% end %>
+</div>
+
 <div class="container">
 
 <div class="row">

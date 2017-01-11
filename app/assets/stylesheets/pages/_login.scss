@@ -11,10 +11,22 @@
    background-size: cover;
 }
 
+.flash-notice-space {
+   margin-bottom: 30px;
+}
+
 .alert {
    a {
       color: red !important;
       margin-top: -4px;
+   }
+}
+
+.alert-success {
+   a {
+      color: green !important;
+      margin-top: -4px;
+      float: right;
    }
 }
 
