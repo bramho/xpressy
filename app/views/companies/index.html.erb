@@ -13,18 +13,28 @@
     <%= link_to (raw('<p>Gebruiker toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_user_path, class:"" %>
   </div>
 
-   <div class="col-sm-9">
+   <div class="col-sm-9 company-container">
+
+      <div class="company">
+         <h1><%= company.name %></h1>
+         <ul>
+            <li><span class="list-title">Beschrijving: </span><%= company.description %></li>
+            <li><span class="list-title">Adres: </span><%= company.address %></li>
+            <li><span class="list-title">Postcode: </span><%= company.postal_code %></li>
+            <li><span class="list-title">Stad: </span><%= company.city %></li>
+         </ul>
+      </div>
+
       <div class="locations">
+         <h1>Locaties</h1>
       <% company.locations.each do |location| %>
-         <div class="col-sm-3">
-            <div class="location">
-               <h1><%= location.name %></h1>
-               <p>Straatnaam en huisnummer: <%= location.address %></p>
-               <p>Postcode: <%= location.postal_code %></p>
-               <p>Stad: <%= location.city %></p>
-               <p><%= link_to 'Locatie Bewerken', company_location_path(company, location) %></p>
-               <p><%= link_to 'Locatie Verwijderen', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" } %></p>
-            </div>
+         <div class="location">
+            <li><span class="list-title">Naam: </span><%= location.name %></li>
+            <li><span class="list-title">Adres: </span><%= location.address %></li>
+            <li><span class="list-title">Postcode: </span><%= location.postal_code %></li>
+            <p>Stad: <%= location.city %></p>
+            <p><%= link_to 'Locatie Bewerken', company_location_path(company, location) %></p>
+            <p><%= link_to 'Locatie Verwijderen', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" } %></p>
          </div>
       <% end %>
       </div>

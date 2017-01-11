@@ -45,18 +45,31 @@
 
   .reactions{
     margin-top: 20px;
-    .reaction{
-      padding: 15px 0 15px 5px;
-      color: $black;
-      border-bottom: 2px solid $white;
-      background: $primary-blue;
+
+    .active {
+      background-color: $ultra-light-blue;
     }
+
+       .reaction{
+         padding: 15px 0 15px 5px;
+         color: $black;
+         border-bottom: 2px solid $white;
+         cursor: pointer;
+
+         &:hover, &:active {
+            background-color: $ultra-light-blue;
+         }
+       }
   }
 
   i{
-    padding: 5px;
-    border-radius: 20px;
     color: $white;
+   //  font-size: 20px;
+    padding-right: 1px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
   }
 
   .cross{
@@ -64,8 +77,7 @@
   }
 
   .question{
-    background: $primary-blue;
-    padding: 5px 8px;
+   background: $primary-blue;
   }
 
   .check{

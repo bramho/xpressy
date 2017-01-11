@@ -14,7 +14,8 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
-//= vacancy-modules.js
+//= require_tree
+//= vacancy-modules
 //= interact-min
 //= grid
+//= Sortable.min

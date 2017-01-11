@@ -21,23 +21,17 @@
       <a href="#" class="on">PHP X</a> <br>
     </div>
 
-    <div class="pull-right reaction-icons">
-      <a href="#"><i class="fa fa-times cross" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-question question" aria-hidden="true"></i></a>
-      <a href="#"><i class="fa fa-check check" aria-hidden="true"></i></a>
-    </div>
-
     <div class="reactions">
-    <% @vacancy.reactions.each do |reaction| %>
-      <div class="reaction">
-        <%= link_to reaction.first_name + ' ' + reaction.last_name, vacancy_reaction_path(reaction) %>
+    <% @vacancy.reactions.each_with_index do |reaction, index| %>
+      <div class='reaction <% if index == 0 %> active <% end %>'>
+        <%= link_to reaction.first_name + ' ' + reaction.last_name, vacancy_reaction_path(@vacancy, reaction) %>
 
          <%= (reaction.distance_to(Location.find(@vacancy.location_id)) * 1.61).round(2) %> km
 
         <div class="pull-right reaction-icons">
-          <%= link_to vacancy_reaction_path(@vacancy, reaction), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="fa fa-times" aria-hidden="true"></i>
-          <% end %>
+          <%= link_to (raw('<i class="fa fa-times fa-fw cross" aria-hidden="true"></i>')), vacancy_reaction_path(@vacancy, reaction), method: :delete, data: { confirm: 'Weet u zeker dat u deze reactie wilt verwijderen?' }, class:"" %>
+          <%= link_to (raw('<i class="fa fa-question fa-fw question" aria-hidden="true"></i>')), edit_vacancy_path(@vacancy), class:"" %>
+          <%= link_to (raw('<i class="fa fa-check fa-fw check" aria-hidden="true"></i>')), edit_vacancy_path(@vacancy), class:"" %>
         </div>
       </div>
     <% end %>
@@ -49,7 +43,8 @@
   </div>
 
   <div class="col-sm-9 xpressheet">
-    <img src="http://placehold.it/1000x1000" class="img-responsive">
+
+    <!-- <img src="http://placehold.it/1000x1000" class="img-responsive"> -->
   </div>
 </div>
 <!-- <div class="col-md-4">

@@ -36,6 +36,48 @@
   }
 }
 
+span.module-text {
+   font-weight: bold;
+}
+
+.sortable-ghost  {
+   background-color: #ccc !important;
+}
+
+.modules-pick-zone {
+   padding-top: 20px;
+
+   .modules-list-group {
+      .modules-list-item {
+         padding: 20px 10px;
+         background-color: $white;
+         border-bottom: 2px solid $light-grey;
+         cursor: pointer;
+
+         &:hover, &:active {
+            background-color: $light-blue;
+         }
+      }
+   }
+}
+
+.modules-drop-zone {
+   background: url('Achtergrond.jpg') repeat-y;
+   background-size: 100%;
+   margin-top: 20px;
+
+   .picked-modules-group {
+      .modules-list-item {
+         background-color: $light-blue;
+         min-height: 200px;
+         width: 23%;
+         float: left;
+         margin: 1em 1%;
+         display: block;
+      }
+   }
+}
+
 // Grid
 #grid-snap {
   width: 40%;

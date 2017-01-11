@@ -4,9 +4,9 @@
 
       <% if user_signed_in? %>
          |
-         <li><%= link_to "Edit", edit_vacancy_reaction_path(@reaction) %></li>
+         <li><%= link_to "Edit", edit_vacancy_reaction_path(params[:vacancy_id], params[:id]) %></li>
          |
-         <li><%= link_to "Delete", vacancy_reaction_path(@reaction), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+         <li><%= link_to "Delete", vacancy_reaction_path(params[:vacancy_id], params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
    </ul>
 </header>

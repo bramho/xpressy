@@ -1,3 +1,70 @@
+<!-- sort: true -->
+<div class="container-fluid">
+   <div class="col-md-3 modules-pick-zone">
+      <div id="sortTrue" class="modules-list-group" style="min-height:300px;">
+        <div data-name="module-1" data-id="ter" class="modules-list-item"><span class="module-text">Module 1</span></div>
+        <div data-name="module-2" data-id="tr" class="modules-list-item"><span class="module-text">Module 2</span></div>
+        <div data-name="module-3" data-id="2345" class="modules-list-item"><span class="module-text">Module 3</span></div>
+        <div data-name="module-4" data-id="erf" class="modules-list-item"><span class="module-text">Module 4</span></div>
+        <div data-name="module-5" data-id="kjh" class="modules-list-item"><span class="module-text">Module 5</span></div>
+      </div>
+   </div>
+
+   <div class="col-md-9 modules-drop-zone">
+      <!-- sort: false -->
+      <div id="sortFalse" class="picked-modules-group" style="min-height:300px;">
+
+      </div>
+   </div>
+</div>
+
+  <script>
+   var order, sortTrue, sortFalse;
+
+   sortTrue = document.getElementById('sortTrue');
+   sortFalse = document.getElementById('sortFalse');
+
+   Sortable.create(sortTrue, {
+   group: "sorting",
+   });
+
+   Sortable.create(sortFalse, {
+   group: "sorting",
+   onUpdate: function (/**Event*/evt) {
+      updateOrder();
+   },
+
+   onAdd: function (/**Event*/evt) {
+      updateOrder();
+   },
+
+   onRemove: function(evt) {
+      updateOrder();
+   }
+   });
+
+   function updateOrder() {
+   order = {
+      gallery: []
+   };
+   $('#sortFalse div[data-id]').each(function() {
+      order.gallery.push($(this).attr('data-id'));
+   });
+   console.log(order);
+   updateOrderDB();
+   }
+
+   function updateOrderDB() {
+   // $.ajax({
+   //   type: "POST",
+   //   url: "ajax.php",
+   //   data: order
+   // }).done(function (response) {
+   //     console.log(response);
+   // });
+   }
+  </script>
+
 <%= form_for @vacancy, url: wizard_path do |f| %>
 
    <!-- <%= render partial: 'vacancy_steps/partials/contact-gegevens', locals: {f: f} %> -->
