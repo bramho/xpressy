@@ -4,6 +4,16 @@
       <div class="login-wrapper">
         <%= image_tag("logo_wit.png", class: "img-responsive") %>
 
+        <% flash.each do |key, value| %>
+           <div class="alert alert-danger">
+              <a href="#" data-dismiss="alert" class="close">x</a>
+              <ul>
+                 <li><%= value %></li>
+              </ul>
+           </div>
+          <!-- <%= content_tag :div, value, :class => "flash #{key}" unless value.blank? %> -->
+        <% end %>
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.email_field :email, autofocus: true, placeholder: "E-mail" %>

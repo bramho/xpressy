@@ -11,6 +11,13 @@
    background-size: cover;
 }
 
+.alert {
+   a {
+      color: red !important;
+      margin-top: -4px;
+   }
+}
+
 .login-wrapper{
   background: $opacity-green;
   border-radius: 20px;
