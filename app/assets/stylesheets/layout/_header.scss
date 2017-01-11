@@ -7,7 +7,6 @@ header {
   background-color: $dark-blue;
   padding: 20px 0px 10px 0px;
 
-
   nav{
   max-width: 1480px;
   margin: auto;
@@ -26,12 +25,15 @@ header {
 
         a {
           &:hover, &:focus {
-            color: $dark-blue;
+            color: $primary-blue;
           }
 
-        i{
-          font-size: 30px !important;
+          i{
+            font-size: 30px !important;
+          }
         }
+        .active{
+          color: $primary-blue;
         }
 
 

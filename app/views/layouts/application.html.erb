@@ -20,14 +20,30 @@
               <li> <%= image_tag current_user.avatar.url(:thumb), class: "img-circle"%> <%= current_user.first_name %> </li>
             </div>
             <div class="col-xs-12 col-sm-8 pull-right text-right">
-              <li> <%= link_to (raw('Home <i class="fa fa-home" aria-hidden="true"></i>')), root_path, class:"" %></a></li>
-              <li> <%= link_to (raw('Portefeuille <i class="fa fa-star" aria-hidden="true"></i>')), wallet_path, class:"" %></a></li>
-              <li> <%= link_to (raw('Instellingen <i class="fa fa-cog" aria-hidden="true"></i>')), companies_path, class:"" %></a></li>
-              <li> <%= link_to (raw('Uitloggen <i class="fa fa-sign-out" aria-hidden="true"></i>')), destroy_user_session_path, :method => :delete, class:"" %></a></li>
+
+            <% if controller?("vacancies") && action?("index")%>
+              <li> <%= link_to (raw('Home <i class="fa fa-home" aria-hidden="true"></i>')), root_path, class:"active" %></li>
+            <% else %>
+              <li> <%= link_to (raw('Home <i class="fa fa-home" aria-hidden="true"></i>')), root_path, class:"" %></li>
+            <% end %>
+
+            <% if controller?("vacancies") && action?("wallet")%>
+            <li> <%= link_to (raw('Portefeuille <i class="fa fa-star" aria-hidden="true"></i>')), wallet_path, class:"active" %></li>
+            <% else %>
+            <li> <%= link_to (raw('Portefeuille <i class="fa fa-star" aria-hidden="true"></i>')), wallet_path, class:"" %></li>
+            <% end %>
+
+            <% if controller?("companies") && action?("index")%>
+            <li> <%= link_to (raw('Instellingen <i class="fa fa-cog" aria-hidden="true"></i>')), companies_path, class:"active" %></li>
+            <% else %>
+            <li> <%= link_to (raw('Instellingen <i class="fa fa-cog" aria-hidden="true"></i>')), companies_path, class:"" %></li>
+            <% end %>
+
+              <li> <%= link_to (raw('Uitloggen <i class="fa fa-sign-out" aria-hidden="true"></i>')), destroy_user_session_path, :method => :delete, class:"" %></li>
             </div>
 
           <% else %>
-            <li class="<%= active_tab(new_user_session_path) %>"><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></a></li>
+            <li class="<%= active_tab(new_user_session_path) %>"><%= link_to (raw('<span>Sign In</span>')), new_user_session_path, class:"" %></li>
           <% end %>
 
           </ul>
