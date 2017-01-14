@@ -1,54 +1,57 @@
-.form{
-  max-width: 800px;
-  margin: auto;
-
-  input, textarea{
-    width: 100%;
-    margin-bottom: 30px;
-    border-radius: 15px;
-    padding-left: 15px;
-    border: 2px solid $dark-blue;
-  }
-
-  input[type='text'], input[type='password'], input[type='email']{
-    height: 50px;
-  }
-
-  textarea{
-    resize: none;
-    overflow: auto;
-    height: 100px;
-    padding-top: 15px;
-    z-index: 999;
-  }
-
-  input[type='submit']{
-    width: 20%;
+.form {
+    max-width: 800px;
     margin: auto;
-    background: $important-green;
-    border: none;
-    border-radius: 5px;
-  }
 
-  select{
-    margin-bottom: 30px;
-    background: $middle-blue;
-    border: none;
-    border-radius: 5px;
-    color: $white;
-  }
+    input,
+    textarea {
+        width: 100%;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        padding-left: 15px;
+        border: 2px solid $dark-blue;
+    }
 
-  label{
-    width: 100%;
-    background: $dark-blue;
-    color: $white;
-    padding: 10px;
-    z-index: 9999;
-    clear: both;
-    margin-bottom: 0px;
-  }
+    input[type='email'],
+    input[type='password'],
+    input[type='text'] {
+        height: 50px;
+    }
 
-  #bottom-border-radius{
-    border-radius: 0 0 15px 15px !important;
-  }
+    textarea {
+        resize: none;
+        overflow: auto;
+        height: 100px;
+        padding-top: 15px;
+        z-index: 999;
+    }
+
+    input[type='submit'] {
+        width: 20%;
+        margin: auto;
+        background: $important-green;
+        border: none;
+        border-radius: 5px;
+    }
+
+    select {
+        margin-bottom: 30px;
+        background: $middle-blue;
+        border: none;
+        border-radius: 5px;
+        color: $white;
+    }
+
+    label {
+        width: 100%;
+        background: $dark-blue;
+        color: $white;
+        padding: 10px;
+        z-index: 9999;
+        clear: both;
+        margin-bottom: 0;
+    }
+
+    #bottom-border-radius {
+        border-radius: 0 0 15px 15px !important;
+    }
 }
