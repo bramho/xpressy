@@ -28,6 +28,7 @@ html {
 a {
     color: $anchor-color;
     text-decoration: none;
+    @include animate(all, 230ms);
 
     &:link,
     &:visited {

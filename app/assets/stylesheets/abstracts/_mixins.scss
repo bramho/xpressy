@@ -23,6 +23,14 @@
   }
 }
 
+@mixin animate ( $attr, $time ) {
+    -webkit-transition: $attr $time ease-in-out;
+    -moz-transition: $attr $time ease-in-out;
+    -ms-transition: $attr $time ease-in-out;
+    -o-transition: $attr $time ease-in-out;
+    transition: $attr $time ease-in-out;
+}
+
 @mixin transition($transition...) {
     -moz-transition:    $transition;
     -o-transition:      $transition;

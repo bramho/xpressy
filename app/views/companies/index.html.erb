@@ -16,25 +16,29 @@
    <div class="col-sm-9 company-container">
 
       <div class="company">
-         <h1><%= company.name %></h1>
+         <h1>Bedrijfsgegevens</h1>
          <ul>
+            <li><h2><span class="list-title">Naam:</span> <%= company.name %></h2></li>
             <li><span class="list-title">Beschrijving: </span><%= company.description %></li>
             <li><span class="list-title">Adres: </span><%= company.address %></li>
             <li><span class="list-title">Postcode: </span><%= company.postal_code %></li>
             <li><span class="list-title">Stad: </span><%= company.city %></li>
          </ul>
+         <%= link_to 'Bewerken', edit_company_path(company), class: "xpressy-button orange-button pull-right" %>
       </div>
 
       <div class="locations">
          <h1>Locaties</h1>
       <% company.locations.each do |location| %>
          <div class="location">
-            <li><span class="list-title">Naam: </span><%= location.name %></li>
-            <li><span class="list-title">Adres: </span><%= location.address %></li>
-            <li><span class="list-title">Postcode: </span><%= location.postal_code %></li>
-            <p>Stad: <%= location.city %></p>
-            <p><%= link_to 'Locatie Bewerken', company_location_path(company, location) %></p>
-            <p><%= link_to 'Locatie Verwijderen', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" } %></p>
+            <ul>
+               <li><h2><span class="list-title">Naam: </span><%= location.name %></h2></li>
+               <li><span class="list-title">Adres: </span><%= location.address %></li>
+               <li><span class="list-title">Postcode: </span><%= location.postal_code %></li>
+               <li><span class="list-title">Stad: </span><%= location.city %></li>
+            </ul>
+            <%= link_to 'Locatie Verwijderen', company_location_path(company, location), method: :delete, data: { confirm: "Are you sure?" }, class: "xpressy-button red-button pull-right" %>
+            <%= link_to 'Locatie Bewerken', edit_company_location_path(company, location), class: "xpressy-button orange-button pull-right" %>
          </div>
       <% end %>
       </div>

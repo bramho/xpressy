@@ -9,34 +9,21 @@
          </ul>
       </div>
    <% end %>
+   <div class="form">
+      <h1>Bedrijfsgegevens bewerken</h1>
 
-   <p>
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
-   </p>
+         <%= f.text_field :name, placeholder: "Naam" %>
 
-   <p>
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-   </p>
+         <%= f.text_area :description, placeholder: "Beschrijving" %>
 
-   <p>
-      <%= f.label :address %><br />
-      <%= f.text_field :address %>
-   </p>
+         <%= f.text_field :address, placeholder: "Adres" %>
 
-   <p>
-      <%= f.label :postal_code %><br />
-      <%= f.text_area :postal_code %>
-   </p>
+         <%= f.text_area :postal_code, placeholder: "Postcode" %>
 
-   <p>
-      <%= f.label :city %><br />
-      <%= f.text_field :city %>
-   </p>
+         <%= f.text_field :city, placeholder: "Stad" %>
 
-   <p>
-      <%= f.submit %>
-   </p>
+         <%= f.submit "Opslaan", class: "xpressy-button green-button" %>
+      </p>
+   </div>
 
 <% end %>
