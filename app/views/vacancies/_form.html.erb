@@ -16,7 +16,10 @@
 
   <%= f.text_area :description, class: '', placeholder: 'Bescrijving vacature' %>
 
-  <%= f.text_field :location, class: '', placeholder: 'Locatie' %>
+  <div class="field">
+     <%= f.label :location_id, "Locatie" %>
+     <%= f.collection_select :location_id, Location.all, :id, :name, class: "styled-select select-location" %>
+  </div>
 
   <%= f.text_area :demands, class: '', placeholder: 'Eisen' %>
 
@@ -30,10 +33,7 @@
          <span class="input__label-content input__label-content--kaede"> Locatie </span>
       </label>
    </span> -->
-   <div class="field">
-      <%= f.label :location_id %>
-      <%= f.collection_select :location_id, Location.all, :id, :name %>
-   </div>
+
   <%= f.text_area :experience, class: '', placeholder: 'Ervaring' %>
 
   <label for="">Mail voor sollicitanten die worden uitgenodigd voor een gesprek.</label>
@@ -45,8 +45,8 @@
   <label for="">Mail voor sollicitanten die worden afgewezen.</label>
   <textarea name="" id="bottom-border-radius" cols="30" rows="10" placeholder="Tekst"> </textarea>
 
-<p>
-  <%= f.submit %>
+<p class="submit-button" style="text-align:center;">
+  <%= f.submit "Volgende stap" %>
 </p>
 
 </div>

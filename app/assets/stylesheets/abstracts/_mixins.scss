@@ -23,6 +23,13 @@
   }
 }
 
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
 /// Make a context based selector a little more friendly
 /// @author Hugo Giraudel
 /// @param {String} $context
@@ -31,4 +38,3 @@
     @content;
   }
 }
-

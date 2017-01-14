@@ -75,6 +75,15 @@ ul {
    list-style: none;
 }
 
+select {
+   border: 2px solid $black !important;
+   width: 100%;
+   height: 40px;
+   background: $white  !important;
+   color: $black !important;
+   font-weight: lighter !important;
+}
+
 input, textarea {
    color: $black;
 }
