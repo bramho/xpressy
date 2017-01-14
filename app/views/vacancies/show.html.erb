@@ -26,7 +26,7 @@
       <div class='reaction <% if index == 0 %> active <% end %>'>
         <%= link_to reaction.first_name + ' ' + reaction.last_name, vacancy_reaction_path(@vacancy, reaction) %>
 
-         <%= (reaction.distance_to(Location.find(@vacancy.location_id)) * 1.61).round(2) %> km
+         <%= calculateDistance(reaction, @vacancy.location_id) %> km
 
         <div class="pull-right reaction-icons">
           <%= link_to (raw('<i class="fa fa-times fa-fw cross" aria-hidden="true"></i>')), vacancy_reaction_path(@vacancy, reaction), method: :delete, data: { confirm: 'Weet u zeker dat u deze reactie wilt verwijderen?' }, class:"" %>
