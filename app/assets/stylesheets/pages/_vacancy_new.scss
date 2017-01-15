@@ -65,6 +65,10 @@ span.module-text {
          border-bottom: 2px solid $light-grey;
          cursor: pointer;
 
+         span.size-control {
+            display: none;
+         }
+
          &:hover, &:active {
             background-color: $light-blue;
          }
@@ -83,8 +87,23 @@ span.module-text {
          min-height: 200px;
          width: 23%;
          float: left;
-         margin: 1em 1%;
+         margin: 1em 8px;
          display: block;
+
+         span.size-control {
+            float: right;
+            margin-right: 10px;
+            font-size: 20px;
+         }
+
+         span.remove-width-control {
+            cursor: pointer;
+         }
+
+         span.add-width-control {
+            margin-left: 10px;
+            cursor: pointer;
+         }
       }
    }
 }

@@ -1,128 +1,209 @@
 <!-- sort: true -->
 <div class="container-fluid">
-   <div class="col-md-3 modules-pick-zone">
-      <div id="sortTrue" class="modules-list-group" style="min-height:300px;">
-        <div data-name="module-1" data-id="ter" class="modules-list-item"><span class="module-text">Module 1</span></div>
-        <div data-name="module-2" data-id="tr" class="modules-list-item"><span class="module-text">Module 2</span></div>
-        <div data-name="module-3" data-id="2345" class="modules-list-item"><span class="module-text">Module 3</span></div>
-        <div data-name="module-4" data-id="erf" class="modules-list-item"><span class="module-text">Module 4</span></div>
-        <div data-name="module-5" data-id="kjh" class="modules-list-item"><span class="module-text">Module 5</span></div>
-      </div>
-   </div>
+    <div class="col-md-3 modules-pick-zone">
+        <div id="sortTrue" class="modules-list-group" style="min-height:300px;">
 
-   <div class="col-md-9 modules-drop-zone">
-      <!-- sort: false -->
-      <div id="sortFalse" class="picked-modules-group" style="min-height:300px;">
+            <div data-name="module-1" data-id="module-1" data-width="1" class="modules-list-item module-1">
+                <span class="module-text">Module 1</span>
+                <span class="size-control">
+                    <span class="remove-width-control" style="display:none;" onclick="ChangeWidth(false, 'module-1')">
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+                    <span class="add-width-control" onclick="ChangeWidth(true, 'module-1')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
 
-      </div>
-   </div>
+            <div data-name="module-2" data-id="module-2" data-width="1" class="modules-list-item module-2">
+                <span class="module-text">Module 2</span>
+                <span class="size-control">
+                    <span class="remove-width-control" style="display:none;"  onclick="ChangeWidth(false, 'module-2')">
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+                    <span class="add-width-control" onclick="ChangeWidth(true, 'module-2')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
+
+            <div data-name="module-3" data-id="module-3" data-width="1" class="modules-list-item module-3">
+                <span class="module-text">Module 3</span>
+                <span class="size-control">
+                    <span class="remove-width-control" style="display:none;"  onclick="ChangeWidth(false, 'module-3')">
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+                    <span class="add-width-control" onclick="ChangeWidth(true, 'module-3')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
+            <div data-name="module-4" data-id="module-4" data-width="1" class="modules-list-item module-4">
+                <span class="module-text">Module 4</span>
+                <span class="size-control">
+                    <span class="remove-width-control" style="display:none;"  onclick="ChangeWidth(false, 'module-4')">
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+                    <span class="add-width-control" onclick="ChangeWidth(true, 'module-4')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
+            <div data-name="module-5" data-id="module-5" data-width="1" class="modules-list-item module-5">
+                <span class="module-text">Module 5</span>
+                <span class="size-control">
+                    <span class="remove-width-control" style="display:none;"  onclick="ChangeWidth(false, 'module-5')">
+                        <i class="fa fa-caret-left" aria-hidden="true"></i>
+                    </span>
+                    <span class="add-width-control" onclick="ChangeWidth(true, 'module-5')">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9 modules-drop-zone">
+        <!-- sort: false -->
+        <div id="sortFalse" class="picked-modules-group" style="min-height:300px;"></div>
+    </div>
 </div>
 
-  <script>
-   var order, sortTrue, sortFalse;
+<script>
 
-   sortTrue = document.getElementById('sortTrue');
-   sortFalse = document.getElementById('sortFalse');
+    var order,
+        sortTrue,
+        sortFalse,
+        addWidth;
 
-   Sortable.create(sortTrue, {
-   group: "sorting",
-   });
+    sortTrue = document.getElementById('sortTrue');
+    sortFalse = document.getElementById('sortFalse');
 
-   Sortable.create(sortFalse, {
-   group: "sorting",
-   onUpdate: function (/**Event*/evt) {
-      updateOrder();
-   },
+    Sortable.create(sortTrue, {group: "sorting"});
 
-   onAdd: function (/**Event*/evt) {
-      updateOrder();
-   },
+    Sortable.create(sortFalse, {
+        group: "sorting",
+        onUpdate: function (evt) {
+            updateOrder();
+        },
 
-   onRemove: function(evt) {
-      updateOrder();
-   }
-   });
+        onAdd: function (evt) {
+            updateOrder();
+        },
 
-   function updateOrder() {
-   order = {
-      gallery: []
-   };
-   $('#sortFalse div[data-id]').each(function() {
-      order.gallery.push($(this).attr('data-id'));
-   });
-   console.log(order);
-   updateOrderDB();
-   }
+        onRemove: function (evt) {
+            updateOrder();
+        }
+    });
 
-   function updateOrderDB() {
-   // $.ajax({
-   //   type: "POST",
-   //   url: "ajax.php",
-   //   data: order
-   // }).done(function (response) {
-   //     console.log(response);
-   // });
-   }
-  </script>
+    function updateOrder() {
+        order = {
+            gallery: []
+        };
+        $('#sortFalse div[data-id]').each(function () {
+            order.gallery.push($(this).data('id'));
+        });
+        console.log(order);
+        updateOrderDB();
+    }
+
+    function updateOrderDB() {
+        // $.ajax({   type: "POST",   url: "ajax.php",   data: order }).done(function (response) {     console.log(response); });
+    }
+
+    function ChangeWidth(addWidth, clickedModule) {
+
+        var currentPixelWidth = $("." + clickedModule).width();
+        var parentWidth = $("." + clickedModule).offsetParent().width();
+        var percent = 100 * (currentPixelWidth / parentWidth);
+        var dataWidth = $("." + clickedModule).data("width");
+
+        if (addWidth === true) {
+            var percentText = percent + 25 + "%";
+            dataWidth = dataWidth + 1;
+
+            if (dataWidth === 2) {
+               $("." + clickedModule + " .remove-width-control").css({"display": "inline-block"});
+            } else if (dataWidth === 4) {
+               $("." + clickedModule + " .add-width-control").css({"display": "none"});
+            }
+
+            $("." + clickedModule).data("width", dataWidth);
+        } else {
+            var percentText = percent - 25 + "%";
+            dataWidth = dataWidth - 1;
+
+            if (dataWidth === 1) {
+               $("." + clickedModule + " .remove-width-control").css({"display": "none"});
+            } else if (dataWidth === 3) {
+               $("." + clickedModule + " .add-width-control").css({"display": "inline-block"});
+            }
+
+            $("." + clickedModule).data("width", dataWidth);
+        }
+
+        $("." + clickedModule).css({"width": percentText});
+    }
+</script>
 
 <%= form_for @vacancy, url: wizard_path do |f| %>
 
-   <!-- <%= render partial: 'vacancy_steps/partials/contact-gegevens', locals: {f: f} %> -->
+<!-- <%= render partial: 'vacancy_steps/partials/contact-gegevens', locals: {f: f} %> -->
 
-   <div class="button" id="contact-gegevens" onclick="show_module('contact-gegevens-module')">Contact Gegevens</div>
-   <div class="button" id="social-media" onclick="show_module('social-media-module')">Social Media</div>
-   <!-- <div class="button" id="profiel-foto" onclick="show_module('profiel-foto-module')">Profiel Foto</div> -->
+<div class="button" id="contact-gegevens" onclick="show_module('contact-gegevens-module')">Contact Gegevens</div>
+<div class="button" id="social-media" onclick="show_module('social-media-module')">Social Media</div>
+<!-- <div class="button" id="profiel-foto" onclick="show_module('profiel-foto-module')">Profiel Foto</div> -->
 
-   <div id="contact-gegevens-module" class="contact-gegevens-module" style="display:none">
-      <input type="hidden" name="vacancy[contact_fields_name]" value="contact_gegevens">
+<div id="contact-gegevens-module" class="contact-gegevens-module" style="display:none">
+    <input type="hidden" name="vacancy[contact_fields_name]" value="contact_gegevens">
 
-      <div class="field">
-         <%= f.label :contact_fields_horizontal_position %>
-         <%= f.text_field :contact_fields_horizontal_position %>
-      </div>
+    <div class="field">
+        <%= f.label :contact_fields_horizontal_position %>
+        <%= f.text_field :contact_fields_horizontal_position %>
+    </div>
 
-      <div class="field">
-         <%= f.label :contact_fields_vertical_position %>
-         <%= f.text_field :contact_fields_vertical_position %>
-      </div>
+    <div class="field">
+        <%= f.label :contact_fields_vertical_position %>
+        <%= f.text_field :contact_fields_vertical_position %>
+    </div>
 
-      <div class="field">
-         <%= f.label :contact_fields_width %>
-         <%= f.text_field :contact_fields_width %>
-      </div>
+    <div class="field">
+        <%= f.label :contact_fields_width %>
+        <%= f.text_field :contact_fields_width %>
+    </div>
 
-      <div class="field">
-         <%= f.label :contact_fields_height %>
-         <%= f.text_field :contact_fields_height %>
-      </div>
-   </div>
+    <div class="field">
+        <%= f.label :contact_fields_height %>
+        <%= f.text_field :contact_fields_height %>
+    </div>
+</div>
 
-   <div id="social-media-module" class="social-media-module" style="display:none">
-      <input type="hidden" name="vacancy[social_media_name]" value="social_media">
+<div id="social-media-module" class="social-media-module" style="display:none">
+    <input type="hidden" name="vacancy[social_media_name]" value="social_media">
 
-      <div class="field">
-         <%= f.label :social_media_horizontal_position %>
-         <%= f.text_field :social_media_horizontal_position %>
-      </div>
+    <div class="field">
+        <%= f.label :social_media_horizontal_position %>
+        <%= f.text_field :social_media_horizontal_position %>
+    </div>
 
-      <div class="field">
-         <%= f.label :social_media_vertical_position %>
-         <%= f.text_field :social_media_vertical_position %>
-      </div>
+    <div class="field">
+        <%= f.label :social_media_vertical_position %>
+        <%= f.text_field :social_media_vertical_position %>
+    </div>
 
-      <div class="field">
-         <%= f.label :social_media_width %>
-         <%= f.text_field :social_media_width %>
-      </div>
+    <div class="field">
+        <%= f.label :social_media_width %>
+        <%= f.text_field :social_media_width %>
+    </div>
 
-      <div class="field">
-         <%= f.label :social_media_height %>
-         <%= f.text_field :social_media_height %>
-      </div>
-   </div>
+    <div class="field">
+        <%= f.label :social_media_height %>
+        <%= f.text_field :social_media_height %>
+    </div>
+</div>
 
-   <div class="field">
-      <%= f.submit "Volgende" %>
-   </div>
+<div class="field">
+    <%= f.submit "Volgende" %>
+</div>
 
 <% end %>
