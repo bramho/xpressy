@@ -1,15 +1,73 @@
+.vacancy-box{
+    overflow: hidden;
+}
+
 .vacancy-wrapper{
   text-align: center;
-  background: #666;
+  background: $middle-blue;
   color: #fff;
   min-height: 300px;
+  position: relative;
+
+.vacancy-overlay{
+  width: 100%;
+  height: 100%;
+  background: $primary-blue;
+  color: $white;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  margin: 0;
+  display: none;
+  text-align: left;
+  padding-top: 10%;
+
+  a{
+    text-decoration: none;
+    text-align: left;
+  }
+
+    i{
+      font-size: 50px;
+      color: $white;
+      margin-top: 0;
+      margin-right: 10px;
+    }
+
+  span{
+    font-size: 20px;
+  }
+
+  .vacancy-option{
+    margin-left: 10%;
+  }
+
+  .onoffswitch{
+    display: inline-block;
+
+  label{
+    margin-bottom: 0px;
+  }
+  }
+}
+
+  &:hover > .vacancy-overlay{
+    left: 0;
+    display: block;
+  }
+
+  i{
+    font-size: 150px;
+    margin-top: 10%;
+  }
 
   h2{
-    background: #fff;
+    font-size: 30px;
     padding: 10px 0 10px 0;
+    margin-top: 0;
 
     a{
-      color: #000;
+      color: $white;
       text-decoration: none;
     }
   }
@@ -21,5 +79,76 @@
 
   .fa-plus-circle{
         font-size: 220px;
+  }
+}
+
+.vacancy-options{
+  color: $white;
+  margin-top: -10px;
+  padding: 5px 10px 5px 10px;
+
+  a{
+    color: $black;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      color: $light-primary-blue;
+    }
+  }
+}
+
+.options-bar{
+  padding: 15px 0 15px;
+  // margin-bottom: 30px;
+  background: $primary-blue;
+
+  .btn-group{
+    width: 100%;
+
+    #btn-text{
+      width: 90%;
+      background: $white;
+      color: #666;
+      text-align: left;
+    }
+
+    #btn-arrow{
+      width: 10%;
+    }
+  }
+
+  select{
+  width: 100%;
+  }
+
+  a{
+    text-decoration: none;
+
+  .new-vac{
+    position: relative;
+    margin: 0px;
+    border-radius: 5px;
+    text-align: left;
+    width: 100%;
+    padding: 8px 5px 8px 15px;
+    background: $white;
+    color: $grey;
+
+      i{
+      color: $important-red;
+      font-size: 50px;
+      position: absolute;
+      top: -9px;
+      right: -8px;
+      }
+    }
+  }
+
+  button{
+    margin: 0;
+    border: 1px solid $light-blue;
+    border-radius: 5px;
+    color: $white;
+    background: $light-blue;
   }
 }

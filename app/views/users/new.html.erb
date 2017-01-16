@@ -1,49 +1,45 @@
-<div class="user-wrapper">
+<div class="container">
+<div class="row">
+   <% @companies.each do |company| %>
+  <div class="col-sm-3 sidenav">
+    <%= link_to (raw('<p>Bedrijfsgegevens<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), companies_path, class:"" %>
+    <%= link_to (raw('<p>Bedrijfslocatie toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_company_location_path(company), class:"" %>
+    <%= link_to (raw('<p class="active">Gebruiker toevoegen<i class="fa fa-arrow-right pull-right" aria-hidden="true"></i></p>')), new_user_path, class:"" %>
+  </div>
+  <% end %>
 
-  <h1>Create new user</h1>
-  
-  <%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
-     <div class="field">
-       <%= f.label :email %><br />
-       <%= f.email_field :email, autofocus: true %>
-     </div>
+  <div class="col-sm-9 company-container">
+    <div class="form new-user-form">
 
-     <div class="address">
-        Add your <%= f.label :avatar %><br />
-        <%= f.file_field :avatar %>
-     </div>
+      <h1>Gebruiker toevoegen</h1>
 
-     <div class="field">
-       <%= f.label :first_name %><br />
-       <%= f.text_field :first_name, autocomplete: "off" %>
-     </div>
+      <%= form_for(User.new, html: { multipart: true }, url: create_user_path) do |f| %>
 
-     <div class="field">
-       <%= f.label :last_name %><br />
-       <%= f.text_field :last_name, autocomplete: "off" %>
-     </div>
+           <%= f.email_field :email, autofocus: true, placeholder: 'Email' %>
 
-     <div class="field">
-        <%= f.label :admin %><br />
-        <%= f.select :admin, [true, false], :promt => 'Select One' %>
-     </div>
+            <p>Voeg een avatar toe (maximaal 250x250)</p>
+            <%= f.file_field 'avatar', :class => 'avatar_button' %>
 
-     <div class="field">
-       <%= f.label :password %>
-       <% if @minimum_password_length %>
-       <em>(<%= @minimum_password_length %> characters minimum)</em>
-       <% end %><br />
-       <%= f.password_field :password, autocomplete: "off" %>
-     </div>
+           <%= f.text_field :first_name, autocomplete: "off", placeholder: 'Voornaam' %>
 
-     <div class="field">
-       <%= f.label :password_confirmation %><br />
-       <%= f.password_field :password_confirmation, autocomplete: "off" %>
-     </div>
+           <%= f.text_field :last_name, autocomplete: "off", placeholder: 'Achternaam' %>
 
-     <div class="actions">
-       <%= f.submit 'Sign up new user', :class => 'submit-button' %>
+            <p>Admin?</p>
+            <%= f.select :admin, [["Ja", true], ["Nee", false]], :promt => 'Maak een keuze' %>
 
-     </div>
+           <% if @minimum_password_length %>
+           <em>(<%= @minimum_password_length %> characters minimum)</em>
+           <% end %><br />
+           <%= f.password_field :password, autocomplete: "off", placeholder: 'Wachtwoord' %>
+
+           <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Wachtwoord bevestigen' %>
+
+         <div class="actions">
+           <%= f.submit 'Gebruiker aanmaken', :class => 'submit-button' %>
+         </div>
+
+       <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
+</div>

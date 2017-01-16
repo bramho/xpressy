@@ -1,0 +1,62 @@
+.bg-image {
+   position: absolute;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background: url(bg.jpeg) no-repeat;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+.flash-notice-space {
+   margin-bottom: 30px;
+}
+
+.alert {
+   a {
+      color: red !important;
+      margin-top: -4px;
+   }
+}
+
+.alert-success {
+   a {
+      color: green !important;
+      margin-top: -4px;
+      float: right;
+   }
+}
+
+.login-wrapper{
+  background: $opacity-green;
+  border-radius: 20px;
+  padding: 50px;
+  margin-top: 20%;
+  text-align: center;
+
+  img{
+    margin-bottom: 15%;
+  }
+
+  input[type="email"], input[type="password"]{
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  input[type="submit"]{
+    background: $white;
+    
+    color: $primary-blue;
+    border: none;
+    border-radius: 15px;
+    margin: 50px 0 50px;
+    padding: 15px;
+  }
+}

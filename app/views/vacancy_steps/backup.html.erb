@@ -1,0 +1,105 @@
+<%= form_for @vacancy, url: wizard_path do |f| %>
+
+   <div class="field">
+      <%= f.label :modules_array %>
+      <% ["contact-gegevens", "social-media"].each do |m| %>
+         <%= check_box_tag "vacancy[modules_array][]", m, false, :onchange=>"toggleForms('module-checkbox', '#{m}')" ,id: "vacancy_modules_#{m} module-checkbox" %><%= m %>
+      <% end %>
+   </div>
+
+   <!-- Checkboxes Contact Gegevens -->
+   <div class="field" id="contact-gegevens-vertical-position" style="display:none">
+      <%= f.label :vertical_positions_array %>
+      <% ["1", "2"].each do |m| %>
+         <%= check_box_tag "vacancy[vertical_positions_array][]", m, false, id: "vacancy_vertical_positions_#{m}" %><%= ' Verticale positie ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field" id="contact-gegevens-horizontal-position" style="display:none">
+      <%= f.label :horizontal_positions_array %>
+      <% ["1", "2"].each do |m| %>
+         <%= check_box_tag "vacancy[horizontal_positions_array][]", m, false, id: "horizontal_vertical_positions_#{m}" %><%= ' Horizontale positie ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field" id="contact-gegevens-width-size" style="display:none">
+      <%= f.label :width_size_array %>
+      <% ["1", "2", "3", "4"].each do |m| %>
+         <%= check_box_tag "vacancy[width_size_array][]", m, false, id: "width_size_array_#{m}" %><%= ' Width ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field" id="contact-gegevens-height-size" style="display:none">
+      <%= f.label :horizontal_positions_array %>
+      <% ["1", "2", "3", "4"].each do |m| %>
+         <%= check_box_tag "vacancy[height_size_array][]", m, false, id: "height_size_array_#{m}" %><%= ' Height ' + m %>
+      <% end %>
+   </div>
+
+   <!-- Checkboxes Social Media -->
+   <div class="field" id="social-media-vertical-position" style="display:none">
+      <%= f.label :vertical_positions_array %>
+      <% ["3", "4"].each do |m| %>
+         <%= check_box_tag "vacancy[vertical_positions_array][]", m, false, id: "vacancy_vertical_positions_#{m}" %><%= ' Verticale positie ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field" id="social-media-horizontal-position" style="display:none">
+      <%= f.label :horizontal_positions_array %>
+      <% ["3", "4"].each do |m| %>
+         <%= check_box_tag "vacancy[horizontal_positions_array][]", m, false, id: "horizontal_vertical_positions_#{m}" %><%= ' Horizontale positie ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field" id="social-media-width-size" style="display:none">
+      <%= f.label :width_size_array %>
+      <% ["1", "2", "3", "4"].each do |m| %>
+         <%= check_box_tag "vacancy[width_size_array][]", m, false, id: "width_size_array_#{m}" %><%= ' Width ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field" id="social-media-height-size" style="display:none">
+      <%= f.label :horizontal_positions_array %>
+      <% ["1", "2", "3", "4"].each do |m| %>
+         <%= check_box_tag "vacancy[height_size_array][]", m, false, id: "height_size_array_#{m}" %><%= ' Height ' + m %>
+      <% end %>
+   </div>
+
+   <div class="field">
+      <%= f.submit "Continue" %>
+   </div>
+
+   <script>
+      function toggleForms(checkbox, hidden_field) {
+         if($("#" + checkbox).toggle()) {
+            $("#" + hidden_field + "-vertical-position").toggle();
+            $("#" + hidden_field + "-horizontal-position").toggle();
+            $("#" + hidden_field + "-width-size").toggle();
+            $("#" + hidden_field + "-height-size").toggle();
+         }
+      }
+
+   </script>
+
+<% end %>
+
+<!-- <%= form_for @vacancy, format: :json, url: wizard_path do |f| %>
+   <div id="error_explanation" style='display:none;'>
+      <ul>
+         <% if @vacancy.errors.any? %>
+           <% @vacancy.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
+         <% end %>
+      </ul>
+   </div>
+
+   <div class="fields">
+      <%= f.label :modules_array %>
+      <% ["contact-gegevens", "social-media"].each do |m| %>
+         <%= check_box_tag "vacancy[modules_array][]", m, false, id: "vacancy_modules_#{m} module-checkbox" %><%= m %>
+      <% end %>
+   </div>
+
+   <%= f.submit "Continue" %>
+<% end %> -->

@@ -2,31 +2,50 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 
-.header {
-    width: 100%;
-    background-color: $primary-color;
-    padding: 20px 0px 10px 0px;
+header {
+  width: 100%;
+  background-color: $dark-blue;
+  padding: 20px 0px 10px 0px;
+
+  nav{
+  max-width: 1480px;
+  margin: auto;
+  padding: 0 15px;
 
     ul {
-      text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: $white;
 
       li {
-         display: inline-block;
-         margin: 0px 10px;
+        display: inline-block;
+        margin: 0px 10px;
+        font-size: 18px;
 
-         a {
-            &:hover, &:focus {
-               color: $secondary-color;
-            }
-         }
+        a {
+          &:hover, &:focus {
+            color: $primary-blue;
+          }
+
+          i{
+            font-size: 30px !important;
+          }
+        }
+        .active{
+          color: $primary-blue;
+        }
+
+
       }
-   }
+    }
+  }
 }
 
 // Sub header
 .sub-header {
    width: 100%;
-   background-color: $light-primary-color;
+   background-color: $light-primary-blue;
    padding: 10px 0px;
 
    ul {

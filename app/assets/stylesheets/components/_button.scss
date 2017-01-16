@@ -1,0 +1,40 @@
+button,
+input[type=submit] {
+   @include animate(all, 230ms);
+}
+
+.xpressy-button {
+   border: none;
+   border-radius: 5px;
+   color: $white !important;
+   font-weight: lighter;
+   padding: 15px 25px;
+
+   &:hover, &:active {
+      color: $white;
+   }
+}
+
+.green-button {
+   background-color: $important-green;
+
+   &:hover, &:active {
+      background-color: $hover-important-green;
+   }
+}
+
+.orange-button {
+   background-color: $important-orange;
+
+   &:hover, &:active {
+      background-color: $hover-important-orange;
+   }
+}
+
+.red-button {
+   background-color: $important-red;
+
+   &:hover, &:active {
+      background-color: $hover-important-red;
+   }
+}

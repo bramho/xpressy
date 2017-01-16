@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :users, except: :create
   get 'create_user' => 'users#add_new_user', as: :new_user_by_admin
   post 'create_user' => 'users#create', as: :create_user
+  get 'wallet' => 'vacancies#wallet'
+
+
+  post '/update_with_modules', to: 'vacancies#updateWithModules'
 
   # devise_for :users, controllers: {
   #       sessions: 'users/sessions'
@@ -15,8 +19,9 @@ Rails.application.routes.draw do
   end
 
   # resources :vacancy_steps
-  resources :companies
-  resources :locations
+  resources :companies do
+     resources :locations
+  end
 
   root "vacancies#index"
 end

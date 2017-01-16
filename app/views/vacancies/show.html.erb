@@ -1,79 +1,53 @@
-<header class="sub-header">
-   <ul>
-      <li><%= link_to "Back", root_path %></li>
+<div class="container">
+<div class="row">
+  <div class="col-sm-3 vacancy-candidates">
 
-      <% if user_signed_in? %>
-         |
-         <li><%= link_to "Edit", edit_vacancy_path(@vacancy) %></li>
-         |
-         <li><%= link_to "Delete", vacancy_path(@vacancy), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      <% end %>
-   </ul>
-</header>
+   <% if user_signed_in? %>
+    <div class="buttons">
+      <%= link_to (raw('Vacature Verwijderen <i class="fa fa-times" aria-hidden="true"></i>')), vacancy_path(@vacancy), method: :delete, data: { confirm: 'Weet u het zeker dat u deze vacature wilt verwijderen?' }, class:"button-red" %><br /><br />
 
-<div class="col-md-4 vacancy-info">
-   <h1 class="title">
-      <%= @vacancy.title %>
-   </h1>
+      <%= link_to (raw('Vacature Bewerken <i class="fa fa-pencil" aria-hidden="true"></i>')), edit_vacancy_path(@vacancy), class:"button-red" %>
+      <br /><br />
 
-   <p class="description">
-      <b>Description:</b><br />
-      <%= @vacancy.description %>
-   </p>
+      <a href="#" class="button-red">Plaats in portefeuille <i class="fa fa-star" aria-hidden="true"></i></a>
+    </div>
+   <% end %>
 
-   <p class="location">
-      <b>Location:</b><br />
-      <%= @vacancy.location %>
-   </p>
+    <div class="filters">
+      <a href="#" class="on">MBO4 X</a> |
+      <a href="#" class="off">HBO -</a> |
+      <a href="#" class="off">HTML -</a> |
+      <a href="#" class="on">CSS X</a>|
+      <a href="#" class="on">PHP X</a> <br>
+    </div>
 
-   <p class="demands">
-      <b>Demands:</b><br />
-      <%= @vacancy.demands %>
-   </p>
+    <div class="reactions">
+    <% @vacancy.reactions.each_with_index do |reaction, index| %>
+      <div class='reaction <% if index == 0 %> active <% end %>'>
+        <%= link_to reaction.first_name + ' ' + reaction.last_name, vacancy_reaction_path(@vacancy, reaction) %>
 
-   <p class="branche">
-      <b>Branche:</b><br />
-      <%= @vacancy.branche %>
-   </p>
+         <%= calculateDistance(reaction, @vacancy.location_id) %> km
 
-   <p class="education_level">
-      <b>Education level:</b><br />
-      <%= @vacancy.education_level %>
-   </p>
+        <div class="pull-right reaction-icons">
+          <%= link_to (raw('<i class="fa fa-times fa-fw cross" aria-hidden="true"></i>')), vacancy_reaction_path(@vacancy, reaction), method: :delete, data: { confirm: 'Weet u zeker dat u deze reactie wilt verwijderen?' }, class:"" %>
+          <%= link_to (raw('<i class="fa fa-question fa-fw question" aria-hidden="true"></i>')), edit_vacancy_path(@vacancy), class:"" %>
+          <%= link_to (raw('<i class="fa fa-check fa-fw check" aria-hidden="true"></i>')), edit_vacancy_path(@vacancy), class:"" %>
+        </div>
+      </div>
+    <% end %>
 
-   <p class="experience">
-      <b>Experience:</b><br />
-      <%= @vacancy.experience %>
-   </p>
+      <div class="reaction-form">
+         <%= render 'reactions/form' %>
+      </div>
+    </div>
+  </div>
 
-   <p class="modules">
-      <b>Modules:</b><br />
-      <%= @vacancy.modules_array %>
-   </p>
+  <div class="col-sm-9 xpressheet">
 
-   <p class="horizontal_positions">
-      <b>Positions:</b><br />
-      <%= @vacancy.horizontal_positions_array %>
-   </p>
-
-   <p class="vertical_positions">
-      <b>Positions:</b><br />
-      <%= @vacancy.vertical_positions_array %>
-   </p>
-
-   <p class="width_size">
-      <b>Positions:</b><br />
-      <%= @vacancy.width_size_array %>
-   </p>
-
-   <p class="hight_size">
-      <b>Positions:</b><br />
-      <%= @vacancy.hight_size_array %>
-   </p>
-
+    <!-- <img src="http://placehold.it/1000x1000" class="img-responsive"> -->
+  </div>
 </div>
-
-<div class="col-md-4">
+<!-- <div class="col-md-4">
    <div id="reaction">
       <h2><%= @vacancy.reactions.count %> Reactions</h2>
       <%= render @vacancy.reactions %>
@@ -83,4 +57,4 @@
 <div class="col-md-4">
    <h3>Add a reaction</h3>
    <%= render 'reactions/form' %>
-</div>
+</div> -->

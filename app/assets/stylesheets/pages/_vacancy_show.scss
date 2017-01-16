@@ -1,0 +1,98 @@
+.vacancy-candidates{
+  background: $white;
+  padding: 0px;
+  color: $black;
+
+  .buttons{
+    margin-bottom: 10px;
+    background: $primary-blue;
+    padding: 15px 0px 15px 10px;
+
+    .button-red{
+      background: $important-red;
+      padding: 8px;
+      border-radius: 8px;
+      color: $white;
+      margin-bottom: 10px;
+    }
+  }
+
+  .filters{
+    padding-left: 10px;
+  }
+
+  .on{
+    color: $important-green;
+  }
+
+  .off{
+    color: $important-red;
+  }
+
+  a{
+    text-decoration: none;
+      color: $black;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      color: $black;
+   }
+  }
+
+  .reaction-icons{
+    padding-right: 10px;
+  }
+
+  .reactions{
+    margin-top: 20px;
+
+    .active {
+      background-color: $ultra-light-blue;
+    }
+
+       .reaction{
+         padding: 15px 0 15px 5px;
+         color: $black;
+         border-bottom: 2px solid $white;
+         cursor: pointer;
+
+         &:hover, &:active {
+            background-color: $ultra-light-blue;
+         }
+       }
+  }
+
+  i{
+    color: $white;
+   //  font-size: 20px;
+    padding-right: 1px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 20px;
+  }
+
+  .cross{
+    background: $important-red;
+  }
+
+  .question{
+   background: $primary-blue;
+  }
+
+  .check{
+    background: $important-green;
+  }
+
+}
+
+.xpressheet{
+  padding-left: 0px;
+
+  h1{
+    text-align: center;
+    background: $light-primary-blue;
+    margin: 0px;
+    padding: 15px 0px;
+  }
+}

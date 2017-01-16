@@ -1,0 +1,48 @@
+<header class="sub-header">
+   <ul>
+      <li><%= link_to "Back", vacancies_path(:vacancy_id) %></li>
+
+      <% if user_signed_in? %>
+         |
+         <li><%= link_to "Edit", edit_vacancy_reaction_path(params[:vacancy_id], params[:id]) %></li>
+         |
+         <li><%= link_to "Delete", vacancy_reaction_path(params[:vacancy_id], params[:id]), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+   </ul>
+</header>
+
+<div class="location-info">
+   <h1 class="name">
+      <%= @reaction.name %>
+   </h1>
+
+   <p class="address">
+      <b>Address:</b><br />
+      <%= @reaction.address %>
+   </p>
+
+   <p class="postal_code">
+      <b>Postal Code:</b><br />
+      <%= @reaction.postal_code %>
+   </p>
+
+   <p class="city">
+      <b>City:</b><br />
+      <%= @reaction.city %>
+   </p>
+
+   <p class="country">
+      <b>County:</b><br />
+      <%= @reaction.country %>
+   </p>
+
+   <p class="longitude">
+      <b>Longitude:</b><br />
+      <%= @reaction.longitude %>
+   </p>
+
+   <p class="latitude">
+      <b>Latitude:</b><br />
+      <%= @reaction.latitude %>
+   </p>
+</div>

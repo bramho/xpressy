@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
    # before_filter :authorize_admin, only: :create
    before_action :authorize_admin
+   before_action :get_companies
 
    def add_new_user
       render 'new'
+   end
+
+   def get_companies
+      @companies = Company.all
    end
 
    def create

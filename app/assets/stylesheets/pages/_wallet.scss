@@ -1,0 +1,24 @@
+.sidenav{
+  .active{
+    background: $ultra-light-blue !important;
+  }
+  .vacancy{
+    background: $white;
+    p{
+      margin: 0;
+      padding: 10px 10px;
+      font-size: 14px;
+      i{
+        color: $primary-blue;
+      }
+    }
+  }
+
+  .candidate{
+    background: $light-blue;
+    p{
+      margin: 0;
+      padding: 5px 10px;
+    }
+  }
+}

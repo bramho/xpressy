@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  social_media_type: MyString
+  social_media_value: MyString
+  vacancy: one
+
+two:
+  social_media_type: MyString
+  social_media_value: MyString
+  vacancy: two

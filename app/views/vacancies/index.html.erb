@@ -1,22 +1,101 @@
-<div class="row">
+<div class="row options-bar">
+  <div class="container">
+  <div class="col-sm-4 col-md-4 col-lg-3">
 
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <div class="vacancy-wrapper">
-        <h2><%= link_to "Nieuwe Vacature", new_vacancy_path %></h2>
-        <%= link_to '<i class="fa fa-plus-circle" aria-hidden="true"></i>'.html_safe, new_vacancy_path %>
-
-      </div>
+    <%= form_tag vacancies_path, method: 'get' do %>
+    <div class="input-group">
+         <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Zoeken'%>
+      <span class="input-group-btn">
+        <%= button_tag(type: "submit", class: "btn btn-secondary") do %>
+            <i class="fa fa-search"></i>
+        <% end %>
+      </span>
     </div>
-<% @vacancies.each do |vacancy| %>
+    <% end %>
+  </div>
 
-  <div class="col-sm-6 col-md-4 col-lg-3">
-    <div class="vacancy-wrapper">
-       <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
-       <p class="description"><%= vacancy.description %></p>
-       <p class="updated">Voor het laatst gewijzigd op: <%= vacancy.updated_at %></p>
+  <div class="col-sm-4 col-md-4 col-lg-3">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-text">Filters</button>
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="btn-arrow">
+        <span class="caret"></span>
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Optie1</a></li>
+      </ul>
     </div>
   </div>
 
+  <div class="col-sm-4 col-md-4 col-lg-3 pull-right">
+    <a href="vacancies/new">
+      <div class="new-vac">
+        Vacature Aanmaken <i class="fa fa-plus-circle fa-1x pull-right" aria-hidden="true"></i>
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+
+<div class="flash-notice-space">
+   <% flash.each do |key, value| %>
+      <div class="alert alert-success">
+         <a href="#" data-dismiss="alert" class="close-success">x</a>
+         <ul>
+            <li><%= value %></li>
+         </ul>
+      </div>
+      <!-- <%= content_tag :div, value, :class => "flash #{key}" unless value.blank? %> -->
+    <% end %>
+</div>
+
+<div class="container">
+
+<div class="row">
+<% @vacancies.each do |vacancy| %>
+
+  <div class="col-sm-6 col-md-4 col-lg-3">
+
+    <div class="vacancy-box">
+
+      <div class="vacancy-wrapper">
+          <i class="fa fa-code fa-5x" aria-hidden="true"></i>
+         <h2 class="title"><%= link_to vacancy.title, vacancy %></h2>
+
+
+        <div class="vacancy-overlay">
+<!--           <% if vacancy.online %>
+             <input type="radio" name="on_off_<%= vacancy.id %>" value="on" checked="checked"> On
+             <input type="radio" name="on_off_<%= vacancy.id %>" value="off"> Off
+          <% else %>
+            <input type="radio" name="on_off_<%= vacancy.id %>" value="on"> On
+            <input type="radio" name="on_off_<%= vacancy.id %>" value="off" checked="checked"> Off
+          <% end %> -->
+
+          <span class="vacancy-option">
+            <i class="fa fa-power-off" aria-hidden="true"></i>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+            </span> <br>
+
+          <span class="vacancy-option"> <i class="fa fa-eye" aria-hidden="true"></i> <%= link_to "Reacties Inzien", vacancy %> </span> <br>
+          <span class="vacancy-option"> <i class="fa fa-pencil" aria-hidden="true"></i> <%= link_to "Vacature Bewerken", edit_vacancy_path(vacancy) %> </span>
+        </div>
+
+    </div>
+</div>
+<!--     <div class="vacancy-options">
+      <%= link_to "Bewerken", edit_vacancy_path(vacancy) %>
+-->
+
+
+  </div>
 <% end %>
+</div>
 
 </div>

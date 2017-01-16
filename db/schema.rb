@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206115726) do
+ActiveRecord::Schema.define(version: 20170110112009) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20161206115726) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "contact_information_modules", force: :cascade do |t|
+    t.string   "gender"
+    t.string   "name"
+    t.string   "last_name"
+    t.integer  "age"
+    t.string   "woonplaats"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -31,20 +42,38 @@ ActiveRecord::Schema.define(version: 20161206115726) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "company_id"
+    t.float    "longitude"
+    t.float    "latitude"
     t.index ["company_id"], name: "index_locations_on_company_id"
   end
 
   create_table "reactions", force: :cascade do |t|
     t.text     "body"
     t.integer  "vacancy_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "age"
     t.string   "education"
+    t.string   "address"
+    t.string   "postal_code"
+    t.string   "city"
+    t.string   "country"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.boolean  "wallet",      default: false
     t.index ["vacancy_id"], name: "index_reactions_on_vacancy_id"
+  end
+
+  create_table "social_media_modules", force: :cascade do |t|
+    t.string   "social_media_type"
+    t.string   "social_media_value"
+    t.integer  "vacancy_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["vacancy_id"], name: "index_social_media_modules_on_vacancy_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,15 +107,18 @@ ActiveRecord::Schema.define(version: 20161206115726) do
     t.string   "branche"
     t.string   "education_level"
     t.text     "experience"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.string   "location"
     t.text     "modules_array"
     t.text     "positions_array"
     t.text     "horizontal_positions_array"
     t.text     "vertical_positions_array"
     t.text     "width_size_array"
-    t.text     "hight_size_array"
+    t.text     "height_size_array"
+    t.boolean  "online",                     default: false
+    t.integer  "location_id"
+    t.index ["location_id"], name: "index_vacancies_on_location_id"
   end
 
   create_table "vacancy_modules", force: :cascade do |t|

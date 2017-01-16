@@ -1,10 +1,10 @@
 <header class="sub-header">
    <ul>
-      <li><%= link_to "Back", locations_path %></li>
+      <li><%= link_to "Back", companies_path %></li>
 
       <% if user_signed_in? %>
          |
-         <li><%= link_to "Delete", location_path(@location), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+         <li><%= link_to "Delete", company_location_path(@location), method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
    </ul>
 </header>

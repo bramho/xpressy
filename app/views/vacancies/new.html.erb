@@ -1,39 +1,18 @@
-<header class="sub-header">
-   <ul>
-      <li><%= link_to "Back", root_path %></li>
-   </ul>
+<!-- Deel 1: Basisgegevens -->
+<header class="sub-header form-title">
+  <center> <h3>Vacature aanmaken - Basisgegeven invullen</h3></center>
 </header>
 
-<div class="tabs tabs-style-shape">
-  <nav>
-    <ul>
-      <li>
-        <a href="#section-shape-1">
-          <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
-          <span>Basis Gegevens</span>
-        </a>
-      </li>
-      <li>
-        <a href="#section-shape-2">
-          <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
-          <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
-          <span>Modules</span>
-        </a>
-      </li>
-      <li>
-        <a href="#section-shape-3">
-          <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
-          <svg viewBox="0 0 80 60" preserveAspectRatio="none"><use xlink:href="#tabshape"></use></svg>
-          <span>Laatste Instellingen</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="content-wrap">
-    <center> <h1>Vacature aanmaken</h1></center>
+<div class="content-wrap">
+  <%= render 'form' %>
+</div><!-- /content -->
 
-    <%= render 'form' %>
-  </div><!-- /content -->
-</div><!-- /tabs -->
-
-
+<div class="progress-bar">
+   <div class="progress-bar-content">
+     <!-- <a href="#" class="pull-left"> <i class="fa fa-arrow-left" aria-hidden="true"></i></a> -->
+     <span class="progress-bar-item active"><span class="progress-bar-number">1</span>Basis Gegevens</span>
+     <span class="progress-bar-item"><span class="progress-bar-number">2</span>Modules toevoegen</span>
+     <span class="progress-bar-item"><span class="progress-bar-number">3</span>Opslaan</span>
+     <!-- <a href="#" class="pull-right" style="margin-right: 0;"> <i class="fa fa-arrow-right" aria-hidden="true"></i></a> -->
+   </div>
+</div>

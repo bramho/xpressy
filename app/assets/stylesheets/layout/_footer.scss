@@ -1,3 +1,17 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+footer {
+  margin-top: 100px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: $opacity-green;
+  z-index:9999;
+  img{
+    max-height: 100%;
+    padding: 8px;
+  }
+}
