@@ -62,6 +62,28 @@ class VacanciesController < ApplicationController
       redirect_to root_path
    end
 
+   def updateWithModules
+      @vacancy = Vacancy.find(params[:vacancy_id])
+
+      @module_width = params[:module_width]
+
+      modules_array = {}
+      module_hash = {}
+
+      module_hash["contact_gegevens"] = "Contact Gegevens"
+      module_hash["contact_gegevens_horizontal_position"] = "Horizontal Position here"
+      module_hash["contact_gegevens_vertical_position"] = "Vertical Postition here"
+      module_hash["contact-gegevens_width"] = @module_width
+      module_hash["contact_gegevens_height"] = "Height here"
+
+      @vacancy.update_attributes(modules_array: module_hash)
+
+      respond_to do |format|
+        format.html
+        format.js
+      end
+   end
+
    def wallet
 
    end

@@ -10,8 +10,8 @@ class VacancyStepsController < ApplicationController
    def update
       @vacancy = Vacancy.find(params[:vacancy_id])
 
-      @contact_gegevens = params[:vacancy][:contact_fields_name]
-      @social_media = params[:vacancy][:social_media_name]
+      # @contact_gegevens = params[:vacancy][:contact_fields_name]
+      # @social_media = params[:vacancy][:social_media_name]
 
       modules_array = {}
       module_hash = {}

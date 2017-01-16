@@ -49,17 +49,6 @@
   }
 }
 
-.submit-button {
-   input[type="submit"] {
-      background: $important-red;
-
-      &:hover {
-         color: #fff;
-         background: $important-pink;
-      }
-   }
-}
-
 span.module-text {
    font-weight: bold;
 }

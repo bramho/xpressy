@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post 'create_user' => 'users#create', as: :create_user
   get 'wallet' => 'vacancies#wallet'
 
+
+  post '/update_with_modules', to: 'vacancies#updateWithModules'
+
   # devise_for :users, controllers: {
   #       sessions: 'users/sessions'
   #     }
