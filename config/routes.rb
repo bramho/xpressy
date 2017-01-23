@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'wallet' => 'vacancies#wallet'
 
 
-  post '/update_with_modules', to: 'vacancies#updateWithModules'
+  post 'vacancies/:vacancy_id/update_with_modules', to: 'vacancies#update_with_modules'
+  get 'vacancies/:vacancy_id/update_with_modules', to: 'vacancies#update_with_modules'
 
   # devise_for :users, controllers: {
   #       sessions: 'users/sessions'
