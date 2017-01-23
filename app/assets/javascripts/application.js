@@ -16,6 +16,5 @@
 //= require turbolinks
 //= require_tree
 //= vacancy-modules
-//= interact-min
 //= grid
 //= Sortable.min

@@ -43,6 +43,30 @@
   </div>
 
   <div class="col-sm-9 xpressheet">
+     <script>
+
+       $.ajax({
+          type: "POST",
+          url: "../../../vacancies/" + <%= params[:id] %> + "/get_modules"
+       }).done(function (response) {
+          console.log(response);
+          buildVacancy(response);
+       });
+
+       function buildVacancy(modules_from_db) {
+          $.each(modules_from_db, function(index) {
+              $("#modules-from-db").append("<div class='selected-module' data-width='" + modules_from_db[index]["width"] + "'><span class='module-text'>" + modules_from_db[index]["name"] + "</span></div>");
+          });
+
+          $(".selected-module").css('width', function() {
+              return (($(this).data("width") * 23) + "%" );
+          });
+       }
+     </script>
+
+     <div id="modules-from-db" class="modules-container">
+
+     </div>
 
     <!-- <img src="http://placehold.it/1000x1000" class="img-responsive"> -->
   </div>

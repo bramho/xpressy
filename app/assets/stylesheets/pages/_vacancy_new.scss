@@ -126,6 +126,32 @@ span.module-text {
    }
 }
 
+.modules-container {
+
+   .selected-module {
+      background-color: $light-blue;
+      width: 23%;
+      min-height: 200px;
+      float: left;
+      margin: 1em 8px;
+      display: block;
+      border-radius: 5px;
+      text-align: center;
+      position: relative;
+
+      span.module-text {
+         font-size: 20px;
+         color: #777 !important;
+         font-weight: 500;
+      }
+   }
+
+   .selected-module > .module-text {
+      line-height: 200px;
+   }
+
+}
+
 // Grid
 #grid-snap {
   width: 40%;

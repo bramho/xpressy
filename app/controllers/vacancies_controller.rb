@@ -71,7 +71,7 @@ class VacanciesController < ApplicationController
       recived_modules.each do |i|
 
          module_hash = {}
-         
+
          module_hash["name"] = params[:addedModules][i][:name]
          module_hash["horizontal_position"] = "Horizontal Position here"
          module_hash["vertical_position"] = "Vertical Postition here"
@@ -88,6 +88,11 @@ class VacanciesController < ApplicationController
         format.html
         format.js
       end
+   end
+
+   def get_modules
+      @vacancy = Vacancy.find(params[:vacancy_id])
+      render :json => @vacancy.modules_array
    end
 
    def wallet

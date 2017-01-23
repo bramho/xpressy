@@ -1,1 +1,37 @@
-Fill Modules
+<div class="container">
+   <script>
+
+      $.ajax({
+         type: "POST",
+         url: "../../../vacancies/" + <%= params[:vacancy_id] %> + "/get_modules"
+      }).done(function (response) {
+         console.log(response);
+         buildVacancy(response);
+      });
+
+      function buildVacancy(modules_from_db) {
+         $.each(modules_from_db, function(index) {
+            $("#modules-from-db").append("<div class='selected-module' data-width='" + modules_from_db[index]["width"] + "'><span class='module-text'>" + modules_from_db[index]["name"] + "</span></div>");
+         });
+
+         $(".selected-module").css('width', function() {
+            return (($(this).data("width") * 23) + "%" );
+         });
+      }
+   </script>
+
+   <div id="modules-from-db" class="modules-container">
+
+   </div>
+
+   <div class="progress-bar">
+      <div class="progress-bar-content">
+        <!-- <a href="#" class="pull-left"> <i class="fa fa-arrow-left" aria-hidden="true"></i></a> -->
+        <span class="progress-bar-item"><span class="progress-bar-number">1</span>Basis Gegevens</span>
+        <span class="progress-bar-item"><span class="progress-bar-number">2</span>Modules toevoegen</span>
+        <span class="progress-bar-item active"><span class="progress-bar-number">3</span>Opslaan</span>
+        <!-- <a href="#" class="pull-right" style="margin-right: 0;"> <i class="fa fa-arrow-right" aria-hidden="true"></i></a> -->
+         <a href="/vacancies/<%= params[:vacancy_id] %>" class='xpressy-button red-button'>Opslaan</a>
+      </div>
+   </div>
+</div>

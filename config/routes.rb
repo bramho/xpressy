@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   post 'vacancies/:vacancy_id/update_with_modules', to: 'vacancies#update_with_modules'
-  get 'vacancies/:vacancy_id/update_with_modules', to: 'vacancies#update_with_modules'
+  post 'vacancies/:vacancy_id/get_modules', to: 'vacancies#get_modules'
 
   # devise_for :users, controllers: {
   #       sessions: 'users/sessions'
