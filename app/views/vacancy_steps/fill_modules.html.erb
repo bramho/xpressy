@@ -18,6 +18,24 @@
             return (($(this).data("width") * 23) + "%" );
          });
       }
+
+      $(document).ready(function() {
+         $("#on-off-checkbox").change(function() {
+            if(this.checked) {
+               $(".save-button a").removeClass("red-button").addClass("green-button");
+            } else {
+               $(".save-button a").removeClass("green-button").addClass("red-button");
+            }
+         });
+
+         $("#open-save-popup").on("click", function() {
+            $("#save-popup").fadeIn(200);
+         });
+
+         $("#close-icon").on("click", function() {
+            $("#save-popup").fadeOut(200);
+         });
+      });
    </script>
 
    <div id="modules-from-db" class="modules-container">
@@ -31,7 +49,31 @@
         <span class="progress-bar-item"><span class="progress-bar-number">2</span>Modules toevoegen</span>
         <span class="progress-bar-item active"><span class="progress-bar-number">3</span>Opslaan</span>
         <!-- <a href="#" class="pull-right" style="margin-right: 0;"> <i class="fa fa-arrow-right" aria-hidden="true"></i></a> -->
-         <a href="/vacancies/<%= params[:vacancy_id] %>" class='xpressy-button red-button'>Opslaan</a>
+         <!-- <a href="/vacancies/<%= params[:vacancy_id] %>" class='xpressy-button red-button'>Opslaan</a> -->
+         <button id="open-save-popup" class="xpressy-button red-button">Opslaan</button>
+
+         <div id="save-popup" class="save-popup-window" style="display:none;">
+            <div class="popup-text">
+               <p>Wilt u de vacature online of offline zetten?</p>
+            </div>
+            <div id="close-icon" class="close-icon">
+               <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="choices">
+               <div class="on-off-switch">
+                  <label class="switch">
+                     <input type="checkbox" id="on-off-checkbox">
+                     <div class="slider round"></div>
+                  </label>
+               </div>
+
+               <div class="save-button">
+                  <a href="/vacancies/<%= params[:vacancy_id] %>" class='xpressy-button red-button'>Opslaan</a>
+               </div>
+            </div>
+
+         </div>
+
       </div>
    </div>
 </div>

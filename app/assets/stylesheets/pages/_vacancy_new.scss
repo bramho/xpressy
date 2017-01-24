@@ -152,6 +152,113 @@ span.module-text {
 
 }
 
+.save-popup-window {
+   background-color: $white;
+   position: fixed;
+   left: 0;
+   right: 0;
+   margin: auto;
+   top: 50%;
+   -webkit-transform: translateY(-50%);
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+   min-width: 200px;
+   max-width: 500px;
+   height: auto;
+   padding: 15px;
+   border-radius: 10px;
+   -moz-box-shadow: 0 0 5px #ccc;
+   -webkit-box-shadow: 0 0 5px #ccc;
+   box-shadow: 0 0 5px #ccc;
+
+
+   .popup-text {
+      color: $black;
+      border-bottom: 1px solid $light-grey;
+   }
+
+   .close-icon {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      cursor: pointer;
+
+      i {
+         background: none !important;
+         color: $grey;
+      }
+   }
+
+   .on-off-switch {
+      margin-top: 10px;
+      margin-left: 40px;
+      text-align: left;
+
+      .switch {
+         position: relative;
+         display: inline-block;
+         width: 100px;
+         height: 50px;
+         float: left;
+
+         input {
+            display: none;
+         }
+      }
+
+      .slider {
+         position: absolute;
+         cursor: pointer;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         left: 0;
+         background-color: $important-red;
+         -webkit-transition: .4s;
+         transition: .4s;
+
+         &:before {
+            position: absolute;
+            content: "";
+            height: 42px;
+            width: 42px;
+            left: 4px;
+            bottom: 4px;
+            background-color: $white;
+            -webkit-transition: .4s;
+            transition: .4s;
+         }
+      }
+
+      .round {
+         border-radius: 34px;
+
+         &:before {
+            border-radius: 50%;
+         }
+      }
+
+      input:checked + .slider {
+        background-color: $important-green;
+      }
+
+      input:focus + .slider {
+        box-shadow: 0 0 1px $important-green;
+      }
+
+      input:checked + .slider:before {
+        -webkit-transform: translateX(48px);
+        -ms-transform: translateX(48px);
+        transform: translateX(48px);
+     }
+   }
+
+   .save-button {
+      text-align: right;
+      margin-right: 40px;
+   }
+}
+
 // Grid
 #grid-snap {
   width: 40%;
